@@ -1,0 +1,22 @@
+server:
+  port: 8761 #配置项目端口号
+spring:
+  application:
+    name: kentra-cms-eureka #项目名称
+  security:
+    basic:
+      enabled: true #开启安全认证
+    user:           #安全认证用户信息
+      name: admin
+      password: 123456
+eureka:
+  instance:
+    hostname: 172.18.100.40
+  client:
+    register-with-eureka: false #表示是否将自己注册到Eureka Server，默认为true。
+    fetch-registry: false #表示是否从Eureka Server获取注册信息，默认为true。
+    serviceUrl:  #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
+      defaultZone: http://admin:123456@${eureka.instance.hostname}:${server.port}/eureka/
+#  server: #配置属性，但由于 Eureka 自我保护模式以及心跳周期长的原因，经常会遇到 Eureka Server 不剔除已关停的节点的问题
+#    enable-self-preservation: false
+#    eviction-interval-timer-in-ms: 6000

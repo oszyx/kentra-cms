@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/kentra-cms.iml" filepath="$PROJECT_DIR$/kentra-cms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kentra-cms-config/kentra-cms-config.iml" filepath="$PROJECT_DIR$/kentra-cms-config/kentra-cms-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kentra-cms-registry/kentra-cms-registry.iml" filepath="$PROJECT_DIR$/kentra-cms-registry/kentra-cms-registry.iml" />
+    </modules>
+  </component>
+</project>
