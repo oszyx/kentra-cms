@@ -1,0 +1,5 @@
+zuul:
+  routes:
+    basic:
+      path: /api/** #网关路由请求地址
+      serviceId: kms-api #基础api服务

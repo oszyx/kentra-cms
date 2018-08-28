@@ -1,0 +1,12 @@
+spring:
+  zipkin:
+    enabled: false
+  application:
+    name: kms-tracker #分布式链路跟踪项目名称
+  sleuth:
+    enabled: false
+server:
+  port: 9005 #分布式链路跟踪项目端口号
+zipkin:
+  storage:
+    type: mysql

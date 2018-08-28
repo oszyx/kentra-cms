@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    bus:
+      trace:
+        enabled: true #开启消息跟踪

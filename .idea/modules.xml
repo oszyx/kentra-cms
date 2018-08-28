@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/kentra-cms.iml" filepath="$PROJECT_DIR$/kentra-cms.iml" />
       <module fileurl="file://$PROJECT_DIR$/kentra-cms-config/kentra-cms-config.iml" filepath="$PROJECT_DIR$/kentra-cms-config/kentra-cms-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kentra-cms-gateway/kentra-cms-gateway.iml" filepath="$PROJECT_DIR$/kentra-cms-gateway/kentra-cms-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kentra-cms-monitor/kentra-cms-monitor.iml" filepath="$PROJECT_DIR$/kentra-cms-monitor/kentra-cms-monitor.iml" />
       <module fileurl="file://$PROJECT_DIR$/kentra-cms-registry/kentra-cms-registry.iml" filepath="$PROJECT_DIR$/kentra-cms-registry/kentra-cms-registry.iml" />
     </modules>
   </component>

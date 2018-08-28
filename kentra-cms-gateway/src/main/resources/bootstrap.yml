@@ -1,0 +1,20 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@172.18.100.40:8761/eureka/
+  instance:
+    prefer-ip-address: true
+spring:
+  cloud:
+    config:
+      name: kentra-config
+      profile: gateway
+      label: master
+      fail-fast: true
+      discovery:
+        enabled: true
+        serviceId: kentra-cms-config
+      retry:
+        max-attempts: 6
+        initial-interval: 1000
+        max-interval: 2000

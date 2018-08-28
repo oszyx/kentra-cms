@@ -1,0 +1,10 @@
+server:
+  port: 8763 #网关项目端口号
+spring:
+  application:
+    name: kentra-cms-gateway #网关项目名称
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 200MB

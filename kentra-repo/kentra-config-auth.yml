@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: kms-auth #系统基础服务api项目名称
+server:
+  port: 9008 #系统基础服务api项目端口号

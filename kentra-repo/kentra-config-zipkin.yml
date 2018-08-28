@@ -1,0 +1,8 @@
+spring:
+  zipkin:
+    enabled: true
+    baseUrl: http://127.0.0.1:9005/
+  sleuth:
+    sampler:
+      #  采样率，默认值为0.1f，现在为了测试设置100%采集
+      percentage: 1
