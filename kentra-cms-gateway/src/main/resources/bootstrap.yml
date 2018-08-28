@@ -9,6 +9,8 @@ spring:
     config:
       name: kentra-config
       profile: gateway
+      username: admin
+      password: 12345678
       label: master
       fail-fast: true
       discovery:
@@ -18,3 +20,4 @@ spring:
         max-attempts: 6
         initial-interval: 1000
         max-interval: 2000
+
