@@ -13,8 +13,8 @@ eureka:
 spring:
   cloud:
     config:
-      name: kentra-cms-config
-      profile: monitor
+      name: kentra-config
+      profile: monitor,management
       label: master
       fail-fast: true
       discovery:
