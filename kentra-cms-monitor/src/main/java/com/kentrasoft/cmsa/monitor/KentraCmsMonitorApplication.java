@@ -13,6 +13,8 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableAdminServer
+//@EnableTurbine
+//@EnableHystrixDashboard
 public class KentraCmsMonitorApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(KentraCmsMonitorApplication.class, args);

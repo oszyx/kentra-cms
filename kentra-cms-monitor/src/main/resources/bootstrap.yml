@@ -16,8 +16,8 @@ spring:
       name: kentra-config
       profile: monitor,management
       label: master
-      username: admin
-      password: 12345678
+#      username: admin
+#      password: 12345678
       fail-fast: true
       discovery:
         enabled: true
