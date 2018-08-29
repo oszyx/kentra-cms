@@ -9,8 +9,6 @@ spring:
     config:
       name: kentra-config
       profile: gateway,management
-      username: admin
-      password: 12345678
       label: master
       fail-fast: true
       discovery:
