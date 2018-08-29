@@ -18,51 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kentra-cms-monitor/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="28" column="21" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="28" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kentra-cms-monitor/src/main/resources/bootstrap.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KentraCmsMonitorApplication.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kentra-cms-monitor/src/main/java/com/kentrasoft/cmsa/monitor/KentraCmsMonitorApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="27" column="2" lean-forward="true" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KentraCmsRegistryApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kentra-cms-registry/src/main/java/com/kentrasoft/cmsa/registry/KentraCmsRegistryApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kentra-config-monitor.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="kentra-config-monitor.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kentra-repo/kentra-config-monitor.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
-              <caret line="6" column="26" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="26" />
+              <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -100,13 +60,13 @@
         <option value="$PROJECT_DIR$/kentra-cms-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/kentra-cms-config/src/main/java/com/kentrasoft/cmsa/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/kentra-cms-gateway/src/main/resources/bootstrap.yml" />
-        <option value="$PROJECT_DIR$/kentra-cms-registry/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/kentra-cms-monitor/src/main/java/com/kentrasoft/cmsa/monitor/KentraCmsMonitorApplication.java" />
         <option value="$PROJECT_DIR$/kentra-cms-config/src/main/java/com/kentrasoft/cmsa/config/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/kentra-cms-config/pom.xml" />
         <option value="$PROJECT_DIR$/kentra-cms-config/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/kentra-cms-monitor/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/kentra-cms-monitor/pom.xml" />
+        <option value="$PROJECT_DIR$/kentra-cms-registry/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/kentra-repo/kentra-config-monitor.yml" />
       </list>
     </option>
@@ -498,12 +458,12 @@
       <workItem from="1535348678417" duration="6533000" />
       <workItem from="1535355830595" duration="5074000" />
       <workItem from="1535419770528" duration="14145000" />
-      <workItem from="1535506311846" duration="22805000" />
+      <workItem from="1535506311846" duration="22884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48557000" />
+    <option name="totallyTimeSpent" value="48636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -735,26 +695,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-registry/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/resources/bootstrap.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="12" column="24" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="12" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-registry/src/main/java/com/kentrasoft/cmsa/registry/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -799,18 +743,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-repo/kentra-config-monitor.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="26" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kentra-cms-monitor/src/main/resources/bootstrap.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-monitor/src/main/java/com/kentrasoft/cmsa/monitor/KentraCmsMonitorApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-registry/src/main/java/com/kentrasoft/cmsa/registry/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-registry/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -823,10 +783,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-monitor/src/main/java/com/kentrasoft/cmsa/monitor/KentraCmsMonitorApplication.java">
+    <entry file="file://$PROJECT_DIR$/kentra-repo/kentra-config-monitor.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="27" column="2" lean-forward="true" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+        <state relative-caret-position="138">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
           <folding />
         </state>
       </provider>

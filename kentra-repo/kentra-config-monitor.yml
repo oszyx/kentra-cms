@@ -3,7 +3,7 @@ spring:
     name: kentra-cms-monitor #监控中心项目名称
   security:
     user:
-      name: "user"
-      password: "password"
+      name: "admin"
+      password: "123456"
 server:
   port: 8764 #监控中心项目端口号
