@@ -6,5 +6,5 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
-#  security:
-#    enabled: false #刷新时关闭安全验证
+  security:
+    enabled: false #刷新时关闭安全验证
