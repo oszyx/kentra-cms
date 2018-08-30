@@ -1,6 +1,6 @@
 spring:
   application:
-    name: kentra-cms-api #系统基础服务api项目名称
+    name: kentra-cms-bis #系统基础服务api项目名称
 #  security:
 #    user:
 #      name: "admin"
