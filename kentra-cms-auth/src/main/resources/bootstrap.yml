@@ -7,14 +7,14 @@ eureka:
     leaseRenewalIntervalInSeconds: 10 #表示eureka client发送心跳给server端的频率，默认为30秒
     health-check-url-path: /actuator/health #健康检查的地址（依赖spring-boot-starter-actuator）
     prefer-ip-address: true
-    metadata-map:
-      user.name: "admin"
-      user.password: "123456"
+#    metadata-map:
+#      user.name: "admin"
+#      user.password: "123456"
 spring:
   cloud:
     config:
       name: kentra-config
-      profile: monitor,management
+      profile: auth,management
       label: master
       username: admin
       password: 123456

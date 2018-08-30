@@ -8,9 +8,13 @@ spring:
       server:
         git:
           uri: https://github.com/oszyx/kentra-cms   # 配置git仓库的地址
-          search-paths: kentra-repo                             # git仓库地址下的相对地址，可以配置多个，用,分割。
-          username: 1281676727@qq.com                                        # git仓库的账号
-          password: Admin_082812                                    # git仓库的密码
+          search-paths: kentra-repo                 # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: 1281676727@qq.com                # git仓库的账号
+          password: Admin_082812                     # git仓库的密码
+  security:
+    user:
+      name: admin
+      password: 123456
 management:
   endpoints:
     web:
@@ -19,6 +23,8 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+  security:
+    enabled: false
 eureka:
   client:
     serviceUrl:
@@ -29,3 +35,6 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 30
     prefer-ip-address: true
+    metadata-map:
+      user.name: admin
+      user.password: 123456

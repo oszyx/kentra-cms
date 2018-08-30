@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: kentra-cms-gateway #网关项目名称
+  security:
+    user:
+      name: "admin"
+      password: "123456"
   servlet:
     multipart:
       enabled: true
