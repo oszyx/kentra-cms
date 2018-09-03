@@ -14,7 +14,7 @@ spring:
   cloud:
     config:
       name: kentra-config
-      profile: bis,management
+      profile: bis,management,jdbc
       label: master
       username: admin
       password: 123456

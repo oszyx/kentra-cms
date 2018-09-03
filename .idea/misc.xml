@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/kentra-cms-monitor/pom.xml" />
         <option value="$PROJECT_DIR$/kentra-cms-bis/pom.xml" />
         <option value="$PROJECT_DIR$/kentra-cms-auth/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
       </list>
     </option>
   </component>
