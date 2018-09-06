@@ -9,7 +9,6 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 @EnableConfigServer
 @EnableDiscoveryClient
 public class KentraCmsConfigApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(KentraCmsConfigApplication.class, args);
 	}

@@ -16,6 +16,11 @@
     <modules>
         <module>kentra-cms-config</module>
         <module>kentra-cms-registry</module>
+        <module>kentra-cms-gateway</module>
+        <module>kentra-cms-monitor</module>
+        <module>kentra-cms-common</module>
+        <module>kentra-cms-auth</module>
+        <module>kentra-cms-bis</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

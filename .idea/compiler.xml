@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="kentra-cms-auth" />
         <module name="kentra-cms-bis" />
+        <module name="kentra-cms-common-chache" />
         <module name="kentra-cms-config" />
         <module name="kentra-cms-gateway" />
         <module name="kentra-cms-monitor" />
@@ -19,6 +20,8 @@
       <module name="kentra-cms" target="1.8" />
       <module name="kentra-cms-auth" target="1.8" />
       <module name="kentra-cms-bis" target="1.8" />
+      <module name="kentra-cms-common" target="1.8" />
+      <module name="kentra-cms-common-chache" target="1.5" />
       <module name="kentra-cms-config" target="1.8" />
       <module name="kentra-cms-gateway" target="1.8" />
       <module name="kentra-cms-monitor" target="1.8" />

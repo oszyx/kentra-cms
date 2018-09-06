@@ -10,8 +10,11 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger.web.UiConfiguration;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@Configuration
-@EnableSwagger2
+/**
+ * 以下configuration enableswagger2两个注解需要用的时候放开就可以
+ */
+//@Configuration
+//@EnableSwagger2
 public class SwaggerConfig extends WebMvcConfigurerAdapter {
 
     @Bean

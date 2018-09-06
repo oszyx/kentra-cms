@@ -10,8 +10,11 @@ import springfox.documentation.swagger.web.SwaggerResourcesProvider;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-@Primary
+/**
+ * 以下configuration enableswagger2两个注解需要用的时候放开就可以
+ */
+//@Component
+//@Primary
 public class DocumentationConfig implements SwaggerResourcesProvider {
 
     private final RouteLocator routeLocator;
