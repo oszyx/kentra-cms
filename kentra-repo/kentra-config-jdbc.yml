@@ -9,8 +9,8 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver #mysql驱动
-    url: jdbc:mysql://171.221.205.67:3306/db_gy_fvs?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    username: user_gy_fvs
-    password: gy_fvs1611
+    url: jdbc:mysql://171.221.205.67:7318/db_gy_fvs?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: keydom
+    password: 333333Aa
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
