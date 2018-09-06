@@ -1,8 +1,16 @@
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver #mysql驱动
+#    url: jdbc:mysql://127.0.0.1:3306/db_kms_zipkin?useUnicode=true&characterEncoding=utf-8&useSSL=false
+#    username: root
+#    password: 123456
+#    # 使用druid数据源
+#    type: com.alibaba.druid.pool.DruidDataSource
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver #mysql驱动
-    url: jdbc:mysql://127.0.0.1:3306/db_kms_zipkin?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    username: root
-    password: 123456
+    url: jdbc:mysql://172.18.105.13:3306/db_gy_fvs?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: user_gy_fvs
+    password: gy_fvs1611
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
