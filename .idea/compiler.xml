@@ -21,7 +21,7 @@
       <module name="kentra-cms-auth" target="1.8" />
       <module name="kentra-cms-bis" target="1.8" />
       <module name="kentra-cms-common" target="1.8" />
-      <module name="kentra-cms-common-chache" target="1.5" />
+      <module name="kentra-cms-common-chache" target="1.8" />
       <module name="kentra-cms-config" target="1.8" />
       <module name="kentra-cms-gateway" target="1.8" />
       <module name="kentra-cms-monitor" target="1.8" />

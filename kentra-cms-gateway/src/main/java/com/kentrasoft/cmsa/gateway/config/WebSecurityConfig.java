@@ -54,9 +54,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .antMatchers("/user/**").permitAll()
+                .antMatchers("/bis/**").permitAll()
+                .antMatchers("/auth/**").permitAll()
                 .anyRequest().authenticated()
                 .and().headers().cacheControl();
         httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
         httpSecurity.exceptionHandling().authenticationEntryPoint(entryPointUnauthorizedHandler).accessDeniedHandler(restAccessDeniedHandler);
+
+//        httpSecurity.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                .and().authorizeRequests()
+//                .antMatchers("/web/**").permitAll()
+//                .antMatchers("/webfvs").permitAll()
+//                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+//                .antMatchers("/user/**").permitAll()
+//                .antMatchers("/bis/**").permitAll()
+//                .antMatchers("/auth/**").permitAll()
+//                .antMatchers("/getMapInfos").permitAll()
+//                .antMatchers("/customer/**").permitAll()
+//                .antMatchers("/api/app/**").permitAll()
+//                .anyRequest().authenticated()
+//                .and().headers().cacheControl();
+//        httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
+//        httpSecurity.exceptionHandling().authenticationEntryPoint(entryPointUnauthorizedHandler).accessDeniedHandler(restAccessDeniedHandler);
+
     }
 }
