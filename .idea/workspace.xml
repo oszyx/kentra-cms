@@ -48,8 +48,8 @@
       <file leaf-file-name="kentra-config-redis.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kentra-repo/kentra-config-redis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+            <state relative-caret-position="270">
+              <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -97,7 +97,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/kentra-repo/kentra-config-gateway.yml" />
         <option value="$PROJECT_DIR$/kentra-cms-auth/src/main/java/com/kentrasoft/cmsa/auth/feign/IRibbonClient.java" />
         <option value="$PROJECT_DIR$/kentra-cms-auth/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/kentra-repo/kentra-config-jdbc.yml" />
@@ -148,6 +147,7 @@
         <option value="$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/src/main/java/com/kentrasoft/cms/common/cache/config/RedisConfig.java" />
         <option value="$PROJECT_DIR$/kentra-cms-bis/src/main/java/com/kentrasoft/cmsa/bis/config/RedisConfig.java" />
         <option value="$PROJECT_DIR$/kentra-repo/kentra-config-redis.yml" />
+        <option value="$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/src/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -195,7 +195,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -613,7 +613,7 @@
       <workItem from="1536653468873" duration="1200000" />
       <workItem from="1536717669058" duration="32000" />
       <workItem from="1536728862101" duration="10353000" />
-      <workItem from="1536810295542" duration="10680000" />
+      <workItem from="1536810295542" duration="10895000" />
     </task>
     <servers />
   </component>
@@ -629,10 +629,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147067000" />
+    <option name="totallyTimeSpent" value="147282000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1046" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1046" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -736,13 +736,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-web/5.0.7.RELEASE/spring-security-web-5.0.7.RELEASE.jar!/org/springframework/security/web/authentication/AnonymousAuthenticationFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-web/5.0.7.RELEASE/spring-security-web-5.0.7.RELEASE.jar!/org/springframework/security/web/FilterChainProxy.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -1115,10 +1108,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/kentra-repo/kentra-config-redis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        <state relative-caret-position="270">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="20" />
           <folding />
         </state>
       </provider>
