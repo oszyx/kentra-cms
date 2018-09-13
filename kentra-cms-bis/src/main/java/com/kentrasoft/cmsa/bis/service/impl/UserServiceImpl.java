@@ -4,6 +4,7 @@ import com.kentrasoft.cmsa.bis.dao.UserMapper;
 import com.kentrasoft.cmsa.bis.entity.User;
 import com.kentrasoft.cmsa.bis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -26,6 +27,7 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
+    @Cacheable(value="user", key="'user'.concat(#id.toString())")
     public User findById(Long id) {
         return userMapper.findById(id);
     }

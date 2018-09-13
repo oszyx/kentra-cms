@@ -8,7 +8,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan("com.kentrasoft.cmsa.bis.dao")
+@MapperScan({"com.kentrasoft.cmsa.bis.dao","com.kentrasoft.cmsa.common"})
 public class KentraCmsBisApplication {
 
 	public static void main(String[] args) {

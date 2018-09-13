@@ -1,5 +1,6 @@
 package com.kentrasoft.cmsa.bis.dao;
 import com.kentrasoft.cmsa.bis.entity.User;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component(value = "userMapper")

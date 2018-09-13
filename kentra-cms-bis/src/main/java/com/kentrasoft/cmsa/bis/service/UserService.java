@@ -1,6 +1,7 @@
 package com.kentrasoft.cmsa.bis.service;
 
 import com.kentrasoft.cmsa.bis.entity.User;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.Date;
 
