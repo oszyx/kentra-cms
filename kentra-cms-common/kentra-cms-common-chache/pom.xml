@@ -12,7 +12,7 @@
 	<description>缓存服务</description>
 
 	<parent>
-		<groupId>com.kentrasoft.cmsa</groupId>
+		<groupId>com.kentrasoft.cms</groupId>
 		<artifactId>kentra-cms-common</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>

@@ -14,7 +14,7 @@ spring:
   cloud:
     config:
       name: kentra-config
-      profile: gateway,management,routes
+      profile: gateway,management,routes,redis
       label: master
       username: admin
       password: 123456

@@ -3,10 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/kentra-cms.iml" filepath="$PROJECT_DIR$/kentra-cms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kentra-cms-api/kentra-cms-api.iml" filepath="$PROJECT_DIR$/kentra-cms-api/kentra-cms-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/kentra-cms-auth/kentra-cms-auth.iml" filepath="$PROJECT_DIR$/kentra-cms-auth/kentra-cms-auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/kentra-cms-bis/kentra-cms-bis.iml" filepath="$PROJECT_DIR$/kentra-cms-bis/kentra-cms-bis.iml" />
       <module fileurl="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common.iml" filepath="$PROJECT_DIR$/kentra-cms-common/kentra-cms-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/kentra-cms-common-chache.iml" filepath="$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/kentra-cms-common-chache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-util/kentra-cms-common-util.iml" filepath="$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-util/kentra-cms-common-util.iml" />
       <module fileurl="file://$PROJECT_DIR$/kentra-cms-config/kentra-cms-config.iml" filepath="$PROJECT_DIR$/kentra-cms-config/kentra-cms-config.iml" />
       <module fileurl="file://$PROJECT_DIR$/kentra-cms-gateway/kentra-cms-gateway.iml" filepath="$PROJECT_DIR$/kentra-cms-gateway/kentra-cms-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/kentra-cms-monitor/kentra-cms-monitor.iml" filepath="$PROJECT_DIR$/kentra-cms-monitor/kentra-cms-monitor.iml" />

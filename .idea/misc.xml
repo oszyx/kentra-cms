@@ -12,6 +12,8 @@
         <option value="$PROJECT_DIR$/kentra-cms-auth/pom.xml" />
         <option value="$PROJECT_DIR$/kentra-cms-common/pom.xml" />
         <option value="$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/pom.xml" />
+        <option value="$PROJECT_DIR$/kentra-cms-api/pom.xml" />
+        <option value="$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-util/pom.xml" />
       </list>
     </option>
   </component>

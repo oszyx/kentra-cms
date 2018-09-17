@@ -9,15 +9,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.CacheErrorHandler;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
-import org.springframework.data.redis.cache.RedisCacheWriter;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.RedisPassword;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -33,9 +30,13 @@ import java.time.Duration;
 
 
 @Configuration
-@EnableCaching
+//@EnableCaching
 @Component
 public class RedisConfig extends CachingConfigurerSupport {
+    @Autowired
+    private JedisConnectionFactory jedisConnectionFactory;
+
+
     @Bean
     @Override
     public KeyGenerator keyGenerator() {
@@ -57,28 +58,32 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     @Bean
-    //@Override
-    public CacheManager cacheManager(JedisConnectionFactory connectionFactory) {
-//        // 初始化缓存管理器，在这里我们可以缓存的整体过期时间什么的，我这里默认没有配置
-//        System.out.print("初始化 -> [{}]:CacheManager RedisCacheManager Start");
-//        RedisCacheManager.RedisCacheManagerBuilder builder = RedisCacheManager
-//                .RedisCacheManagerBuilder
-//                .fromConnectionFactory(jedisConnectionFactory);
-//        return builder.build();
-
-        //初始化一个RedisCacheWriter
-        RedisCacheWriter redisCacheWriter = RedisCacheWriter.nonLockingRedisCacheWriter(connectionFactory);
-        //设置CacheManager的值序列化方式为JdkSerializationRedisSerializer,但其实RedisCacheConfiguration默认就是使用StringRedisSerializer序列化key，JdkSerializationRedisSerializer序列化value,所以以下注释代码为默认实现
-        //ClassLoader loader = this.getClass().getClassLoader();
-        //JdkSerializationRedisSerializer jdkSerializer = new JdkSerializationRedisSerializer(loader);
-        //RedisSerializationContext.SerializationPair<Object> pair = RedisSerializationContext.SerializationPair.fromSerializer(jdkSerializer);
-        //RedisCacheConfiguration defaultCacheConfig=RedisCacheConfiguration.defaultCacheConfig().serializeValuesWith(pair);
+    @Override
+    public CacheManager cacheManager() {
+        // 初始化缓存管理器，在这里我们可以缓存的整体过期时间什么的，我这里默认没有配置
+        System.out.print("初始化 -> [{}]:CacheManager RedisCacheManager Start");
         RedisCacheConfiguration defaultCacheConfig = RedisCacheConfiguration.defaultCacheConfig();
         //设置默认超过期时间是30秒
         defaultCacheConfig.entryTtl(Duration.ofSeconds(30));
-        //初始化RedisCacheManager
-        RedisCacheManager cacheManager = new RedisCacheManager(redisCacheWriter, defaultCacheConfig);
-        return cacheManager;
+        RedisCacheManager.RedisCacheManagerBuilder builder = RedisCacheManager
+                .RedisCacheManagerBuilder
+                .fromConnectionFactory(jedisConnectionFactory)
+                .cacheDefaults(defaultCacheConfig);
+        return builder.build();
+//
+//        //初始化一个RedisCacheWriter
+//        RedisCacheWriter redisCacheWriter = RedisCacheWriter.nonLockingRedisCacheWriter(jedisConnectionFactory);
+//        //设置CacheManager的值序列化方式为JdkSerializationRedisSerializer,但其实RedisCacheConfiguration默认就是使用StringRedisSerializer序列化key，JdkSerializationRedisSerializer序列化value,所以以下注释代码为默认实现
+//        //ClassLoader loader = this.getClass().getClassLoader();
+//        //JdkSerializationRedisSerializer jdkSerializer = new JdkSerializationRedisSerializer(loader);
+//        //RedisSerializationContext.SerializationPair<Object> pair = RedisSerializationContext.SerializationPair.fromSerializer(jdkSerializer);
+//        //RedisCacheConfiguration defaultCacheConfig=RedisCacheConfiguration.defaultCacheConfig().serializeValuesWith(pair);
+//        RedisCacheConfiguration defaultCacheConfig = RedisCacheConfiguration.defaultCacheConfig();
+//        //设置默认超过期时间是30秒
+//        defaultCacheConfig.entryTtl(Duration.ofSeconds(30));
+//        //初始化RedisCacheManager
+//        RedisCacheManager cacheManager = new RedisCacheManager(redisCacheWriter, defaultCacheConfig);
+//        return cacheManager;
     }
     @Bean
     public RedisTemplate<String, Object> redisTemplate(JedisConnectionFactory jedisConnectionFactory ) {
@@ -99,8 +104,9 @@ public class RedisConfig extends CachingConfigurerSupport {
         redisTemplate.afterPropertiesSet();
         return redisTemplate;
     }
-    @Override
+
     @Bean
+    @Override
     public CacheErrorHandler errorHandler() {
         // 异常处理，当Redis发生异常时，打印日志，但是程序正常走
         System.out.print("初始化 -> [{}]:Redis CacheErrorHandler");
