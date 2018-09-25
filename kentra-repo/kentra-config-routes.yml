@@ -6,11 +6,3 @@ zuul:
     basicWeb:
       path: /web/**
       serviceId: kentra-cms-basicWeb  # 基础web服务
-  add-host-header: true
-    host:
-      max-total-connections: 200 #每个服务的http客户端连接池最大连接。默认200
-      max-per-route-connections: 50 #每个route可用的最大连接数，默认20
-      connect-timeout-millis: 10000 #请求超时时间，默认2000毫秒
-      connection-request-timeout-millis: 5000 #从连接池获取连接的超时时间
-      socket-timeout-millis: 10000 #从服务器读取数据超时时间，默认1000毫秒
-      time-to-live: -1 #连接池生命周期
