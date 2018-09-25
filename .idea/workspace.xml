@@ -23,58 +23,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="RedisConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/src/main/java/com/kentrasoft/cms/common/cache/config/RedisConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="33" column="10" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kentra-config-routes.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kentra-repo/kentra-config-routes.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebSecurityConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/config/WebSecurityConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="57" column="54" lean-forward="true" selection-start-line="56" selection-start-column="18" selection-end-line="57" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KentraCmsGatewayApplication.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/KentraCmsGatewayApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/resources/bootstrap.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -153,12 +102,12 @@
         <option value="$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/jwt/JwtTokenUtil.java" />
         <option value="$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/filter/JwtAuthenticationTokenFilter.java" />
         <option value="$PROJECT_DIR$/kentra-cms-gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/KentraCmsGatewayApplication.java" />
         <option value="$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/jwt/JwtUser.java" />
         <option value="$PROJECT_DIR$/kentra-cms-bis/src/main/java/com/kentrasoft/cms/bis/controller/UserController.java" />
         <option value="$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/jwt/JwtUserDetailsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/kentra-cms-gateway/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/KentraCmsGatewayApplication.java" />
+        <option value="$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/config/WebSecurityConfig.java" />
       </list>
     </option>
   </component>
@@ -181,30 +130,12 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="kentra-cms-bis" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="kentra-cms-bis" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="kentra-cms-bis" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="kentra-cms-common-cache" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="kentra-cms-common-cache" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+          <item name="kentra-cms-gateway" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="kentra-cms-gateway" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
@@ -215,7 +146,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -236,127 +167,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
               <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common-chache" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common-chache" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common-chache" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common-chache" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common-chache" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cache" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-common-chache" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cache" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-gateway" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-cms-gateway" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kentra-cms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kentra-cms" type="462c0819:PsiDirectoryNode" />
-              <item name="kentra-repo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -365,6 +181,7 @@
       <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -643,10 +460,10 @@
       <item index="9" class="java.lang.String" itemvalue="Spring Boot.KentraCmsMonitorApplication (1)" />
       <item index="10" class="java.lang.String" itemvalue="Spring Boot.KentraCmsConfigApplication (1)" />
       <item index="11" class="java.lang.String" itemvalue="Spring Boot.KentraCmsRegistryApplication (1)" />
-      <item index="12" class="java.lang.String" itemvalue="Spring Boot.KentraCmsRegistryApplication" />
-      <item index="13" class="java.lang.String" itemvalue="Spring Boot.KentraCmsConfigApplication" />
-      <item index="14" class="java.lang.String" itemvalue="JUnit.KentraCmsBisApplicationTests.contextLoads" />
-      <item index="15" class="java.lang.String" itemvalue="Spring Boot.KentraCmsCommonUtilApplication" />
+      <item index="12" class="java.lang.String" itemvalue="Spring Boot.KentraCmsCommonUtilApplication" />
+      <item index="13" class="java.lang.String" itemvalue="Spring Boot.KentraCmsRegistryApplication" />
+      <item index="14" class="java.lang.String" itemvalue="Spring Boot.KentraCmsConfigApplication" />
+      <item index="15" class="java.lang.String" itemvalue="JUnit.KentraCmsBisApplicationTests.contextLoads" />
       <item index="16" class="java.lang.String" itemvalue="Spring Boot.KentraCmsBisApplication (1)" />
     </list>
     <recent_temporary>
@@ -689,7 +506,10 @@
       <workItem from="1536728862101" duration="10353000" />
       <workItem from="1536810295542" duration="14449000" />
       <workItem from="1536888568763" duration="12604000" />
-      <workItem from="1537148313788" duration="11166000" />
+      <workItem from="1537148313788" duration="14265000" />
+      <workItem from="1537177354070" duration="399000" />
+      <workItem from="1537318954188" duration="22000" />
+      <workItem from="1537852933617" duration="1310000" />
     </task>
     <servers />
   </component>
@@ -705,15 +525,14 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174606000" />
+    <option name="totallyTimeSpent" value="179436000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1046" extended-state="7" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1046" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2729332" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22371244" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16255365" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -721,18 +540,17 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22919042" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10490308" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.55986315" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42987457" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32081544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26824033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -741,6 +559,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -794,19 +613,18 @@
           <properties />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/filter/JwtAuthenticationTokenFilter.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="52" />
+      <option name="time" value="54" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.8.RELEASE/spring-context-5.0.8.RELEASE.jar!/org/springframework/cache/annotation/CachingConfigurerSupport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.8.RELEASE/spring-context-5.0.8.RELEASE.jar!/org/springframework/cache/CacheManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -868,7 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="17" column="13" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,14 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="853">
           <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-auth/src/main/java/com/kentrasoft/cms/auth/controller/SimpleCtl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -922,7 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="53" column="28" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="53" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,7 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="44" column="21" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="44" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,38 +774,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/src/main/java/com/kentrasoft/cms/common/cache/util/JwtTokenUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/src/main/java/com/kentrasoft/cms/common/cache/util/JwtTokenUtil.java" />
     <entry file="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/src/main/java/com/kentrasoft/cms/common/cache/util/RedisStringUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="13" column="30" lean-forward="true" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/src/main/java/com/kentrasoft/cms/common/cache/util/RedisUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2426">
-          <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="10" />
-          <folding>
-            <marker date="1536910216741" expanded="false" signature="852:882" ph="/unchecked/" />
-            <marker date="1536910216741" expanded="false" signature="1138:1168" ph="/unchecked/" />
-            <marker date="1536910216741" expanded="false" signature="1379:1409" ph="/unchecked/" />
-            <marker date="1536910216741" expanded="false" signature="1577:1607" ph="/unchecked/" />
-            <marker date="1536910216741" expanded="false" signature="1928:1958" ph="/unchecked/" />
-            <marker date="1536910216741" expanded="false" signature="2418:2448" ph="/unchecked/" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1007,39 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="694">
           <caret line="90" column="12" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="90" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-bis/src/main/java/com/kentrasoft/cms/bis/controller/TestRedisController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="19" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-util/src/main/java/com/kentrasoft/cms/common/util/JwtUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="56" column="5" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="56" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-bis/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="77" column="21" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="77" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="61" column="47" lean-forward="false" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1055,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1063,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1071,49 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/jwt/JwtUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#754#755#0" expanded="false" />
-            <element signature="e#785#786#0" expanded="false" />
-            <element signature="e#850#851#0" expanded="false" />
-            <element signature="e#881#882#0" expanded="false" />
-            <element signature="e#965#966#0" expanded="false" />
-            <element signature="e#999#1000#0" expanded="false" />
-            <element signature="e#1057#1058#0" expanded="false" />
-            <element signature="e#1084#1085#0" expanded="false" />
-            <element signature="e#1141#1142#0" expanded="false" />
-            <element signature="e#1168#1169#0" expanded="false" />
-            <element signature="e#1230#1231#0" expanded="false" />
-            <element signature="e#1257#1258#0" expanded="false" />
-            <element signature="e#1305#1306#0" expanded="false" />
-            <element signature="e#1332#1333#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/jwt/JwtUserDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="28" column="53" lean-forward="true" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
-          <folding>
-            <element signature="e#1056#1064#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/filter/JwtAuthenticationTokenFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="39" column="69" lean-forward="false" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1137,7 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,30 +848,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1484">
           <caret line="66" column="12" lean-forward="false" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-util/src/main/java/com/kentrasoft/cms/common/util/KentraCmsCommonUtilApplication.java">
+    <entry file="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-util/src/main/java/com/kentrasoft/cms/common/util/KentraCmsCommonUtilApplication.java" />
+    <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/resources/bootstrap.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="480">
+          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="61" column="34" lean-forward="false" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-bis/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="69" column="34" lean-forward="false" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kentra-cms-bis/src/main/java/com/kentrasoft/cms/bis/KentraCmsBisApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-bis/src/main/java/com/kentrasoft/cms/bis/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="38" />
+        <state relative-caret-position="240">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1176,39 +884,102 @@
     <entry file="file://$PROJECT_DIR$/kentra-repo/kentra-config-routes.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/config/WebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="57" column="54" lean-forward="true" selection-start-line="56" selection-start-column="18" selection-end-line="57" selection-end-column="54" />
+        <state relative-caret-position="241">
+          <caret line="55" column="56" lean-forward="false" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-bis/src/main/java/com/kentrasoft/cms/bis/controller/SimpleCtl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/KentraCmsGatewayApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-bis/src/main/java/com/kentrasoft/cms/bis/controller/TestRedisController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="19" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-bis/src/main/java/com/kentrasoft/cms/bis/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="41" column="43" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/jwt/JwtUserDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="28" column="26" lean-forward="false" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/jwt/JwtUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="18" selection-start-column="63" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/filter/JwtAuthenticationTokenFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-util/src/main/java/com/kentrasoft/cms/common/util/JwtUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/src/main/java/com/kentrasoft/cms/common/cache/util/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1346">
+          <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kentra-cms-common/kentra-cms-common-chache/src/main/java/com/kentrasoft/cms/common/cache/config/RedisConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="33" column="10" lean-forward="true" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+        <state relative-caret-position="-3554">
+          <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/resources/bootstrap.yml">
+    <entry file="file://$PROJECT_DIR$/kentra-cms-auth/src/main/java/com/kentrasoft/cms/auth/controller/SimpleCtl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kentra-cms-gateway/src/main/java/com/kentrasoft/cms/gateway/KentraCmsGatewayApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="180">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
