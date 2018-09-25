@@ -5,12 +5,5 @@ spring:
 #    user:
 #      name: "admin"
 #      password: "123456"
-  thymeleaf:
-       cache: false #关闭thymeleaf的缓存，不然在开发过程中修改页面不会立刻生效需要重启，生产可配置为true。
-       prefix: classpath:/templates/ #在构建URL时添加到视图名称前的前缀（默认值：classpath:/templates/）
-       suffix: .html #模板后缀
-       encoding: UTF-8 #模板编码
-       content-type: text/html #Content-Type的值（默认值：text/html）
-       mode: HTML5 #要运用于模板之上的模板模式。另见StandardTemplate-ModeHandlers(默认值：HTML5)
 server:
   port: 8770 #系统基础服务web项目端口号
