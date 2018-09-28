@@ -1,6 +1,7 @@
 package com.kentrasoft.cms.web.controller.customer;
 
 
+import com.kentrasoft.cms.common.cache.util.RedisUtil;
 import com.kentrasoft.cms.entity.Customer;
 import com.kentrasoft.cms.service.CustomerService;
 import com.kentrasoft.utils.exportExcel.ExportExcelUtils;
@@ -8,8 +9,6 @@ import com.kentrasoft.utils.exportExcel.bean.ExcelData;
 import com.kentrasoft.utils.plugin.BaseController;
 import com.kentrasoft.utils.plugin.BaseResult;
 import com.kentrasoft.utils.plugin.PageForm;
-//TODO 注释
-//import com.kentrasoft.utils.redis.RedisUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,9 +27,8 @@ public class CustomerManagementController extends BaseController {
 
     @Autowired
     private CustomerService customerService;
-    //TODO 注释
-//    @Autowired
-//    RedisUtils redisUtils;
+    @Autowired
+    private RedisUtil redisUtil;
 
     /**
      * 用户列表
@@ -157,19 +155,15 @@ public class CustomerManagementController extends BaseController {
             for (Customer customer : customerList) {
                 row.append(customer.getId()).append(",")
                         .append(customer.getName()).append(",")
-                        //TODO 注释
-//                        .append(StringUtils.isBlank(customer.getSex()) ? "" : redisUtils.StringGet(customer.getSex())).append(",")
-                        //TODO 注释
-//                        .append(StringUtils.isBlank(customer.getNational()) ? "" : redisUtils.StringGet(customer.getNational())).append(",")
+                        .append(StringUtils.isBlank(customer.getSex()) ? "" : (String)redisUtil.get(customer.getSex())).append(",")
+                        .append(StringUtils.isBlank(customer.getNational()) ? "" : (String)redisUtil.get(customer.getNational())).append(",")
                         .append(customer.getBirthday() != null ? dateFormate.format(customer.getBirthday()) : "").append(",")
-                        //TODO 注释
-//                        .append(StringUtils.isBlank(customer.getDocumentType()) ? "" : redisUtils.StringGet(customer.getDocumentType())).append(",")
+                        .append(StringUtils.isBlank(customer.getDocumentType()) ? "" : (String)redisUtil.get(customer.getDocumentType())).append(",")
                         .append(customer.getDocumentNum()).append(",")
                         .append(customer.getLinkTelphone1()).append(",")
                         .append(customer.getLinkAddress()).append(",")
-                        .append(customer.getDriveNum()).append(",");
-                //TODO 注释
-//                        .append(StringUtils.isBlank(customer.getDriveType()) ? "" : redisUtils.StringGet(customer.getDriveType()));
+                        .append(customer.getDriveNum()).append(",")
+                        .append(StringUtils.isBlank(customer.getDriveType()) ? "" : (String)redisUtil.get(customer.getDriveType()));
 
                 data.add(row.toString());
                 row.delete(0, row.length());

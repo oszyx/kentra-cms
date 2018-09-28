@@ -17,7 +17,7 @@ import java.util.Random;
 
 /**
  * @author liyang
- * @Description: TODO
+ * @Description: 图片上传
  * @date 22018年6月29日 17:06:28
  */
 @RestController
