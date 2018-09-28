@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: kentra-cms-gyEquip #贵阳设备项目名称
+#  security:
+#    user:
+#      name: "admin"
+#      password: "123456"
+server:
+  port: 8774 #贵阳设备项目端口号
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml #mybatis配置文件
+  mapper-locations: classpath:mybatis/mapper/*.xml #mybatis扫描路径及文件类型
