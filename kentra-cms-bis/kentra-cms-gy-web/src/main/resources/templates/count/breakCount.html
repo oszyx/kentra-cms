@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>违规统计</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" media="all">
+</head>
+<body class="childrenBody" style="padding: 0 0 0 30px;background-color: white">
+<!--工具栏-->
+<div>
+    <!--搜索按钮-->
+    <div style="padding-top: 15px;padding-right: 10px">
+        <div class="layui-input-inline">
+            <span style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;选择年份:</span>
+            <input type="text" name="breakCountYear" id="breakCountYear" placeholder="选择年份" style="border-radius:6px;height: 16px;">
+        </div>
+        <button class="btn btn-xs btn-primary" style="float:right;width: 80px;margin-right: 40px" id="searchBtn">
+            <i class="icon-search bigger-130"></i>
+            <span class="bigger-130 no-text-shadow">搜索</span>
+        </button>
+    </div>
+</div>
+<div>
+    <div id="breakCountGraph" style="width:90%;height: 480px;padding-top: 10px;"></div>
+</div>
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/utils/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../echart/echarts.min.js"></script>
+<script type="text/javascript" src="../js/count/breakCount.js"></script>
+</body>
+</html>

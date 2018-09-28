@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>龙门架维修首页</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <script type="text/javascript" src="../js/frame/frameRepair.js"></script>
+</head>
+<body class="childrenBody">
+<div style="margin-top: 30px;">
+<form class="layui-form" action="#" lay-filter="frameRepair">
+    <!-- 维修设备ID -->
+    <div class="layui-input-inline">
+         <input type="hidden" name="repairDeviceId" readonly="readonly" autocomplete="off" class="layui-input">
+    </div>
+  
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label" style="width: 100px;">维修员姓名<font color="red">&nbsp;*</font></label>
+        <div class="layui-input-inline">
+            <input type="text" name="repairUserName" lay-verify="required" placeholder="请输入维修人员姓名" autocomplete="off"
+                   class="layui-input">
+        </div>
+
+        <label class="layui-form-label" style="width: 100px;">维修员电话<font color="red">&nbsp;*</font></label>
+        <div class="layui-input-inline">
+            <input type="text" name="repairUserPhone" lay-verify="required|phone" placeholder="请输入维修人员联系电话"
+                   autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label" style="width: 100px;">设备名称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="repairDeviceName" readonly="readonly" autocomplete="off" class="layui-input">
+        </div>
+
+        <label class="layui-form-label" style="width: 100px;">维修状态<font color="red">&nbsp;*</font></label>
+        <div class="layui-input-inline">
+            <select name="repairStatus" lay-verify="required" id="repairStatus"></select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+         <label class="layui-form-label" style="width: 100px;">起始时间<font color="red">&nbsp;*</font></label>
+         <div class="layui-input-inline">
+              <input type="text" name="repairDateStar" lay-verify="required|repairDateStar" id="repairDateStar"
+                     placeholder="请选择维修起始时间"
+                      class="layui-input">
+         </div>
+         <label class="layui-form-label" style="width: 100px;">结束时间<font color="red">&nbsp;*</font></label>
+         <div class="layui-input-inline">
+               <input type="text" name="repairDateEnd" lay-verify="required|repairDateEnd" id="repairDateEnd"
+                      placeholder="请选择维修结束时间" class="layui-input">
+         </div>
+    </div>
+	<div class="layui-form-item">
+        	<label class="layui-form-label" style="width: 98px">通知说明&nbsp;&nbsp;</label>
+        		<div class="layui-input-block">
+            	<textarea style="width:88%;min-height: 50px" name="repairNotice"
+                      placeholder="请输入维修事故通知说明" autocomplete="off"
+                      class="layui-textarea"></textarea>
+        		</div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 98px">原因说明&nbsp;&nbsp;</label>
+        	<div class="layui-input-block">
+            <textarea style="width:88%;min-height: 100px" name="repairReason" 
+                      placeholder="请输入维修事故原因说明" autocomplete="off"
+                      class="layui-textarea"></textarea>
+        	</div>
+        </div>
+
+
+    <div class="layui-form-item layui-hide">
+        <div class="layui-input-block">
+            <button class="layui-btn" id="frameRepairSubmitBtn" lay-submit lay-filter="frameRepairSubmitBtn">立即提交
+            </button>
+        </div>
+    </div>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>龙门架管展示页面</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <script type="text/javascript" src="../js/frame/frameView.js"></script>
+</head>
+<body class="childrenBody">
+<div style="margin-top: 30px;">
+<form class="layui-form" action="#" lay-filter="frameForm">
+    <div class="layui-form-item">
+      <div class="layui-inline">
+        <label class="layui-form-label">设备名称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="name" readonly="readonly" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">设备编号</label>
+        <div class="layui-input-inline">
+            <input type="text" name="frameCode" readonly="readonly" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+    </div>
+    
+    <div class="layui-form-item">
+      <div class="layui-inline">
+        <label class="layui-form-label">设备经度</label>
+        <div class="layui-input-inline">
+            <input type="text" name="frameGisX" readonly="readonly" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">设备纬度</label>
+        <div class="layui-input-inline">
+            <input type="text" name="frameGisY" readonly="readonly" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+    </div>
+    
+    <div class="layui-form-item">
+      <div class="layui-inline">
+        <label class="layui-form-label">设备地址</label>
+        <div class="layui-input-inline">
+            <input type="text" name="frameAddress" readonly="readonly" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-inline">
+        <label class="layui-form-label">设备状态</label>
+        <div class="layui-input-inline">
+            <input type="text" name="frameStatus" readonly="readonly" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">设备描述</label>
+        <div class="layui-input-block">
+            <textarea style="width: 88%;min-height: 100px" name="descripInfos" readonly="readonly" autocomplete="off"
+                      class="layui-input"></textarea>
+        </div>
+    </div>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kentrasoft.cms.dao.ControllerMapper">
+    <resultMap id="BaseResultMap" type="com.kentrasoft.cms.entity.ControllerManagement">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="controller_code" jdbcType="VARCHAR" property="controllerCode" />
+    <result column="controller_address" jdbcType="VARCHAR" property="controllerAddress" />
+    <result column="controller_gis_x" jdbcType="VARCHAR" property="controllerGisX" />
+    <result column="controller_gis_y" jdbcType="VARCHAR" property="controllerGisY" />
+    <result column="controller_status" jdbcType="VARCHAR" property="controllerStatus" />
+    <result column="descrip_infos" jdbcType="VARCHAR" property="descripInfos" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="extends1" jdbcType="VARCHAR" property="extends1" />
+    <result column="extends2" jdbcType="VARCHAR" property="extends2" />
+    <result column="extends3" jdbcType="VARCHAR" property="extends3" />
+  </resultMap>
+  
+  <sql id="Base_Column_List">
+    id, `name`, controller_code, controller_address, controller_gis_x, controller_gis_y, 
+    controller_status, descrip_infos, create_time, update_time, extends1, extends2, extends3
+  </sql>
+  
+  <!-- 查询控制器设备信息 -->
+  <select id="selectController" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"></include>
+    FROM  controller_management 
+    WHERE CONTROLLER_CODE = #{controllerCode,jdbcType=VARCHAR}
+  </select>
+  
+  <!-- 更新控制器状态 -->
+  <update id="updateControllerNet">
+    UPDATE CONTROLLER_MANAGEMENT 
+    SET CONTROLLER_STATUS = #{netStatus,jdbcType=VARCHAR}, EXTENDS3 = #{equipStatus,jdbcType=VARCHAR}
+    WHERE CONTROLLER_CODE = #{controllerCode,jdbcType=VARCHAR}
+  </update>
+  
+  
+</mapper>

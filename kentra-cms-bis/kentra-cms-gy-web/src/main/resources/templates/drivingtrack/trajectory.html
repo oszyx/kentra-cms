@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>行驶轨迹</title>
+  <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+</head>
+<body class="childrenBody">
+
+<form class="layui-form" action="#" lay-filter="drivingTrackForm" style="margin-top: 30px ;margin-left: 20px;margin-bottom: 30px">
+		   <div class="layui-form-item">
+		      <label class="layui-form-label">车牌号码</label>
+		      <div class="layui-input-inline">
+              <input type="text" name="licenseNum" readonly="readonly"  autocomplete="off" class="layui-input">
+		      </div>
+		      
+		      <label class="layui-form-label">行驶日期</label>
+		      <div class="layui-input-inline">
+              <input type="text" name="travelTime" readonly="readonly"  autocomplete="off" class="layui-input">
+		      </div>
+		   </div>
+		   <div class="layui-form-item">   
+		      <label class="layui-form-label">进站名称</label>
+		      <div class="layui-input-inline">
+              <input type="text" name="entranceName" readonly="readonly"  autocomplete="off" class="layui-input">
+		      </div>
+		   
+		      <label class="layui-form-label">进站时间</label>
+		      <div class="layui-input-inline">
+              <input type="text" name="entranceTime" readonly="readonly"  autocomplete="off" class="layui-input">
+		      </div>
+		   </div>
+		   <div class="layui-form-item">     
+		      <label class="layui-form-label">出站名称</label>
+		      <div class="layui-input-inline">
+              <input type="text" name="exitName" readonly="readonly"  autocomplete="off" class="layui-input">
+		      </div>
+
+		      <label class="layui-form-label">出站时间</label>
+		      <div class="layui-input-inline">
+		      <input type="text" name="exitTime" readonly="readonly"  autocomplete="off" class="layui-input">
+              </div>
+           </div>    
+		</form>
+
+<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+  <ul class="layui-tab-title">
+    <li class="layui-this">行驶轨迹</li>
+    <li>违规图像</li>
+  </ul>
+  <div class="layui-tab-content" style="height: 100px;">
+    <!-- 时间轴 -->
+    <div class="layui-tab-item layui-show"><ul class="layui-timeline" id="drivingDetailsDateLine"></ul></div>
+   	<!-- 卡口图片 -->
+    <div class="layui-tab-item">
+    	<div id="IllegalImage"></div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="../layui/layui.js" charset="utf-8"></script>
+<script type="text/javascript" src="../js/drivingtrack/trajectory.js"></script>
+<script type="text/javascript" src="../js/drivingtrack/Illegal_image.js"></script>
+</body>
+</html>

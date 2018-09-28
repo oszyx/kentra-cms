@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑收费站信息</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+</head>
+<body class="childrenBody">
+
+<!--控制器列表展示-->
+<div class="layui-form news_list">
+<!--     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 18px;"> -->
+<!--         <legend><font color="#2e8b57">收费站信息</font></legend> -->
+<!--     </fieldset> -->
+    <form class="layui-form" id="tollStationForm" lay-filter="tollStationFormFilter" style="padding-top:20px;">
+    	<!--隐藏提交信息-->
+	    <div class="layui-form-item layui-hide">
+	        <input type="text" name="id" autocomplete="off" class="layui-input">
+	    </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">收费站名称<font color="red">&nbsp;*</font></label>
+                <div class="layui-input-block">
+                    <input type="text" name="tollStationName" lay-verify="tollStationName" autocomplete="off" placeholder="请输入收费站名称"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">收费站编码<font color="red">&nbsp;*</font></label>
+                <div class="layui-input-block">
+                    <input type="text" name="tollStationCode" lay-verify="tollStationCode" autocomplete="off" placeholder="请输入收费站编码"
+                           class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">经度<font color="red">&nbsp;*</font></label>
+                <div class="layui-input-block">
+                    <input type="text" name="longitude" lay-verify="longitude" autocomplete="off" placeholder="请输入经度"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">纬度<font color="red">&nbsp;*</font></label>
+                <div class="layui-input-block">
+                    <input type="text" name="latitude" lay-verify="latitude" autocomplete="off" placeholder="请输入纬度"
+                           class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        <!-- 提交表单按钮 -->
+        <div class="layui-form-item layui-hide">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" id="tollStationSubmitBtn" lay-filter="tollStationSubmitBtnFilter">立即提交</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/tollStation/edit.js"></script>
+</body>
+</html>

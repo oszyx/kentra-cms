@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>菜单详情</title>
+<link rel="stylesheet" href="../layui/css/layui.css" media="all" />
+</head>
+<body class="childrenBody">
+    <div style="margin-top: 30px;">
+	<div class="layui-form news_list">
+		<form class="layui-form" id="menuEditForm"
+			lay-filter="menuQueryFormFilter">
+			<div class="layui-form-item layui-hide">
+				<input type="text" name="id" autocomplete="off" class="layui-input">
+				<input type="text" name="menuParentId" autocomplete="off"
+					class="layui-input">
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">菜单名称</label>
+					<div class="layui-input-block">
+						<input type="text" name="menuName" lay-verify="menuName"
+							autocomplete="off" class="layui-input" readonly="readonly">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label">菜单编号</label>
+					<div class="layui-input-block">
+						<input type="text" name="menuCode" lay-verify="roleCode"
+							autocomplete="off" class="layui-input" readonly="readonly">
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">菜单链接</label>
+					<div class="layui-input-block">
+						<input type="text" name="menuUrl" lay-verify="menuUrl"
+							autocomplete="off" class="layui-input" readonly="readonly">
+					</div>
+				</div>
+			
+			</div>	
+		</form>
+	</div>
+    </div>
+	<script type="text/javascript" src="../layui/layui.js"></script>
+	<script type="text/javascript" src="../js/system/menu/menuQuery.js"></script>
+</body>
+</html>

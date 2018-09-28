@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增维修信息</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+</head>
+<body class="childrenBody">
+
+<!--控制器列表展示-->
+<div class="layui-form news_list">
+    <form class="layui-form" id="repairFrom" lay-filter="repairFromFilter">
+        <div style="height: 40px"></div>
+        <!--隐藏提交信息-->
+        <div class="layui-form-item layui-hide">
+            <input type="text" name="repairDeviceId" id="repairDeviceId" autocomplete="off" class="layui-input">
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 100px;">维修员姓名<font color="red">&nbsp;*</font></label>
+            <div class="layui-input-inline">
+                <input type="text" name="repairUserName" lay-verify="name" autocomplete="off"
+                       placeholder="请输入维修人员姓名" class="layui-input">
+            </div>
+            
+            <label class="layui-form-label" style="width: 100px;">维修员电话<font color="red">&nbsp;*</font></label>
+            <div class="layui-input-inline">
+                <input type="text" name="repairUserPhone" lay-verify="telphone" autocomplete="off"
+                       placeholder="请输入维修人员联系电话" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 100px;">设备名称<font color="red">&nbsp;*</font></label>
+            <div class="layui-input-inline">
+                <input type="text" id="repairDeviceName" name="repairDeviceName" lay-verify="required"
+                       readonly="readonly" autocomplete="off"
+                       placeholder="设备名称" class="layui-input">
+            </div>
+            
+            <label class="layui-form-label" style="width: 100px;">维修状态<font color="red">&nbsp;*</font></label>
+            <div class="layui-input-inline">
+                <select name="repairStatus" id="repairStatus" lay-verify="required" lay-search="" lay-filter="repairStatusFilter">
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 100px;">起始时间<font color="red">&nbsp;*</font></label>
+            <div class="layui-input-inline">
+                <input type="text" name="repairDateStar" lay-verify="required|repairDateStar" id="repairDateStar"
+                       placeholder="请选择维修起始时间" class="layui-input">
+            </div>
+            
+            <label class="layui-form-label" style="width: 100px;">结束时间<font color="red">&nbsp;*</font></label>
+            <div class="layui-input-inline">
+                <input type="text" name="repairDateEnd" lay-verify="required|repairDateEnd" id="repairDateEnd"
+                       placeholder="请选择维修结束时间" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+        	<label class="layui-form-label" style="width: 98px">通知说明&nbsp;&nbsp;</label>
+        		<div class="layui-input-block">
+            	<textarea style="width:88%;min-height: 50px" name="repairNotice"
+                      placeholder="请输入维修事故通知说明" autocomplete="off"
+                      class="layui-textarea"></textarea>
+        		</div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 98px">原因说明&nbsp;&nbsp;</label>
+        	<div class="layui-input-block">
+            <textarea style="width:88%;min-height: 100px" name="repairReason" 
+                      placeholder="请输入维修事故原因说明" autocomplete="off"
+                      class="layui-textarea"></textarea>
+        	</div>
+        </div>
+
+        <!-- 提交表单按钮 -->
+        <div class="layui-form-item layui-hide">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" id="repairSubmit" lay-filter="repairSubmitFilter">立即提交
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/control/repair.js"></script>
+</body>
+</html>

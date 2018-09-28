@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>赋权</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <script type="text/javascript" src="../js/system/role/roleEmpowerment.js"></script>
+    <!--引入ztreeJS  -->
+    <script type="text/javascript" src="../ztree/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../ztree/jquery.ztree.all.min.js"></script>
+    <script type="text/javascript" src="../ztree/jquery.ztree.core.min.js"></script>
+    <script type="text/javascript" src="../ztree/jquery.ztree.excheck.min.js"></script>
+    <script type="text/javascript" src="../ztree/jquery.ztree.exedit.min.js"></script>
+    <script type="text/javascript" src="../ztree/jquery.ztree.exhide.min.js"></script>
+    <!--引入ztressCss  -->
+    <link rel="stylesheet" type="text/css" href="../ztree/css/zTreeStyle.css">
+
+</head>
+<body class="childrenBody">
+
+<!--menuTrezz  -->
+<div class="layui-side">
+     <ul id="roleEmpZtree" class="ztree"></ul>
+</div>
+
+<!--用户列表展示-->
+<div class="layui-body layui-form" lay-filter="roleEmpowermentFormFilter">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 18px;">
+        <legend><font color="#2e8b57">角色信息</font></legend>
+    </fieldset>
+        <!--隐藏角色id提交信息-->
+        <div class="layui-form-item">
+            <input type="hidden" name="id" autocomplete="off" class="layui-input">
+            <input type="hidden" id="menuIds" name="menuIds"/>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">角色名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="roleName" readonly="readonly" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">角色编号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="roleCode" readonly="readonly" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 提交表单按钮 -->
+        <div class="layui-form-item layui-hide">
+            <div class="layui-input-block">
+                <button class="layui-btn" id="roleEmpowermentSubmit" lay-submit lay-filter="roleEmpowermentSubmitBtn">
+                                                               立即提交
+                </button>
+            </div>
+        </div>
+
+</div>
+</body>
+</html>

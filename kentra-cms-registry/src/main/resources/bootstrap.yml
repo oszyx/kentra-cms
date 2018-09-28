@@ -12,9 +12,16 @@ spring:
       roles: SUPERUSER
 eureka:
   instance:
-    hostname: 172.18.100.40
+    hostname: localhost
   client:
     register-with-eureka: false #表示是否将自己注册到Eureka Server，默认为true。
     fetch-registry: false #表示是否从Eureka Server获取注册信息，默认为true。
     serviceUrl:  #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
       defaultZone: http://admin:123456@${eureka.instance.hostname}:${server.port}/eureka/
+logging:
+  path: /mnt/logs/gyfvs/system_eureka #指定文件名
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger- %msg%n" #控制台日志数据格式
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger- %msg%n" #输出格式
+    dateformat: yyyy-MM-dd HH:mm:ss #日志时间格式
+    level: DEBUG  #日志输出级别

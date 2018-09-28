@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>菜单添加</title>
+<link rel="stylesheet" href="../layui/css/layui.css" media="all" />
+</head>
+<body class="childrenBody">
+    <div style="margin-top: 30px;">
+	<div class="layui-form news_list">
+		<form class="layui-form" id="menuAddForm"
+			lay-filter="menuAddFormFilter">
+			<div class="layui-form-item layui-hide">
+				<input type="text" name="id" autocomplete="off" class="layui-input">
+				<input type="text" name="menuParentId" autocomplete="off"
+					class="layui-input">
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">菜单名称<font color="red">&nbsp;*</font></label>
+					<div class="layui-input-block">
+						<input type="text" name="menuName" lay-verify="menuName"
+							autocomplete="off" placeholder="请输入菜单名" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label">菜单编号<font color="red">&nbsp;*</font></label>
+					<div class="layui-input-block">
+						<input type="text" name="menuCode" lay-verify="menuCode"
+							autocomplete="off" placeholder="请输入菜单编号" class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">菜单链接</label>
+					<div class="layui-input-block">
+						<input type="text" name="menuUrl" lay-verify="menuUrl"
+							autocomplete="off" placeholder="请输入菜单url" class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item layui-hide">
+				<div class="layui-inline">
+					<label class="layui-form-label">父级菜单Id</label>
+					<div class="layui-input-block">
+						<input type="text" name="menuParentId" lay-verify="menuParentId" id="menuParentId"
+							autocomplete="off" placeholder="请输入父级菜单名称" class="layui-input">
+					</div>
+				</div>
+			</div>
+
+			<!-- 提交表单 -->
+			<div class="layui-form-item layui-hide">
+				<div class="layui-input-block">
+					<button class="layui-btn" lay-submit="" id="menuAddSubmit"
+						lay-filter="menuAddSubmitBtn">立即提交</button>
+				</div>
+			</div>
+		</form>
+
+	</div>
+	</div>
+
+	<script type="text/javascript" src="../layui/layui.js"></script>
+	<script type="text/javascript" src="../js/system/menu/menuAdd.js"></script>
+</body>
+</html>

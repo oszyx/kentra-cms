@@ -3,6 +3,7 @@ package com.kentrasoft.cms.common.util;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
@@ -18,7 +19,7 @@ public final class JwtUtil implements Serializable {
      * @param claims 数据声明
      * @return 令牌
      */
-    public static String generateToken(Map<String, Object> claims,String secret,Long extTime) {
+    public static String generateToken(Map<String, Object> claims, String secret, Long extTime) {
         Date expirationDate = new Date(System.currentTimeMillis() + extTime);
         return Jwts.builder().setClaims(claims).setExpiration(expirationDate).signWith(SignatureAlgorithm.HS512, secret).compact();
     }
@@ -29,7 +30,7 @@ public final class JwtUtil implements Serializable {
      * @param token 令牌
      * @return 数据声明
      */
-    public static Claims getClaimsFromToken(String token,String secret) {
+    public static Claims getClaimsFromToken(String token, String secret) {
         Claims claims;
         try {
             claims = Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
@@ -45,10 +46,10 @@ public final class JwtUtil implements Serializable {
      * @param token 令牌
      * @return 用户名
      */
-    public static String getUsernameFromToken(String token,String secret) {
+    public static String getUsernameFromToken(String token, String secret) {
         String username;
         try {
-            Claims claims = getClaimsFromToken(token,secret);
+            Claims claims = getClaimsFromToken(token, secret);
             username = claims.getSubject();
         } catch (Exception e) {
             username = null;
@@ -62,14 +63,18 @@ public final class JwtUtil implements Serializable {
      * @param token 令牌
      * @return 是否过期
      */
-    public static Boolean isTokenExpired(String token,String secret) {
+    public static Boolean isTokenExpired(String token, String secret) {
         try {
-            Claims claims = getClaimsFromToken(token,secret);
-            Date expiration = claims.getExpiration();
-            return expiration.before(new Date());
+            Claims claims = getClaimsFromToken(token, secret);
+            if (claims != null) {
+                Date expiration = claims.getExpiration();
+                return expiration.before(new Date());
+            }
+            return true;
         } catch (Exception e) {
-            return false;
+            e.printStackTrace();
         }
+        return null;
     }
 
     /**
@@ -78,12 +83,12 @@ public final class JwtUtil implements Serializable {
      * @param token 原令牌
      * @return 新令牌
      */
-    public static String refreshToken(String token,String secret,Long extTime) {
+    public static String refreshToken(String token, String secret, Long extTime) {
         String refreshedToken;
         try {
-            Claims claims = getClaimsFromToken(token,secret);
+            Claims claims = getClaimsFromToken(token, secret);
             claims.put("created", new Date());
-            refreshedToken = generateToken(claims,secret,extTime);
+            refreshedToken = generateToken(claims, secret, extTime);
         } catch (Exception e) {
             refreshedToken = null;
         }

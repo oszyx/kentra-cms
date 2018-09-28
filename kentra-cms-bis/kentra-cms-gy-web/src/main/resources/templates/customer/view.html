@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>客户信息查看</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+</head>
+
+<body class="childrenBody">
+    <form class="layui-form" id="customerFrom" lay-filter="customerFromFilter">    	
+        <div class="layui-form-item" style="padding: 25px 0 0 0">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="name" readonly class="layui-input">
+                </div>
+                <label class="layui-form-label">准驾车型</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="driveType" readonly class="layui-input">
+                </div>
+        </div>
+
+        <div class="layui-form-item">
+                <label class="layui-form-label">国籍</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="national" readonly class="layui-input">
+                </div>
+                <label class="layui-form-label">出生日期</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="birthday" readonly class="layui-input">
+                </div>
+        </div>
+
+        <div class="layui-form-item">
+                <label class="layui-form-label">手机号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="linkTelphone1" readonly class="layui-input">
+                </div>
+                <label class="layui-form-label">座机</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="linkTelphone2" readonly class="layui-input">
+                </div>
+        </div>
+
+        <div class="layui-form-item">
+                <label class="layui-form-label">证件类型</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="documentType" readonly class="layui-input">
+                </div>
+                <label class="layui-form-label">证件号码</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="documentNum" readonly class="layui-input">
+                </div>
+        </div>
+		
+        <div class="layui-form-item">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="sex" readonly class="layui-input">
+                </div>
+                <label class="layui-form-label">驾驶证号码</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="driveNum" readonly class="layui-input">
+                </div>
+        </div>
+		
+        <div class="layui-form-item">
+                <label class="layui-form-label">联系地址</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="linkAddress" readonly class="layui-input">
+                </div>
+                <label class="layui-form-label">初次领证</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="evidenceStart" readonly class="layui-input">
+                </div>
+        </div>
+		
+        <div class="layui-form-item">
+                <label class="layui-form-label">有效期起</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="effectiveStart" readonly class="layui-input">
+                </div>
+                <label class="layui-form-label">有效期止</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="effectiveEnd" readonly class="layui-input">
+                </div>
+        </div>
+	</form>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/customer/view.js"></script>
+<!--日期格式化工具类-->
+<script type="text/javascript" src="../js/utils/dateFormat.js"></script>
+</body>
+</html>
+

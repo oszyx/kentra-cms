@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kentrasoft.cms.dao.LedManagementMapper">
+    <resultMap id="BaseResultMap" type="com.kentrasoft.cms.entity.LedManagement">
+        <result column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="LED_code" jdbcType="VARCHAR" property="ledCode"/>
+        <result column="LED_address" jdbcType="VARCHAR" property="ledAddress"/>
+        <result column="LED_gis_x" jdbcType="VARCHAR" property="ledGisX"/>
+        <result column="LED_gis_y" jdbcType="VARCHAR" property="ledGisY"/>
+        <result column="LED_status" jdbcType="VARCHAR" property="ledStatus"/>
+        <result column="descrip_infos" jdbcType="VARCHAR" property="descripInfos"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="extends1" jdbcType="VARCHAR" property="extends1"/>
+        <result column="extends2" jdbcType="VARCHAR" property="extends2"/>
+        <result column="extends3" jdbcType="VARCHAR" property="extends3"/>
+    </resultMap>
+    <sql id="whereSql">
+        WHERE 1=1
+        <if test=" model != null ">
+            <if test=" model.name!=null and model.name !='' ">
+                and `name` LIKE concat( concat ("%",#{model.name}),"%")
+            </if>
+            <if test=" model.ledCode!=null and model.ledCode !='' ">
+                and `LED_code` LIKE concat( concat ("%",#{model.ledCode}),"%")
+            </if>
+            <if test=" model.ledStatus!=null and model.ledStatus !='' ">
+                and LED_status = #{model.ledStatus}
+            </if>
+        </if>
+    </sql>
+
+    <select id="countByExample" parameterType="com.kentrasoft.cms.entity.LedManagement" resultType="java.lang.Long">
+        select count(*) from led_management
+        <if test="_parameter != null">
+            <include refid="whereSql"/>
+        </if>
+    </select>
+
+    <sql id="Base_Column_List">
+        id, `name`, LED_code, LED_address, LED_gis_x, LED_gis_y, LED_status, descrip_infos,
+        create_time, update_time, extends1, extends2, extends3
+    </sql>
+
+    <!--liyang-->
+    <!--获取列表-->
+    <select id="selectByExample" parameterType="com.kentrasoft.utils.plugin.PageForm" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from led_management
+        <include refid="whereSql"/>
+    </select>
+    <!--编辑-->
+    <update id="updateByExampleSelective" parameterType="map">
+        update led_management
+        <set>
+            <if test="name != null">
+                `name` = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="ledCode != null">
+                LED_code = #{ledCode,jdbcType=VARCHAR},
+            </if>
+            <if test="ledAddress != null">
+                LED_address = #{ledAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="ledGisX != null">
+                LED_gis_x = #{ledGisX,jdbcType=VARCHAR},
+            </if>
+            <if test="ledGisY != null">
+                LED_gis_y = #{ledGisY,jdbcType=VARCHAR},
+            </if>
+            <if test="ledStatus != null">
+                LED_status = #{ledStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="descripInfos != null">
+                descrip_infos = #{descripInfos,jdbcType=VARCHAR},
+            </if>
+        </set>
+        WHERE id = #{id,jdbcType=VARCHAR}
+    </update>
+    <!--删除-->
+    <delete id="deleteByIds">
+        DELETE FROM led_management
+        where id in
+        <foreach collection="idList" item="item" index="index"
+                 open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+    <!--添加功能-->
+    <insert id="insert" parameterType="com.kentrasoft.cms.entity.LedManagement">
+        <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+            SELECT REPLACE((SELECT CONCAT('LED','-',UUID()) FROM DUAL),'-','')
+        </selectKey>
+        insert into led_management (id, `name`, LED_code,
+        LED_address, LED_gis_x, LED_gis_y,LED_status, descrip_infos, create_time,
+        update_time, extends1, extends2,extends3)
+        values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{ledCode,jdbcType=VARCHAR},
+        #{ledAddress,jdbcType=VARCHAR}, #{ledGisX,jdbcType=VARCHAR}, #{ledGisY,jdbcType=VARCHAR},
+        #{ledStatus,jdbcType=VARCHAR}, #{descripInfos,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+        #{updateTime,jdbcType=TIMESTAMP}, #{extends1,jdbcType=VARCHAR}, #{extends2,jdbcType=VARCHAR},
+        #{extends3,jdbcType=VARCHAR})
+    </insert>
+    <!--添加的时候查询是否已经存在此设备-->
+    <select id="selectByLedCode" parameterType="String" resultMap="BaseResultMap">
+        SELECT id,`name`,LED_code FROM led_management WHERE  LED_code=#{ledCode}
+    </select>
+    <!--修改的时候根据设备id和code查询该code是否已经存在-->
+    <select id="selectByLedCodeId" parameterType="map" resultMap="BaseResultMap">
+        SELECT id,`name`,LED_code FROM led_management WHERE  LED_code=#{ledCode} and id !=#{id}
+    </select>
+    <!--liyang-->
+    
+    <!-- 查询导出数据 -->
+    <select id="selectLedList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from led_management
+    </select>
+    
+    <!-- 根据搜索条件查询导出数据 -->
+    <select id="selectLedListBySearch" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from led_management a
+        WHERE	a.`name` LIKE '%${searchName}%'
+		AND		a.LED_code LIKE '%${searchCode}%'
+		AND		a.LED_status LIKE '%${searchStatus}%'
+    </select>
+    
+</mapper>

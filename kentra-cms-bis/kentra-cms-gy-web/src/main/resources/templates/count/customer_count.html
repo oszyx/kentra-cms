@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5.8G设备统计</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <script type="text/javascript" src="../js/utils/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="../css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" href="../assets/css/ace.min.css"/>
+    <!-- 引入 ECharts 文件 -->
+    <script src="../echart/echarts.min.js"></script>
+</head>
+<script>
+    layui.use('laydate', function () {
+        var laydate = layui.laydate;
+        //年选择器
+        laydate.render({
+            elem: '#yearParam'
+            , type: 'year'
+        });
+    });
+</script>
+<body class="childrenBody" style="padding: 0 0 0 30px;background-color: white">
+<div>
+    <!--搜索-->
+    <div style="padding-top: 15px;padding-right: 10px">
+        <div class="layui-input-inline">
+            <span style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;选择年份:</span>
+            <input type="text" name="yearParam"  id="yearParam" placeholder="选择年份" style="border-radius:6px;height: 16px;">
+        </div>
+        <button class="btn btn-xs btn-primary" style="float:right;width: 80px;margin-right: 40px" id="searchBtn">
+            <i class="icon-search bigger-130"></i>
+            <span class="bigger-130 no-text-shadow">搜索</span>
+        </button>
+    </div>
+</div>
+
+<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+<div id="customerMain" style="width: 95%; height: 480px;"></div>
+</body>
+
+<script>
+    var yearValue;
+    var list = [];
+    var myChart = echarts.init(document.getElementById('customerMain'));
+    $("#searchBtn").click(function () {
+        yearValue = $("#yearParam").val();
+        $.ajax({
+            url: '/customer/management/customer/customerCount',
+            type: "post",
+            data: {"year": yearValue},
+            dataType: "json",
+            async: false,
+            success: function (result) {
+                list = result.result;
+            }
+        });
+        myChart.setOption({
+            title: {
+                text: '贵阳环高'+yearValue+'年用户注册统计',
+                right: 'center',
+                top:'93%'
+            },
+            series: [{
+                type: 'bar',
+                barWidth: 70,
+                data: list,
+                itemStyle: {   //配置样式，设置每个柱子的颜色
+                    normal: {
+                        color: function (params) {
+                            var colorList = ['#FFFF00', 'green', 'blue', 'red', '#FFFF00', 'green',
+                                'blue', 'red', '#FFFF00', 'green', 'blue', 'red'];
+                            return colorList[params.dataIndex];
+                        }
+                    }
+                },
+                label: {
+                    show: true,
+                    position: 'top',
+                    textStyle: {
+                        color: 'black'
+                    }
+                }
+            }]
+        })
+    });
+    // 基于准备好的dom，初始化echarts实例
+    $(document).ready(function () {
+        $.ajax({
+            url: '/customer/management/customer/customerCount',
+            type: "post",
+            data: {},
+            dataType: "json",
+            async: false,
+            success: function (result) {
+                list = result.result;
+            }
+        });
+        var date = new Date;
+        yearValue = date.getFullYear();
+        myChart.setOption({
+            title: {
+                text: '贵阳环高'+yearValue+'年用户注册统计',
+                right: 'center',
+                top:'93%'
+            },
+            series: [{
+                name: '注册数量',
+                type: 'bar',
+                barWidth: 70,
+                data: list,
+                itemStyle: {   //配置样式，设置每个柱子的颜色
+                    normal: {
+                        color: function (params) {
+                            var colorList = ['#FFFF00', 'green', 'blue', 'red', '#FFFF00', 'green',
+                                'blue', 'red', '#FFFF00', 'green', 'blue', 'red'];
+                            return colorList[params.dataIndex];
+                        }
+                    }
+                },
+                label: {
+                    show: true,
+                    position: 'top',
+                    textStyle: {
+                        color: 'black'
+                    }
+                }
+            }]
+        })
+    });
+    var option = {
+        legend: {data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']},
+        tooltip: {trigger: 'axis', axisPointer: {type: 'shadow'}},
+        grid: {//设置位置
+            // left: '4%', right: '6%', bottom: '3%', containLabel: true
+            x:80,
+            x2:110,
+            y:100,
+            height:320
+        },
+        toolbox: {
+            itemSize: 20,
+            itemGap: 20,
+            show: true,//是否显示
+            orient: 'horizontal', //横向展示
+            left: '18',
+            top: '9',
+            feature: {
+                mark: {show: true},
+                // dataView: {
+                //     title: '统计数据', show: true, readOnly: true, lang: ['用户注册统计表格', '关闭'],
+                //     optionToContent: function (opt) {
+                //         var axisData = opt.xAxis[0].data; //坐标数据
+                //         var series = opt.series; //折线图数据
+                //         var tdHeads = '<td  style="padding: 0 10px">月份</td>'; //表头
+                //         var tdBodys = ''; //数据
+                //         series.forEach(function (item) {
+                //             //组装表头
+                //             tdHeads += '<td style="padding: 0 10px">' + item.name + '</td>';
+                //         });
+                //         var table = '<table border="1" style="margin-left:20px;border-collapse:collapse;font-size:14px;text-align:center;padding-top: 20px"><tbody><tr>' + tdHeads + '</tr>';
+                //         for (var i = 0, l = axisData.length; i < l; i++) {
+                //             for (var j = 0; j < series.length; j++) {
+                //                 //组装表数据
+                //                 tdBodys += '<td>' + series[j].data[i] + '</td>';
+                //             }
+                //             table += '<tr><td style="padding: 0 10px">' + axisData[i] + '</td>' + tdBodys + '</tr>';
+                //             tdBodys = '';
+                //         }
+                //         table += '</tbody></table>';
+                //         return table;
+                //     }
+                // },//数据视图
+                magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},//切换
+                restore: {show: true},//重置
+                saveAsImage: {show: true}//下载
+            }
+        },
+        xAxis: {
+            name: 'X(月份)',
+            type: 'category',
+            boundaryGap: true,//data数据显示位置
+            data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        },
+        yAxis: [{
+            name: 'Y(数量)',
+            type: 'value',
+            height:320,
+            splitArea: {show: true}
+        }],
+
+    };
+    myChart.setOption(option);
+</script>
+
+</html>

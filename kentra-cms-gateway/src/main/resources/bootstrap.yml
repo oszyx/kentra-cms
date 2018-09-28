@@ -26,3 +26,10 @@ spring:
         max-attempts: 6
         initial-interval: 1000
         max-interval: 2000
+logging:
+  path: /mnt/logs/gyfvs/system_gateway #日志输出位置
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger- %msg%n" #控制台日志数据格式
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger- %msg%n" #输出格式
+    dateformat: yyyy-MM-dd HH:mm:ss #日志时间格式
+    level: INFO

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kentrasoft.cms.dao.SysVersionMapper">
+    <resultMap id="BaseResultMap" type="com.kentrasoft.cms.entity.SysVersion">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="v_id" jdbcType="VARCHAR" property="vId"/>
+        <result column="v_name" jdbcType="VARCHAR" property="vName"/>
+        <result column="v_downloadUrl" jdbcType="VARCHAR" property="vDownloadUrl"/>
+        <result column="v_state" jdbcType="VARCHAR" property="vState"/>
+        <result column="v_forcedUpdate" jdbcType="VARCHAR" property="vForcedUpdate"/>
+        <result column="v_releaseTime" jdbcType="VARCHAR" property="vReleaseTime"/>
+        <result column="v_createTime" jdbcType="VARCHAR" property="vCreateTime"/>
+        <result column="v_extends" jdbcType="VARCHAR" property="vExtends"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, v_id, v_name, v_downloadUrl, v_state, v_forcedUpdate, v_releaseTime, v_createTime
+    </sql>
+
+    <sql id="whereSql">
+        WHERE 1=1
+        <if test=" model != null ">
+            <if test=" model.vId !=null and model.vId !='' ">
+                and v_id LIKE concat( concat ("%",#{model.vId}),"%")
+            </if>
+            <if test=" model.vName !=null and model.vName !='' ">
+                and v_name LIKE concat( concat ("%",#{model.vName}),"%")
+            </if>
+            <if test=" model.vForcedUpdate!=null and model.vForcedUpdate !='' ">
+                and v_forcedUpdate = #{model.vForcedUpdate}
+            </if>
+            <if test="model.vState!=null and model.vState!='' ">
+                and v_state = #{model.vState}
+            </if>
+        </if>
+    </sql>
+
+    <!--获取分页列表数据-->
+    <select id="getVersionList" parameterType="com.kentrasoft.utils.plugin.PageForm" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_version
+        <include refid="whereSql"/>
+        order by v_releaseTime DESC
+    </select>
+    <!--添加的时候查询此版本号是否存在-->
+    <select id="selectByVId" parameterType="string" resultMap="BaseResultMap">
+        select id, v_id, v_name from sys_version
+        where v_id =#{vId}
+    </select>
+    <!--编辑的时候查询除了此条数据之外是否有相同的版本号-->
+    <select id="selectExitByVId" parameterType="map" resultMap="BaseResultMap">
+        select id, v_id, v_name from sys_version
+        where v_id =#{vId} and id !=#{id}
+    </select>
+
+    <!--编辑-->
+    <update id="updateByExampleSelective" parameterType="map">
+        update sys_version
+        <set>
+            <if test="vId != null">
+                v_id = #{vId,jdbcType=VARCHAR},
+            </if>
+            <if test="vName != null">
+                v_name = #{vName,jdbcType=VARCHAR},
+            </if>
+            <if test="vDownloadUrl != null">
+                v_downloadUrl = #{vDownloadUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="vState != null">
+                v_state = #{vState,jdbcType=VARCHAR},
+            </if>
+            <if test="vForcedUpdate != null">
+                v_forcedUpdate = #{vForcedUpdate,jdbcType=VARCHAR},
+            </if>
+            <if test="vReleaseTime != null">
+                v_releaseTime = #{vReleaseTime,jdbcType=VARCHAR},
+            </if>
+            <if test="vCreateTime != null">
+                v_createTime = #{vCreateTime,jdbcType=VARCHAR},
+            </if>
+        </set>
+        WHERE id = #{id,jdbcType=VARCHAR}
+    </update>
+
+    <!--添加功能-->
+    <insert id="insert" parameterType="com.kentrasoft.cms.entity.SysVersion">
+        insert into sys_version (v_id, v_name, v_downloadUrl, v_state, v_forcedUpdate, v_releaseTime, v_createTime)
+        values (#{vId,jdbcType=VARCHAR}, #{vName,jdbcType=VARCHAR}, #{vDownloadUrl,jdbcType=VARCHAR},
+        #{vState,jdbcType=VARCHAR}, #{vForcedUpdate,jdbcType=VARCHAR}, #{vReleaseTime,jdbcType=VARCHAR},
+        #{vCreateTime,jdbcType=VARCHAR})
+    </insert>
+
+    <!--删除-->
+    <delete id="deleteByIds">
+        DELETE FROM sys_version
+        where id in
+        <foreach collection="idList" item="item" index="index"
+                 open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+
+    <select id="latestVersion" resultMap="BaseResultMap">
+        select v_id, v_name, v_downloadUrl, v_forcedUpdate from sys_version
+        where v_state=1 AND v_releaseTime &lt;= (select SYSDATE() from dual)
+        order by v_releaseTime DESC
+        limit 1
+    </select>
+</mapper>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制器设备详情</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+</head>
+<body class="childrenBody">
+
+<form class="layui-form" id="breakRecordForm" lay-filter="breakRecordFormFilter" style="margin-top: 30px ;margin-left: 20px;margin-bottom: 30px">
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">车牌号码</label>
+            <div class="layui-input-inline">
+                <input type="text" name="licenseNum" readonly="readonly" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">记录编号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="drivingRecord" readonly="readonly" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">进站时间</label>
+            <div class="layui-input-inline">
+                <input type="text" name="entranceTime" readonly="readonly" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">出站时间</label>
+            <div class="layui-input-inline">
+                <input type="text" name="exitTime" readonly="readonly" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">进站名称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="entranceName" readonly="readonly" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">出站名称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="exitName" readonly="readonly" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+
+	<div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">应缴费(元)</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="extends1" readonly="readonly" autocomplete="off" 
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">已缴费(元)</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="extends2" readonly="readonly" autocomplete="off" 
+                           class="layui-input">
+                </div>
+            </div>
+        </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">待缴费(元)</label>
+            <div class="layui-input-inline">
+                <input type="text" name="payMoney" readonly="readonly" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+                <label class="layui-form-label">违规类型</label>
+                <div class="layui-input-inline">
+              	  	 <input type="text" name="remakeType" readonly="readonly" autocomplete="off" class="layui-input">
+                </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">违规备注</label>
+        <div class="layui-input-inline">
+            <textarea name="remakeContent" lay-verify="remakeContent" style="width: 510px;min-height: 80px"
+                      readonly="readonly"  autocomplete="off" class="layui-textarea"></textarea>
+        </div>
+    </div>
+</form>
+<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+  <ul class="layui-tab-title">
+    <li class="layui-this">行驶轨迹</li>
+    <li>违规图像</li>
+  </ul>
+  <div class="layui-tab-content" style="height: 100px;">
+    <!-- 时间轴 -->
+    <div class="layui-tab-item layui-show"><ul class="layui-timeline" id="breakRecordDateLine"></ul></div>
+   	<!-- 卡口图片 -->
+    <div class="layui-tab-item">
+    	<div id="IllegalImage"></div>
+    </div>
+  </div>
+</div> 
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/breakRecord/detail.js"></script>
+<script type="text/javascript" src="../js/breakRecord/Illegal_image.js"></script>
+</body>
+</html>
+

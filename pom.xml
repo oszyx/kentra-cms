@@ -21,6 +21,7 @@
         <module>kentra-cms-common</module>
         <module>kentra-cms-auth</module>
         <module>kentra-cms-bis</module>
+        <module>kentra-cms-api</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

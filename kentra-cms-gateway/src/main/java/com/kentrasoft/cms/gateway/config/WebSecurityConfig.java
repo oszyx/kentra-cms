@@ -1,14 +1,15 @@
 package com.kentrasoft.cms.gateway.config;
 
-import com.kentrasoft.cms.gateway.handler.RestAccessDeniedHandler;
 import com.kentrasoft.cms.gateway.filter.JwtAuthenticationTokenFilter;
 import com.kentrasoft.cms.gateway.handler.EntryPointUnauthorizedHandler;
+import com.kentrasoft.cms.gateway.handler.RestAccessDeniedHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -52,28 +53,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().authorizeRequests()
-                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .antMatchers("/bis/user/**").permitAll()
-                .anyRequest().authenticated()
-                .and().headers().cacheControl();
+                // 页面资源放过
+                .antMatchers("/web/**","/gyWeb/**").permitAll()
+                //登录放过,刷新token
+                .antMatchers("/web/gyfvs","/api/sys/login","/api/sys/chanageToken").permitAll()
+                //静态资源放过
+                .antMatchers("/*.js","/*.css","/*.jpg","/*.html","/*.png","/.woff","/.ttf","/favicon.ico").permitAll()
+                //地图获取
+                .antMatchers("/gyfvsmap").permitAll()
+                //app端
+                .antMatchers("/customer/**","/app/**").permitAll()
+//                .anyRequest().authenticated().and().headers().cacheControl();
+                .anyRequest().authenticated().and().headers().frameOptions().disable();
         httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
         httpSecurity.exceptionHandling().authenticationEntryPoint(entryPointUnauthorizedHandler).accessDeniedHandler(restAccessDeniedHandler);
-
-//        httpSecurity.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//                .and().authorizeRequests()
-//                .antMatchers("/web/**").permitAll()
-//                .antMatchers("/webfvs").permitAll()
-//                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-//                .antMatchers("/user/**").permitAll()
-//                .antMatchers("/bis/**").permitAll()
-//                .antMatchers("/auth/**").permitAll()
-//                .antMatchers("/getMapInfos").permitAll()
-//                .antMatchers("/customer/**").permitAll()
-//                .antMatchers("/api/app/**").permitAll()
-//                .anyRequest().authenticated()
-//                .and().headers().cacheControl();
-//        httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
-//        httpSecurity.exceptionHandling().authenticationEntryPoint(entryPointUnauthorizedHandler).accessDeniedHandler(restAccessDeniedHandler);
-
     }
 }

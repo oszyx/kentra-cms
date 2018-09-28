@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LED设备信息编辑</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+</head>
+<body class="childrenBody">
+<form class="layui-form" id="ledForm" lay-filter="ledFormFilter">
+
+    <!--隐藏提交信息-->
+    <div class="layui-form-item layui-hide">
+        <input type="text" name="id" autocomplete="off" class="layui-input">
+    </div>
+
+    <div class="layui-form-item" style="padding: 25px 0 0 0">
+        <div class="layui-inline">
+            <label class="layui-form-label">设备名称<span style="color: red">&nbsp;*</span></label>
+            <div class="layui-input-block">
+                <input type="text" name="name"
+                       onkeypress="return /[\w\u4e00-\u9fa5]/.test(String.fromCharCode(window.event.keyCode))"
+                       onpaste="return !/[^\w\u4e00-\u9fa5]/g.test(window.clipboardData.getData('Text'))"
+                       ondragenter="return false"
+                       lay-verify="name" autocomplete="off" placeholder="请输入LED设备名称"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">设备编号<span style="color: red">&nbsp;*</span></label>
+            <div class="layui-input-block">
+                <input type="text" name="ledCode" id="ledCode" lay-verify="ledCode" autocomplete="off"
+                       placeholder="请输入LED设备编号"
+                       class="layui-input">
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">设备经度<span style="color: red">&nbsp;*</span></label>
+            <div class="layui-input-block">
+                <input type="text" name="ledGisX" lay-verify="ledGisX" autocomplete="off"
+                       placeholder="请输入经纬度"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">设备纬度<span style="color: red">&nbsp;*</span></label>
+            <div class="layui-input-block">
+                <input type="text" name="ledGisY" lay-verify="ledGisY" autocomplete="off"
+                       placeholder="请输入LED所处纬度"
+                       class="layui-input">
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">设备地址<span style="color: red">&nbsp;*</span></label>
+            <div class="layui-input-block">
+                <input type="text" name="ledAddress" lay-verify="ledAddress" autocomplete="off"
+                       placeholder="请输入LED设备地址"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">设备状态<span style="color: red">&nbsp;*</span></label>
+            <div class="layui-input-inline">
+                <select name="ledStatus" id="ledStatus" lay-verify="required" lay-search=""
+                        lay-filter="ledStatusFilter">
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设备描述<span style="color: white">&nbsp;*</span></label>
+        <div class="layui-input-block">
+            <textarea type="text" name="descripInfos" autocomplete="off" placeholder="控制器描述信息"
+                      class="layui-textarea" style="width: 85%;min-height: 90px"></textarea>
+        </div>
+    </div>
+
+    <!-- 提交表单 -->
+    <div class="layui-form-item layui-hide">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" id="ledFormSubmitBtn" lay-filter="ledFormSubmitBtnFilter">立即提交
+            </button>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/led/ledEdit.js"></script>
+</body>
+</html>
+

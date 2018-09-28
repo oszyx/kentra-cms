@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数据字典修改</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+</head>
+
+<body class="childrenBody">
+<form class="layui-form" id="dictEditForm" lay-filter="dictEditFormFilter">
+    <!--隐藏提交信息-->
+    <div class="layui-form-item layui-hide">
+        <input type="text" name="id" autocomplete="off" class="layui-input">
+        <input type="text" name="dictParentId" autocomplete="off" class="layui-input">
+	    <input type="text" name="type" th:value="${type}" autocomplete="off" class="layui-input">
+    </div>
+    <div class="layui-form-item" style="padding-top: 30px">
+        <div class="layui-inline">
+            <label class="layui-form-label">字典名称<font style="color:red">&nbsp;*</font></label>
+            <div class="layui-input-block" th:switch="${type}">
+                <input type="text" name="dictName" lay-verify="dictName" autocomplete="off" 
+                placeholder="请输入字典名称" class="layui-input" th:case="'0'">
+                <input type="text" name="dictName" autocomplete="off" 
+                 class="layui-input" th:case="'1'" readonly>
+            </div>
+        </div>
+        
+        <div class="layui-inline">
+            <label class="layui-form-label">字典编号<font style="color:red">&nbsp;*</font></label>
+            <div class="layui-input-block" th:switch="${type}">
+                <input type="text" name="dictCode" lay-verify="required" autocomplete="off" 
+                placeholder="请输入字典code" class="layui-input" th:case="'0'">
+                <input type="text" name="dictCode" autocomplete="off" 
+                 class="layui-input" th:case="'1'" readonly>
+            </div>
+        </div>
+     </div>
+     <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">字典状态<font style="color:red">&nbsp;*</font></label>
+            <div class="layui-input-block" th:switch="${type}">
+					<span th:case='1'> 
+					   <input type="radio" name="dictStatus" value="false" title="无效" disabled>
+					   <input type="radio" name="dictStatus" value="true" title="有效" disabled>
+					</span> 
+					<span th:case='0'> 
+					   <input type="radio" name="dictStatus" value="false" title="无效">
+					   <input type="radio" name="dictStatus" value="true" title="有效">
+					</span>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+            <label class="layui-form-label">字典描述</label>
+            <div class="layui-input-block" th:switch="${type}">
+                <textarea name="dictDesc" placeholder="请输入字典描述" style="width: 85%;min-height: 90px" class="layui-textarea" th:case="'0'"></textarea>
+                <textarea name="dictDesc" class="layui-textarea" style="width: 85%;min-height: 90px" th:case="'1'" readonly></textarea>
+            </div>
+    </div>
+    <!-- 提交表单 -->
+    <div class="layui-form-item layui-hide">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit id="dictEditSubmit" lay-filter="dictEditSubmitBtn">立即提交</button>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/system/dict/dictEdit.js"></script>
+</body>
+</html>
+

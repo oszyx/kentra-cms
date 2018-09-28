@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>缴费记录添加</title>
+<link rel="stylesheet" href="../layui/css/layui.css" media="all" />
+</head>
+<body class="childrenBody">
+	<div class="layui-form news_list">
+	
+		<div style="padding-top: 20px; padding-left: 30px; padding-bottom: 20px;">
+			<div class="layui-inline" style="margin-left: 100px;">
+			    <span class="layui-form-label" style="width: 100px;">车牌号码查询:</span>
+			    <div class="layui-input-inline">
+			       <input type="text" id="searchParam" name="licenseNum" value="" placeholder="请输入车牌号" class="layui-input search_input">
+			    </div>
+			</div>
+			<button style="margin-left: 20px;" data-method="notice" class="layui-btn layui-btn-xs layui-btn-normal" id="searchBtn">查询</button>
+		</div>
+	
+		<form class="layui-form" id="payRecordAddForm" lay-filter="payRecordAddFormFilter">
+			
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">车牌号码<font color="red">&nbsp;*</font></label>
+					<div class="layui-input-inline">
+						<input type="text" name="licenseNum" id="licenseNum" lay-verify="required"
+							autocomplete="off" placeholder="请输入车牌号" class="layui-input" readonly="readonly">
+					</div>
+				</div>
+				<div class="layui-inline">
+                	<label class="layui-form-label">记录编号<font color="red">&nbsp;*</font></label>
+                	<div class="layui-input-inline">
+                    	<input type="text" name="drivingRecord" id="drivingRecord" lay-verify="drivingRecord" 
+                    		autocomplete="off" placeholder="请选择行驶记录" class="layui-input" readonly="readonly">
+                	</div>
+            	</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">进站名称<font color="red">&nbsp;*</font></label>
+					<div class="layui-input-inline">
+						<input type="text" id="entranceName" name="entranceName" lay-verify="entranceName"
+							autocomplete="off" placeholder="请输入进站名称" class="layui-input" readonly="readonly">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label">出站名称<font color="red">&nbsp;*</font></label>
+					<div class="layui-input-inline">
+						<input type="text" id="exitName" name="exitName" lay-verify="exitName"
+							autocomplete="off" placeholder="请输入出站名称" class="layui-input" readonly="readonly">
+					</div>
+				</div>
+			</div>			
+
+			<div class="layui-form-item">
+				<div class="layui-inline">
+      				<label class="layui-form-label">进站时间<font color="red">&nbsp;*</font></label>
+      		  		<div class="layui-input-inline">
+        			<input type="text" name="entranceTime" lay-verify="entranceTime" id="entranceTime" placeholder="请选择进站时间" class="layui-input" readonly="readonly">
+      				</div>
+   				</div>
+				<div class="layui-inline">
+      				<label class="layui-form-label">出站时间<font color="red">&nbsp;*</font></label>
+      		  		<div class="layui-input-inline">
+        			<input type="text" name="exitTime" lay-verify="exitTime" id="exitTime" placeholder="请选择出站时间" class="layui-input" readonly="readonly">
+      				</div>
+   				</div>   								
+			</div>
+			
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">应缴费(元)<font color="red">&nbsp;*</font></label>
+					<div class="layui-input-inline">
+						<input type="text" id="receivablesParam" name="receivablesstr" lay-verify="receivablesstr"
+						  onblur="contPay();"	autocomplete="off" placeholder="请输入应缴费用" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label">已缴费(元)<font color="red">&nbsp;*</font></label>
+					<div class="layui-input-inline">
+						<input type="text" id="payCountParam" name="payCountstr" lay-verify="payCountstr"
+						 onblur="contPay();"	autocomplete="off" placeholder="请输入已缴费用" class="layui-input">
+					</div>
+				</div>
+			</div>
+   			<div class="layui-form-item">
+   			<div class="layui-inline">
+   			  <label class="layui-form-label">缴费类型<font color="red">&nbsp;*</font></label>
+		      <div class="layui-input-inline" style="margin-right: 15px">
+		          <select name="payStatus" lay-verify="required"  id="payStatus" lay-filter="payStatusSelect"></select>
+              </div>
+              </div>
+              <div class="layui-inline">
+              <label class="layui-form-label">缴费状态<font color="red">&nbsp;*&nbsp;</font></label>
+              <div class="layui-input-inline">
+		          <select name="isPay" disabled="disabled" lay-verify="required"  id="isPay" lay-filter="isPaySelect"></select>
+              </div>
+              </div>
+			</div>			
+ 			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">缴费备注&nbsp;&nbsp;</label>
+					<div class="layui-input-inline">
+						<textarea name="extends1" lay-verify="extends1" style="width: 520px;min-height: 80px"
+                      			  placeholder="请输入缴费备注" autocomplete="off" class="layui-textarea"></textarea>
+					</div>
+				</div>
+   			</div>
+   			
+			<!-- 提交表单 -->
+			<div class="layui-form-item layui-hide">
+				<div class="layui-input-block">
+					<button class="layui-btn" lay-submit="" id="payRecordAddSubmit"
+						lay-filter="payRecordAddSubmitBtn">立即提交</button>
+				</div>
+			</div>
+		</form>
+
+	</div>
+
+	<script type="text/javascript" src="../layui/layui.js"></script>
+	<script type="text/javascript" src="../js/record/payRecordAdd.js"></script>
+</body>
+</html>

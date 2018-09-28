@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>车牌行驶记录查询</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <script type="text/javascript" src="../js/breakRecord/licenseSerach.js"></script>
+    <script type="text/javascript" src="../js/utils/dateFormat.js"></script>
+</head>
+<body class="childrenBody">
+   <input type="hidden" id="licenseNum"/>
+   <!--车辆行驶记录 -->
+   <div class="layui-tab-content">
+      <div class="layui-tab-item layui-show">
+	    <table id="drvingRecordTable" lay-filter="drvingRecordTableFilter"></table>
+	    <script type="text/html" id="drvingRecordTableBar">
+              <a class="layui-btn layui-btn-xs" lay-event="drvingRecordChecked">选择</a>
+        </script>
+      </div>
+	</div>
+</body>
+   
+<script id="exitTimeTpl" type="text/html">
+    {{#   if(d.exitTime == null||d.exitTime == ''){    }}
+    /
+    {{#   } else {    }}
+    {{#   return Format(d.exitTime,'yyyy-MM-dd hh:mm:ss');    }}
+    {{#   } }}
+</script>
+
+<script id="entranceTimeTpl" type="text/html">
+    {{#   if(d.entranceTime == null||d.entranceTime == ''){    }}
+    /
+    {{#   } else {    }}
+    {{#   return Format(d.entranceTime,'yyyy-MM-dd hh:mm:ss');    }}
+    {{#   } }}
+</script>
+
+</html>

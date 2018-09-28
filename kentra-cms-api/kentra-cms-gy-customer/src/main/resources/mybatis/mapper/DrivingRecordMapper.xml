@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kentrasoft.cms.dao.DrivingRecordMapper">
+  <resultMap id="BaseResultMap" type="com.kentrasoft.cms.entity.DrivingRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="driving_record" jdbcType="VARCHAR" property="drivingRecord" />
+    <result column="license_num" jdbcType="VARCHAR" property="licenseNum" />
+    <result column="lane_num" jdbcType="VARCHAR" property="laneNum" />
+    <result column="entrance_time" jdbcType="TIMESTAMP" property="entranceTime" />
+    <result column="exit_time" jdbcType="TIMESTAMP" property="exitTime" />
+    <result column="entrance_name" jdbcType="VARCHAR" property="entranceName" />
+    <result column="exit_name" jdbcType="VARCHAR" property="exitName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="mileage" jdbcType="VARCHAR" property="mileage" />
+    <result column="equipment_number" jdbcType="VARCHAR" property="equipmentNumber" />
+    <result column="export_longitude" jdbcType="VARCHAR" property="exportLongitude" />
+    <result column="export_latitudes" jdbcType="VARCHAR" property="exportLatitudes" />
+    <result column="entrance_longitude" jdbcType="VARCHAR" property="entranceLongitude" />
+    <result column="entrance_latitudes" jdbcType="VARCHAR" property="entranceLatitudes" />
+    <result column="instation_code" jdbcType="VARCHAR" property="instationCode" />
+    <result column="outstation_code" jdbcType="VARCHAR" property="outstationCode" />
+    <result column="extends1" jdbcType="VARCHAR" property="extends1" />
+    <result column="extends2" jdbcType="VARCHAR" property="extends2" />
+    <result column="extends3" jdbcType="VARCHAR" property="extends3" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, driving_record, license_num, lane_num, entrance_time, exit_time, entrance_name, 
+    exit_name, create_time, mileage, equipment_number, export_longitude, export_latitudes, 
+    entrance_longitude, entrance_latitudes, instation_code, outstation_code, extends1, 
+    extends2, extends3
+  </sql>
+  <select id="selectByExample" parameterType="com.kentrasoft.cms.entity.DrivingRecordExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from driving_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limitStart != null and limitStart>=0">
+      limit #{limitStart} , #{limitEnd}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from driving_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from driving_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.kentrasoft.cms.entity.DrivingRecordExample">
+    delete from driving_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.kentrasoft.cms.entity.DrivingRecord">
+    insert into driving_record (id, driving_record, license_num, 
+      lane_num, entrance_time, exit_time, 
+      entrance_name, exit_name, create_time, 
+      mileage, equipment_number, export_longitude, 
+      export_latitudes, entrance_longitude, entrance_latitudes, 
+      instation_code, outstation_code, extends1, 
+      extends2, extends3)
+    values (#{id,jdbcType=INTEGER}, #{drivingRecord,jdbcType=VARCHAR}, #{licenseNum,jdbcType=VARCHAR}, 
+      #{laneNum,jdbcType=VARCHAR}, #{entranceTime,jdbcType=TIMESTAMP}, #{exitTime,jdbcType=TIMESTAMP}, 
+      #{entranceName,jdbcType=VARCHAR}, #{exitName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{mileage,jdbcType=VARCHAR}, #{equipmentNumber,jdbcType=VARCHAR}, #{exportLongitude,jdbcType=VARCHAR}, 
+      #{exportLatitudes,jdbcType=VARCHAR}, #{entranceLongitude,jdbcType=VARCHAR}, #{entranceLatitudes,jdbcType=VARCHAR}, 
+      #{instationCode,jdbcType=VARCHAR}, #{outstationCode,jdbcType=VARCHAR}, #{extends1,jdbcType=VARCHAR}, 
+      #{extends2,jdbcType=VARCHAR}, #{extends3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.kentrasoft.cms.entity.DrivingRecord">
+    insert into driving_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="drivingRecord != null">
+        driving_record,
+      </if>
+      <if test="licenseNum != null">
+        license_num,
+      </if>
+      <if test="laneNum != null">
+        lane_num,
+      </if>
+      <if test="entranceTime != null">
+        entrance_time,
+      </if>
+      <if test="exitTime != null">
+        exit_time,
+      </if>
+      <if test="entranceName != null">
+        entrance_name,
+      </if>
+      <if test="exitName != null">
+        exit_name,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="mileage != null">
+        mileage,
+      </if>
+      <if test="equipmentNumber != null">
+        equipment_number,
+      </if>
+      <if test="exportLongitude != null">
+        export_longitude,
+      </if>
+      <if test="exportLatitudes != null">
+        export_latitudes,
+      </if>
+      <if test="entranceLongitude != null">
+        entrance_longitude,
+      </if>
+      <if test="entranceLatitudes != null">
+        entrance_latitudes,
+      </if>
+      <if test="instationCode != null">
+        instation_code,
+      </if>
+      <if test="outstationCode != null">
+        outstation_code,
+      </if>
+      <if test="extends1 != null">
+        extends1,
+      </if>
+      <if test="extends2 != null">
+        extends2,
+      </if>
+      <if test="extends3 != null">
+        extends3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="drivingRecord != null">
+        #{drivingRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseNum != null">
+        #{licenseNum,jdbcType=VARCHAR},
+      </if>
+      <if test="laneNum != null">
+        #{laneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="entranceTime != null">
+        #{entranceTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="exitTime != null">
+        #{exitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="entranceName != null">
+        #{entranceName,jdbcType=VARCHAR},
+      </if>
+      <if test="exitName != null">
+        #{exitName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mileage != null">
+        #{mileage,jdbcType=VARCHAR},
+      </if>
+      <if test="equipmentNumber != null">
+        #{equipmentNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="exportLongitude != null">
+        #{exportLongitude,jdbcType=VARCHAR},
+      </if>
+      <if test="exportLatitudes != null">
+        #{exportLatitudes,jdbcType=VARCHAR},
+      </if>
+      <if test="entranceLongitude != null">
+        #{entranceLongitude,jdbcType=VARCHAR},
+      </if>
+      <if test="entranceLatitudes != null">
+        #{entranceLatitudes,jdbcType=VARCHAR},
+      </if>
+      <if test="instationCode != null">
+        #{instationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="outstationCode != null">
+        #{outstationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="extends1 != null">
+        #{extends1,jdbcType=VARCHAR},
+      </if>
+      <if test="extends2 != null">
+        #{extends2,jdbcType=VARCHAR},
+      </if>
+      <if test="extends3 != null">
+        #{extends3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.kentrasoft.cms.entity.DrivingRecordExample" resultType="java.lang.Long">
+    select count(*) from driving_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update driving_record
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.drivingRecord != null">
+        driving_record = #{record.drivingRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="record.licenseNum != null">
+        license_num = #{record.licenseNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.laneNum != null">
+        lane_num = #{record.laneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entranceTime != null">
+        entrance_time = #{record.entranceTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.exitTime != null">
+        exit_time = #{record.exitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.entranceName != null">
+        entrance_name = #{record.entranceName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.exitName != null">
+        exit_name = #{record.exitName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.mileage != null">
+        mileage = #{record.mileage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.equipmentNumber != null">
+        equipment_number = #{record.equipmentNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.exportLongitude != null">
+        export_longitude = #{record.exportLongitude,jdbcType=VARCHAR},
+      </if>
+      <if test="record.exportLatitudes != null">
+        export_latitudes = #{record.exportLatitudes,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entranceLongitude != null">
+        entrance_longitude = #{record.entranceLongitude,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entranceLatitudes != null">
+        entrance_latitudes = #{record.entranceLatitudes,jdbcType=VARCHAR},
+      </if>
+      <if test="record.instationCode != null">
+        instation_code = #{record.instationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.outstationCode != null">
+        outstation_code = #{record.outstationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extends1 != null">
+        extends1 = #{record.extends1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extends2 != null">
+        extends2 = #{record.extends2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extends3 != null">
+        extends3 = #{record.extends3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update driving_record
+    set id = #{record.id,jdbcType=INTEGER},
+      driving_record = #{record.drivingRecord,jdbcType=VARCHAR},
+      license_num = #{record.licenseNum,jdbcType=VARCHAR},
+      lane_num = #{record.laneNum,jdbcType=VARCHAR},
+      entrance_time = #{record.entranceTime,jdbcType=TIMESTAMP},
+      exit_time = #{record.exitTime,jdbcType=TIMESTAMP},
+      entrance_name = #{record.entranceName,jdbcType=VARCHAR},
+      exit_name = #{record.exitName,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      mileage = #{record.mileage,jdbcType=VARCHAR},
+      equipment_number = #{record.equipmentNumber,jdbcType=VARCHAR},
+      export_longitude = #{record.exportLongitude,jdbcType=VARCHAR},
+      export_latitudes = #{record.exportLatitudes,jdbcType=VARCHAR},
+      entrance_longitude = #{record.entranceLongitude,jdbcType=VARCHAR},
+      entrance_latitudes = #{record.entranceLatitudes,jdbcType=VARCHAR},
+      instation_code = #{record.instationCode,jdbcType=VARCHAR},
+      outstation_code = #{record.outstationCode,jdbcType=VARCHAR},
+      extends1 = #{record.extends1,jdbcType=VARCHAR},
+      extends2 = #{record.extends2,jdbcType=VARCHAR},
+      extends3 = #{record.extends3,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kentrasoft.cms.entity.DrivingRecord">
+    update driving_record
+    <set>
+      <if test="drivingRecord != null">
+        driving_record = #{drivingRecord,jdbcType=VARCHAR},
+      </if>
+      <if test="licenseNum != null">
+        license_num = #{licenseNum,jdbcType=VARCHAR},
+      </if>
+      <if test="laneNum != null">
+        lane_num = #{laneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="entranceTime != null">
+        entrance_time = #{entranceTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="exitTime != null">
+        exit_time = #{exitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="entranceName != null">
+        entrance_name = #{entranceName,jdbcType=VARCHAR},
+      </if>
+      <if test="exitName != null">
+        exit_name = #{exitName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mileage != null">
+        mileage = #{mileage,jdbcType=VARCHAR},
+      </if>
+      <if test="equipmentNumber != null">
+        equipment_number = #{equipmentNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="exportLongitude != null">
+        export_longitude = #{exportLongitude,jdbcType=VARCHAR},
+      </if>
+      <if test="exportLatitudes != null">
+        export_latitudes = #{exportLatitudes,jdbcType=VARCHAR},
+      </if>
+      <if test="entranceLongitude != null">
+        entrance_longitude = #{entranceLongitude,jdbcType=VARCHAR},
+      </if>
+      <if test="entranceLatitudes != null">
+        entrance_latitudes = #{entranceLatitudes,jdbcType=VARCHAR},
+      </if>
+      <if test="instationCode != null">
+        instation_code = #{instationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="outstationCode != null">
+        outstation_code = #{outstationCode,jdbcType=VARCHAR},
+      </if>
+      <if test="extends1 != null">
+        extends1 = #{extends1,jdbcType=VARCHAR},
+      </if>
+      <if test="extends2 != null">
+        extends2 = #{extends2,jdbcType=VARCHAR},
+      </if>
+      <if test="extends3 != null">
+        extends3 = #{extends3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kentrasoft.cms.entity.DrivingRecord">
+    update driving_record
+    set driving_record = #{drivingRecord,jdbcType=VARCHAR},
+      license_num = #{licenseNum,jdbcType=VARCHAR},
+      lane_num = #{laneNum,jdbcType=VARCHAR},
+      entrance_time = #{entranceTime,jdbcType=TIMESTAMP},
+      exit_time = #{exitTime,jdbcType=TIMESTAMP},
+      entrance_name = #{entranceName,jdbcType=VARCHAR},
+      exit_name = #{exitName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      mileage = #{mileage,jdbcType=VARCHAR},
+      equipment_number = #{equipmentNumber,jdbcType=VARCHAR},
+      export_longitude = #{exportLongitude,jdbcType=VARCHAR},
+      export_latitudes = #{exportLatitudes,jdbcType=VARCHAR},
+      entrance_longitude = #{entranceLongitude,jdbcType=VARCHAR},
+      entrance_latitudes = #{entranceLatitudes,jdbcType=VARCHAR},
+      instation_code = #{instationCode,jdbcType=VARCHAR},
+      outstation_code = #{outstationCode,jdbcType=VARCHAR},
+      extends1 = #{extends1,jdbcType=VARCHAR},
+      extends2 = #{extends2,jdbcType=VARCHAR},
+      extends3 = #{extends3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <!--****************************************自定义查询****************************************-->
+    <!-- 查询行驶记录数据列表 -->
+<!--     <select id="queryDrivingList" parameterType="com.kentrasoft.utils.plugin.PageForm" resultMap="BaseResultMap">
+        SELECT
+        a.id,
+        a.driving_record,
+        a.license_num ,
+        a.entrance_name,
+        a.entrance_time,
+        a.exit_name,
+        a.exit_time,
+        a.mileage,
+        a.create_time
+        FROM driving_record a
+     </select> -->
+
+	<!-- 根据车牌号查询行驶记录数据列表 -->
+<!--     <select id="queryDrivingListBylicenseNum" parameterType="com.kentrasoft.utils.plugin.PageForm" resultMap="BaseResultMap">
+        SELECT
+        a.id,
+        a.license_num ,
+        a.entrance_name,
+        a.entrance_time,
+        a.exit_name,
+        a.exit_time,
+        a.mileage,
+        a.create_time
+        FROM driving_record a
+        WHERE   a.license_num LIKE '%${licenseNum}%'
+        AND		a.entrance_name LIKE '%${entranceName}%'
+		AND		a.exit_name LIKE '%${exitName}%'
+     </select> -->
+
+    <!--查询行车记录-->
+    <select id="findByCustomerId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+      SELECT
+        dr.`id`,dr.`driving_record`,dr.`license_num`,dr.`lane_num`,dr.`entrance_time`,dr.`exit_time`,
+        dr.`entrance_name`,dr.`exit_name`,dr.`create_time`,dr.`mileage`,dr.`equipment_number`, dr.`export_longitude`,
+        dr.`export_latitudes`,dr.`entrance_longitude`, dr.`entrance_latitudes`
+
+
+      FROM
+        `driving_license` dl,
+        `driving_record` dr
+      WHERE
+          dl.`customer_id`=#{customerId} and dl.`license_num`=dr.`license_num`
+          AND dr.entrance_name!='暂无数据'
+      ORDER BY
+	    entrance_time DESC
+  </select>
+  
+  <!-- 根据车牌号码查询 -->		
+  <select id="selectDrivingRecordBylicenseNum" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List"/>
+    from driving_record
+    where license_num = #{licenseNum,jdbcType=VARCHAR}
+  </select>
+    <!--删除-->
+  <delete id="deleteByPKs" parameterType="String">
+      delete from driving_record WHERE FIND_IN_SET(id,#{ids})
+  </delete>
+  
+  <!-- 卡口数据查询行驶记录 -->
+  <select id="selectbyCardportPasstime" parameterType="java.lang.String" resultMap="BaseResultMap">
+      SELECT 
+          <include refid="Base_Column_List"></include>,
+          MIN(EXIT_TIME)
+      FROM DRIVING_RECORD R
+      WHERE R.EXIT_TIME >= #{passtime,jdbcType=VARCHAR}
+      AND R.license_num = #{licenseNum,jdbcType=VARCHAR}
+      ORDER BY R.EXIT_TIME ASC;
+  </select>
+  
+  <!-- 进出口查询行驶记录 -->
+  <select id="selectbyInoutEndtime" parameterType="java.lang.String" resultMap="BaseResultMap">
+      select
+        <include refid="Base_Column_List"></include>
+      from driving_record
+      where license_num = #{licenseNum,jdbcType=VARCHAR}
+      and  exit_time = #{outTime,jdbcType=VARCHAR}
+  </select>
+</mapper>

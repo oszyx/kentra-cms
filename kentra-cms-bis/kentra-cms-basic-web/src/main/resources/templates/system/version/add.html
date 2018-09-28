@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增版本信息</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+</head>
+<body class="childrenBody">
+<!--LED列表展示-->
+<div class="layui-form news_list">
+    <form class="layui-form" id="versionForm" lay-filter="versionFormFilter">
+        <div class="layui-form-item" style="padding: 25px 0 0 0">
+            <div class="layui-inline">
+                <label class="layui-form-label">版本号<span style="color: red">&nbsp;*</span></label>
+                <div class="layui-input-block">
+                    <input type="text" name="vId" id="vId" lay-verify="required|vid" autocomplete="off" placeholder="请输入版本号" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">版本名称<span style="color: red">&nbsp;*</span></label>
+                <div class="layui-input-block">
+                    <input type="text" name="vName" lay-verify="required" id="vName" autocomplete="off" placeholder="请输入版本名称"
+                           class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">发布时间<span style="color: red">&nbsp;*</span></label>
+                <div class="layui-input-block">
+                    <input type="text" name="vReleaseTime" lay-verify="required" id="vReleaseTime" autocomplete="off" placeholder="请选择发布时间" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">版本状态<span style="color: red">&nbsp;*</span></label>
+                <div class="layui-input-block">
+                    <input type="radio" name="vState" value="0" title="不可用">
+                    <input type="radio" name="vState" checked="" value="1" title="可用">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">强制更新<span style="color: red">&nbsp;*</span></label>
+                <div class="layui-input-block">
+                    <input type="radio" name="vForcedUpdate" checked="" value="0" title="不强制">
+                    <input type="radio" name="vForcedUpdate" value="1" title="强制">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">下载地址<span style="color: red">&nbsp;*</span></label>
+                <div class="layui-input-block" style="width: 495px;">
+                    <input type="text" name="vDownloadUrl" lay-verify="required|downloadUrl" autocomplete="off" placeholder="请输入下载地址" class="layui-input">
+                </div>
+            </div>
+        </div>
+
+        <!-- 提交表单按钮 -->
+        <div class="layui-form-item layui-hide">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" id="versionSubmitBtn" lay-filter="versionSubmitBtnFilter">立即提交
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/system/version/add.js"></script>
+</body>
+</html>

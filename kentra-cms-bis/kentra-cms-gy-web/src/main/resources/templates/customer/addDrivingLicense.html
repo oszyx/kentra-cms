@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增行驶证信息</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="../js/utils/jquery-2.1.4.min.js"></script>
+</head>
+<body class="childrenBody">
+
+
+<div class="layui-form news_list">
+    <form class="layui-form" id="drivingLicenseFrom" lay-filter="drivingLicenseFromFilter">
+
+        <!--隐藏提交信息-->
+        <div class="layui-form-item layui-hide">
+            <input type="text" name="customerId" autocomplete="off" class="layui-input">
+        </div>
+
+        <div class="layui-form-item" style="padding: 30px 0 0 0">
+            <label class="layui-form-label">车牌号码<span style="color: red">&nbsp;*</span></label>
+            <div class="layui-input-inline" style="width: 70px">
+                <select name="plateNumPrefix" id="plateNumPrefix" lay-verify="required">
+                </select>
+            </div>
+            <div class="layui-input-inline" style="width: 110px">
+                <input type="text" name="licNum" id="licNum" lay-verify="required|licenseNum" autocomplete="off" placeholder="车牌号码"
+                       class="layui-input"/>
+            </div>
+            <label class="layui-form-label">车辆类型<span style="color: red">&nbsp;*</span></label>
+            <div class="layui-input-inline">
+                <select name="carType" id="carType" lay-verify="required">
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">持有人&nbsp;</label>
+            <div class="layui-input-inline">
+                <input type="text" name="owner" lay-verify="owner" autocomplete="off" placeholder="请输入持有人"
+                       class="layui-input">
+            </div>
+            <label class="layui-form-label">家庭住址&nbsp;</label>
+            <div class="layui-input-inline">
+                <input type="text" name="houseAddress" lay-verify="houseAddress" id="houseAddress" placeholder="请输入家庭住址"
+                       class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">车辆型号&nbsp;</label>
+            <div class="layui-input-inline">
+                <input type="text" name="carVehicle" lay-verify="carVehicle" autocomplete="off" placeholder="请输入车辆品牌型号"
+                       class="layui-input">
+            </div>
+            <label class="layui-form-label">使用性质&nbsp;<span style="color: red">*</span></label>
+            <div class="layui-input-inline">
+                <select name="carUsetype" id="carUsetype" lay-verify="required">
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">车辆识别码&nbsp;<span style="color: red">*</span></label>
+            <div class="layui-input-inline">
+                <input type="text" name="carIndetcode" lay-verify="required|carIndetcode" autocomplete="off"
+                       placeholder="请输入车辆识别码"
+                       class="layui-input">
+            </div>
+            <label class="layui-form-label">发动机号码&nbsp;<span style="color: red">*</span></label>
+            <div class="layui-input-inline">
+                <input type="text" name="carFramenumber" lay-verify="required|carFramenumber" autocomplete="off"
+                       placeholder="请输入发动机号码"
+                       class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">注册日期&nbsp;</label>
+            <div class="layui-input-inline">
+                <input type="text" name="registerDate" lay-verify="registerDate" id="registerDate" placeholder="请选择注册日期"
+                       class="layui-input">
+            </div>
+            <label class="layui-form-label">发证日期&nbsp;</label>
+            <div class="layui-input-inline">
+                <input type="text" name="issueDate" lay-verify="issueDate" id="issueDate" placeholder="请选择发证日期"
+                       class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">档案编号&nbsp;</label>
+            <div class="layui-input-inline">
+                <input type="text" name="fileNum" lay-verify="fileNum" autocomplete="off" placeholder="请输入档案编号"
+                       class="layui-input">
+            </div>
+            <label class="layui-form-label">核定载人数&nbsp;</label>
+            <div class="layui-input-inline">
+                <input type="number" name="authorNum"
+                       onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"
+                       onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}"
+                       min="1" autocomplete="off" placeholder="请输入核定载人数"
+                       class="layui-input">
+            </div>
+        </div>
+
+
+        <!-- 提交表单按钮 -->
+        <div class="layui-form-item layui-hide">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" id="drivingLicenseSubmitBtn"
+                        lay-filter="drivingLicenseSubmitBtnFilter">立即提交
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/customer/addDrivingLicense.js"></script>
+<script>
+    $(document).ready(function () {
+        var useType = JSON.parse(window.sessionStorage.getItem("Dict"))[13].value;
+        var carstype = JSON.parse(window.sessionStorage.getItem("Dict"))[14].value;
+        var plateNumPrefix = JSON.parse(window.sessionStorage.getItem("Dict"))[15].value;
+        var plateNumPrefixSelect = $("#plateNumPrefix");
+        $.each(plateNumPrefix, function (index, value) {
+            if (index == 0) plateNumPrefixSelect.append("<option value=''>选择</option>");
+            plateNumPrefixSelect.append("<option value='" + value.value + "'>" + value.value + " </option>");
+        });
+        var carUsetypeElm = $("#carUsetype");
+        $.each(useType, function (index, value) {
+            if (index == 0) carUsetypeElm.append("<option value=''>选择</option>");
+            carUsetypeElm.append("<option value='" + value.key + "'>" + value.value + " </option>");
+        });
+        var carTypeElm = $("#carType");
+        $.each(carstype, function (index, value) {
+            if (index == 0) carTypeElm.append("<option value=''>选择</option>");
+            carTypeElm.append("<option value='" + value.key + "'>" + value.value + " </option>");
+        });
+    })
+</script>
+<style>
+    .layui-form-select dl { max-height:230px; }
+</style>
+</body>
+</html>

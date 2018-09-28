@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5.8G设备管编辑页面</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <script type="text/javascript" src="../js/device/deviceEdit.js"></script>
+</head>
+<body class="childrenBody">
+<div style="margin-top: 30px">
+<form class="layui-form" action="#" lay-filter="deviceForm">
+    <!--设备ID  -->
+    <input type="hidden" name="id">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设备名称<font color="red">&nbsp;*</font></label>
+        <div class="layui-input-inline">
+            <input type="text" name="name" lay-verify="required" placeholder="请输入设备名称" autocomplete="off"
+                   class="layui-input">
+        </div>
+
+        <label class="layui-form-label">设备编号<font color="red">&nbsp;*</font></label>
+        <div class="layui-input-inline">
+            <input type="text" name="deviceCode" lay-verify="required" placeholder="请输入设备编号" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设备经度<font color="red">&nbsp;*</font></label>
+        <div class="layui-input-inline">
+            <input type="text" name="deviceGisX" lay-verify="deviceGisX" placeholder="请输入设备经度" autocomplete="off"
+                   class="layui-input">
+        </div>
+
+        <label class="layui-form-label">设备纬度<font color="red">&nbsp;*</font></label>
+        <div class="layui-input-inline">
+            <input type="text" name="deviceGisY" lay-verify="deviceGisY" placeholder="请输入设备纬度" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设备状态<font color="red">&nbsp;*</font></label>
+        <div class="layui-input-inline">
+            <select name="deviceStatus" lay-verify="required" id="deviceStatus" lay-filter="deviceStatusSelect"></select>
+        </div>
+
+        <label class="layui-form-label">所属控制器<font color="red">&nbsp;*</font></label>
+        <div class="layui-input-inline">
+            <select name="belongEqipment" lay-verify="required" id="belongEqipment" lay-filter="belongEqipmentSelect">
+            </select>
+        </div>
+
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">设备地址<font color="red">&nbsp;*</font></label>
+        <div class="layui-input-block">
+            <input type="text" name="deviceAddress" lay-verify="required" style="width: 85%;" placeholder="请输入设备地址" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">设备描述</label>
+        <div class="layui-input-block">
+            <textarea name="descripInfos" style="width: 85%;min-height: 90px" 
+                      placeholder="请输入设备描述信息" autocomplete="off"
+                      class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item layui-hide">
+        <div class="layui-input-block">
+            <button class="layui-btn" id="deviceAddSubmitBtn" lay-submit lay-filter="deviceAddSubmitBtn">立即提交</button>
+        </div>
+    </div>
+</form>
+</div>
+</body>
+</html>

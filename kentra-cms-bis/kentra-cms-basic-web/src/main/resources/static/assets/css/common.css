@@ -1,0 +1,235 @@
+/* public */
+body{
+	/*overflow: hidden;*/
+	background-color: #fff;
+}
+body::-webkit-scrollbar{
+	width: 0;
+}
+iframe{
+	border: 0;
+}
+textarea{
+	resize: none;
+}
+label{
+	margin-top: 5px;
+}
+.file-label{
+	margin-top: 0px;
+}
+input[type=checkbox].ace+.lbl::before{
+	height: 15px;
+	line-height: 15px;
+	min-width: 16px;
+	margin-top: -2px;
+}
+.home{
+	width: 100%;
+	position: fixed;
+	overflow: hidden;
+}
+.home .col-sm-5{
+	height: 400px;
+	width:49%;
+	/*margin-left: 18.7%;
+	margin-bottom: 50px;*/
+}
+.home .col-sm-7{
+	width:49%;
+	height: 420px;
+	/*margin-left: 20%;*/
+	padding-left: 0;
+	padding-right: 0;
+	border: 1px solid #ccc;
+}
+.home #piechart-placeholder{
+	min-height: 300px !important;
+}
+.home #sales-charts{
+	height: 270px !important;
+	margin-top: 40px;
+}
+.widget-box{
+	margin: 0;
+	border-bottom: 0;
+}
+.widget-main{
+	padding: 13.5px;
+}
+.sidebar,.navbar,.btn-scroll-up{
+	position: fixed;
+}
+.sidebar{
+	top: 47px;
+}
+.navbar{
+	width: 100%;
+	z-index: 999;
+	background: url(../images/head_bg.jpg) no-repeat;
+}
+.navbar-container{
+	padding-right:0;
+}
+.breadcrumbs{
+	width: 83%;
+	z-index: 9;
+	position: fixed;
+}
+.navbar-header .navbar-brand{
+	width: 424px;
+    height: 22px;
+    margin-top: 14px;
+	background: url(../images/head_logo.png) 0 0 /424px 22px no-repeat;
+}
+.ace-nav{
+	margin: 0 20px 0 0 !important;
+}
+.main-container{
+	position: absolute;
+    top: 45px;
+    width: 100%;
+}
+.page-content{
+	position: relative;
+	top: 41px;
+}
+.ace-settings-container{
+	position: fixed;
+	top: 100px;
+}
+.user-info{
+	top: 0;
+	line-height: 45px;
+}
+.icon-car{
+	width: 36px;
+	height: 36px;
+	display:inline-block;
+	border-radius: 100%;
+	background:#87b87f url(../images/car.png) center center / 70% 70% no-repeat;
+}
+.from-page-btn{
+	text-align: center;
+}
+.form-fill{
+	height: 80px;
+}
+.daterangepicker{
+	z-index: 9999;
+}
+.grey{
+	font-size: 19px;
+    line-height: 36px;
+}
+
+/* 左侧menu */
+.sidebar{
+	overflow-y: scroll;
+	overflow-x: hidden;
+	/*border: 1px solid red;*/
+}
+.nav-list{
+	/*height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;*/
+}
+.sidebar::-webkit-scrollbar{
+	width: 0;
+}
+.form-control{
+	height: auto;
+}
+.input-group-addon{
+	padding: 5px 12px;
+}
+.dataTables_wrapper .row:first-child{
+	padding: 0;
+}
+.dataTables_wrapper .row:last-child{
+	padding-top: 5px;
+	padding-bottom:3px;
+}
+/*  */
+.btn-operation{
+	margin: 0 0 10px 0;
+}
+
+/* form 表单 */
+.widget-main fieldset{
+	margin: 0 0 10px 0;
+}
+.inp-describe{
+	width:26%;
+}
+.form-inp{
+	width:72.5%;
+	float: right;
+}
+.ck-box,.ck-radio{
+	margin: 0 10px 0 0;
+}
+fieldset .date-box{
+	width: 100%;
+}
+.from-btn{
+	width: 92.5%;
+	height: 50px;
+	line-height: 50px;
+	background-color: #eff3f8;
+    border-top: 1px solid #d6e1ea!important;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+}
+
+/* layer */
+.lay-box{
+	width: 100%;
+	height: 100%;
+	z-index: 1001;
+	overflow: hidden;
+	display: none;
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.lay-info{
+	height: 400px;
+	min-width: 350px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+}
+.lay-info .widget-box {
+	width: 100%;
+	height: 100%;
+}
+.lay-info .widget-box .widget-body{
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+.lay-info .widget-box .widget-body::-webkit-scrollbar{
+	width: 0;
+}
+.lay-box .lay-info .widget-box .widget-header .lay-close{
+	color: #e09e96;
+}
+
+/* login */
+.login-layout{
+	background: url(../images/login_bg.jpg) no-repeat;
+}
+.login-layout .widget-box{
+	background-color: rgba(0,0,0,0.25);
+}
+.login-layout .main-container{
+	top: 20%;
+}
+.login-tit{
+	color: #fff;
+}

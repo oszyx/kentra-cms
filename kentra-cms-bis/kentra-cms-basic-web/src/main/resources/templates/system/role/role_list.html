@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="../layui/layui.js"></script>
+    <!--引入ztreeJS  -->
+    <script type="text/javascript" src="../ztree/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../ztree/jquery.ztree.all.min.js"></script>
+    <script type="text/javascript" src="../ztree/jquery.ztree.core.min.js"></script>
+    <script type="text/javascript" src="../ztree/jquery.ztree.excheck.min.js"></script>
+    <script type="text/javascript" src="../ztree/jquery.ztree.exedit.min.js"></script>
+    <script type="text/javascript" src="../ztree/jquery.ztree.exhide.min.js"></script>
+    <script type="text/javascript" src="../js/system/menu/menuZtree.js"></script>
+    <script type="text/javascript" src="../js/system/role/roleList.js"></script>
+    <script type="text/javascript" src="../js/system/role/roleTree.js"></script>
+    <!--引入ztressCss  -->
+    <link rel="stylesheet" type="text/css" href="../ztree/css/zTreeStyle.css">
+    <meta charset="UTF-8">
+    <title>角色管理</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" media="all">
+</head>
+<body class="childrenBody"   style="padding: 0 0 0 30px;background-color: white">
+
+<!-- 左侧树形菜单 -->
+<div class="layui-side" style="background-color: white">
+    <ul id="roleZtree" class="ztree"></ul>
+</div>
+
+<!-- 右侧信息展示 -->
+<div class="layui-body layui-form">
+    <!--隐藏信息-->
+    <input type="hidden" id="parentId"/>
+
+    <!--工具栏-->
+    <div >
+        <!--搜索按钮-->
+        <div style="padding-top: 7px;padding-right: 10px">
+            <div class="layui-input-inline">
+                <span style="font-size: 16px;">角色名称:</span>
+                <input type="text" id="searchParam" placeholder="请输入角色名" style="border-radius:6px;height: 16px;">
+            </div>
+            <button class="btn btn-xs btn-primary" style="float:right;width: 80px;margin-right: 40px" id="searchBtn">
+                <i class="icon-search bigger-130"></i>
+                <span class="bigger-130 no-text-shadow">搜索</span>
+            </button>
+        </div>
+
+        <!--工具栏-->
+        <div class='btn-operation' style="margin:7px 0 2px 0">
+            <!--添加-->
+            <button class="btn btn-xs btn-warning btn-add" id="addBtn">
+                <i class="icon-plus bigger-130"></i>
+                <span class="bigger-130 no-text-shadow">添加</span>
+            </button>
+            <!--详情-->
+            <button class="btn btn-xs btn-primary" id="detailBtn">
+                <i class="icon-zoom-in bigger-130"></i>
+                <span class="bigger-130 no-text-shadow">详情</span>
+            </button>
+            <!--编辑-->
+            <button class="btn btn-xs btn-primary" id="editBtn">
+                <i class="icon-pencil bigger-130"></i>
+                <span class="bigger-130 no-text-shadow">编辑</span>
+            </button>
+            <!--删除-->
+            <button class="btn btn-xs btn-danger" id="deleteBtn">
+                <i class="icon-trash bigger-130"></i>
+                <span class="bigger-130 no-text-shadow">删除</span>
+            </button>
+            <!--赋权-->
+            <button class="btn btn-xs btn-primary" id="empowermentBtn">
+                <i class="icon-wrench bigger-130"></i>
+                <span class="bigger-130 no-text-shadow">赋权菜单</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="layui-form news_list" style="padding: 0 50px 0 0">
+        <table id="roleTable" lay-filter="roleTableFilter"></table>
+    </div>
+</div>
+</body>
+</html>
