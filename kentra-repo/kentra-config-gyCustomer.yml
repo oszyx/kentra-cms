@@ -5,6 +5,19 @@ spring:
 #    user:
 #      name: "admin"
 #      password: "123456"
+  kafka:
+    bootstrap-servers: 172.16.0.19:9092
+    listener:
+      concurrency: 10
+    consumer:
+      group-id: test-consumer-group
+      key-deserializer:   org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      batch-size: 65536
+      buffer-memory: 524288
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
 server:
   port: 8773 #贵阳用户项目端口号
 mybatis:
