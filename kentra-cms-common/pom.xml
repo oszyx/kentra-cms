@@ -19,5 +19,6 @@
 	</parent>
 	<modules>
 		<module>kentra-cms-common-chache</module>
+		<module>kentra-cms-common-util</module>
 	</modules>
 </project>
