@@ -9,8 +9,6 @@
 
     <modules>
         <module>kentra-cms-basic-api</module>
-        <module>kentra-cms-gy-customer</module>
-        <module>kentra-cms-gy-equipment</module>
     </modules>
 
     <packaging>pom</packaging>

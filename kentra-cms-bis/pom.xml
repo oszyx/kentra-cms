@@ -10,7 +10,6 @@
 
     <modules>
         <module>kentra-cms-basic-web</module>
-        <module>kentra-cms-gy-web</module>
     </modules>
 
 	<name>kentra-cms-bis</name>
