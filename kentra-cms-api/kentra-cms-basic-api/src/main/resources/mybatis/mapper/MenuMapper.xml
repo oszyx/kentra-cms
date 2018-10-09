@@ -1,393 +1,361 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kentrasoft.cms.dao.MenuMapper">
-  <resultMap id="BaseResultMap" type="com.kentrasoft.cms.entity.Menu">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
-    <result column="menu_code" jdbcType="VARCHAR" property="menuCode" />
-    <result column="menu_url" jdbcType="VARCHAR" property="menuUrl" />
-    <result column="menu_parent_id" jdbcType="BIGINT" property="menuParentId" />
-    <result column="menu_target" jdbcType="VARCHAR" property="menuTarget" />
-    <result column="menu_style" jdbcType="VARCHAR" property="menuStyle" />
-    <result column="menu_order" jdbcType="VARCHAR" property="menuOrder" />
-    <result column="rely_system" jdbcType="VARCHAR" property="relySystem" />
-    <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List">
-    id, menu_name, menu_code, menu_url, menu_parent_id, menu_target, menu_style, menu_order, 
-    rely_system, status, create_time, update_time
-  </sql>
-  <select id="selectByExample" parameterType="com.kentrasoft.cms.entity.MenuExample" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from menu
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-    <if test="limitStart != null and limitStart>=0">
-      limit #{limitStart} , #{limitEnd}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from menu
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from menu
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <delete id="deleteByExample" parameterType="com.kentrasoft.cms.entity.MenuExample">
-    delete from menu
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" parameterType="com.kentrasoft.cms.entity.Menu">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into menu (menu_name, menu_code, menu_url, 
-      menu_parent_id, menu_target, menu_style, 
-      menu_order, rely_system, `status`, 
-      create_time, update_time)
-    values (#{menuName,jdbcType=VARCHAR}, #{menuCode,jdbcType=VARCHAR}, #{menuUrl,jdbcType=VARCHAR}, 
-      #{menuParentId,jdbcType=BIGINT}, #{menuTarget,jdbcType=VARCHAR}, #{menuStyle,jdbcType=VARCHAR}, 
-      #{menuOrder,jdbcType=VARCHAR}, #{relySystem,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.kentrasoft.cms.entity.Menu">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into menu
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="menuName != null">
-        menu_name,
-      </if>
-      <if test="menuCode != null">
-        menu_code,
-      </if>
-      <if test="menuUrl != null">
-        menu_url,
-      </if>
-      <if test="menuParentId != null">
-        menu_parent_id,
-      </if>
-      <if test="menuTarget != null">
-        menu_target,
-      </if>
-      <if test="menuStyle != null">
-        menu_style,
-      </if>
-      <if test="menuOrder != null">
-        menu_order,
-      </if>
-      <if test="relySystem != null">
-        rely_system,
-      </if>
-      <if test="status != null">
-        status,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="menuName != null">
-        #{menuName,jdbcType=VARCHAR},
-      </if>
-      <if test="menuCode != null">
-        #{menuCode,jdbcType=VARCHAR},
-      </if>
-      <if test="menuUrl != null">
-        #{menuUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="menuParentId != null">
-        #{menuParentId,jdbcType=BIGINT},
-      </if>
-      <if test="menuTarget != null">
-        #{menuTarget,jdbcType=VARCHAR},
-      </if>
-      <if test="menuStyle != null">
-        #{menuStyle,jdbcType=VARCHAR},
-      </if>
-      <if test="menuOrder != null">
-        #{menuOrder,jdbcType=VARCHAR},
-      </if>
-      <if test="relySystem != null">
-        #{relySystem,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        #{status,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.kentrasoft.cms.entity.MenuExample" resultType="java.lang.Integer">
-    select count(*) from menu
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map">
-    update menu
-    <set>
-      <if test="record.id != null">
-        id = #{record.id,jdbcType=BIGINT},
-      </if>
-      <if test="record.menuName != null">
-        menu_name = #{record.menuName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.menuCode != null">
-        menu_code = #{record.menuCode,jdbcType=VARCHAR},
-      </if>
-      <if test="record.menuUrl != null">
-        menu_url = #{record.menuUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="record.menuParentId != null">
-        menu_parent_id = #{record.menuParentId,jdbcType=BIGINT},
-      </if>
-      <if test="record.menuTarget != null">
-        menu_target = #{record.menuTarget,jdbcType=VARCHAR},
-      </if>
-      <if test="record.menuStyle != null">
-        menu_style = #{record.menuStyle,jdbcType=VARCHAR},
-      </if>
-      <if test="record.menuOrder != null">
-        menu_order = #{record.menuOrder,jdbcType=VARCHAR},
-      </if>
-      <if test="record.relySystem != null">
-        rely_system = #{record.relySystem,jdbcType=VARCHAR},
-      </if>
-      <if test="record.status != null">
-        status = #{record.status,jdbcType=VARCHAR},
-      </if>
-      <if test="record.createTime != null">
-        create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.updateTime != null">
-        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map">
-    update menu
-    set id = #{record.id,jdbcType=BIGINT},
-      menu_name = #{record.menuName,jdbcType=VARCHAR},
-      menu_code = #{record.menuCode,jdbcType=VARCHAR},
-      menu_url = #{record.menuUrl,jdbcType=VARCHAR},
-      menu_parent_id = #{record.menuParentId,jdbcType=BIGINT},
-      menu_target = #{record.menuTarget,jdbcType=VARCHAR},
-      menu_style = #{record.menuStyle,jdbcType=VARCHAR},
-      menu_order = #{record.menuOrder,jdbcType=VARCHAR},
-      rely_system = #{record.relySystem,jdbcType=VARCHAR},
-      status = #{record.status,jdbcType=VARCHAR},
-      create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.kentrasoft.cms.entity.Menu">
-    update menu
-    <set>
-      <if test="menuName != null">
-        menu_name = #{menuName,jdbcType=VARCHAR},
-      </if>
-      <if test="menuCode != null">
-        menu_code = #{menuCode,jdbcType=VARCHAR},
-      </if>
-      <if test="menuUrl != null">
-        menu_url = #{menuUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="menuParentId != null">
-        menu_parent_id = #{menuParentId,jdbcType=BIGINT},
-      </if>
-      <if test="menuTarget != null">
-        menu_target = #{menuTarget,jdbcType=VARCHAR},
-      </if>
-      <if test="menuStyle != null">
-        menu_style = #{menuStyle,jdbcType=VARCHAR},
-      </if>
-      <if test="menuOrder != null">
-        menu_order = #{menuOrder,jdbcType=VARCHAR},
-      </if>
-      <if test="relySystem != null">
-        rely_system = #{relySystem,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        status = #{status,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.kentrasoft.cms.entity.Menu">
-    update menu
-    set menu_name = #{menuName,jdbcType=VARCHAR},
-      menu_code = #{menuCode,jdbcType=VARCHAR},
-      menu_url = #{menuUrl,jdbcType=VARCHAR},
-      menu_parent_id = #{menuParentId,jdbcType=BIGINT},
-      menu_target = #{menuTarget,jdbcType=VARCHAR},
-      menu_style = #{menuStyle,jdbcType=VARCHAR},
-      menu_order = #{menuOrder,jdbcType=VARCHAR},
-      rely_system = #{relySystem,jdbcType=VARCHAR},
-      status = #{status,jdbcType=VARCHAR},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  
-  <!--查询所有menu  -->
-  <select id="findAllMenus" resultMap="BaseResultMap">
-       select
-         <include refid="Base_Column_List"/>
-       from menu
-  </select>
-  <!--查询用户导航展示项  -->
-  <sql id="allMenu">
-    m.id, m.menu_name, m.menu_code, m.menu_url, m.menu_parent_id, m.menu_target, m.menu_style, m.menu_order, 
-    m.rely_system, m.status, m.create_time, m.update_time
-  </sql>
-  <select id="findUserMenu"  resultMap="BaseResultMap">
-       select
-          DISTINCT
-         <include refid="allMenu"/>
-       from user u  inner join user_role ur on u.id=ur.user_id
-                    inner join role r on ur.role_id=r.id
-                    inner join role_menu rm on rm.role_id=r.id
-                    inner join menu m on rm.menu_id=m.id
-       where u.id=#{arg0}
-  </select>
-  
-    <!--查询所有菜单数据-->
-  <select id="getTreeList" parameterType="com.kentrasoft.cms.entity.Menu" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from menu
-    WHERE id != 1 
-  </select>
-  <!--查询二级菜单数据-->
-  <select id="getChildTreeList" parameterType="com.kentrasoft.cms.entity.Menu" resultMap="BaseResultMap">
-    select
-    a.menu_name
-    from menu a
-    WHERE a.menu_parent_id = 2
-  </select>
-  <!--删除-->
-  <delete id="delete" parameterType="String">
-    delete from menu  WHERE FIND_IN_SET(id,#{ids})
-  </delete>    
-  <!--统计菜单树数据总数-->
-  <select id="countTreeData" parameterType="com.kentrasoft.cms.entity.Menu" resultType="java.lang.Integer">
-    select count(*) from menu a
-    WHERE  a.menu_parent_id IN (1,2)
-  </select>
-  
-  <!--查询菜单下子菜单  -->
-  <select id="findChildrenMenu" parameterType="java.lang.String" resultMap="BaseResultMap">
-      select
-      <include refid="Base_Column_List"></include>
-      from Menu where FIND_IN_SET(menu_parent_id,#{ids})
-  </select>
-  
-  <!--删除角色机构管理表数据  -->
-  <delete id="deletRoleMenu" parameterType="java.lang.String">
-    delete from role_menu where FIND_IN_SET(menu_id,#{ids})
-  </delete>
-  
-  <!--根据机构code查询  -->
-  <select id="querybyMenuCode" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List"></include>
-    from Menu where menu_code = #{menuCode,jdbcType=VARCHAR}
-    <if test="menuId!=null and menuId!=''">
-    and id != #{menuId,jdbcType=BIGINT}
-    </if>
-  </select>
-  
+
+<mapper namespace="com.kentrasoft.cms.dao.MenuDao">
+
+    <resultMap id="resultMap" type="com.kentrasoft.cms.model.Menu">
+        <result property="id" column="id"/>
+        <result property="menuCode" column="menu_code"/>
+        <result property="menuName" column="menu_name"/>
+        <result property="menuIcon" column="menu_icon"/>
+        <result property="menuUrl" column="menu_url"/>
+        <result property="menuSpread" column="menu_spread"/>
+        <result property="menuLeaf" column="menu_leaf"/>
+        <result property="menuOrder" column="menu_order"/>
+        <result property="menuStatus" column="menu_status"/>
+        <result property="menuDesc" column="menu_desc"/>
+        <result property="menuPid" column="menu_pid"/>
+        <result property="creator" column="creator"/>
+        <result property="updator" column="updator"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="baseCol">
+        `id`,`menu_code`,`menu_name`,`menu_icon`,`menu_url`,`menu_spread`,`menu_leaf`,`menu_order`,`menu_status`,`menu_desc`,`menu_pid`,`creator`,`updator`,`create_time`,`update_time`
+    </sql>
+
+    <sql id="pageSql">
+        <if test="__start !=null and __size!=null"><![CDATA[ limit #{__start},#{__size} ]]></if>
+    </sql>
+
+    <sql id="whereSql">
+        <trim prefix="WHERE" prefixOverrides="and |or ">
+            <if test="id != null"><![CDATA[ and  `id` = #{id:NUMERIC}]]></if>
+            <if test="id_r_min != null"><![CDATA[ and `id` >= #{id_r_min} and `id` <= #{id_r_max} ]]></if>
+            <if test="id_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="id_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="menuCode != null"><![CDATA[ and  `menu_code` = #{menuCode:VARCHAR}]]></if>
+            <if test="menuCode_r_min != null"><![CDATA[ and `menu_code` >= #{menuCode_r_min} and `menu_code` <= #{menuCode_r_max} ]]></if>
+            <if test="menuCode_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="menuCode_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="menuName != null"><![CDATA[ and  `menu_name` = #{menuName:VARCHAR}]]></if>
+            <if test="menuName_r_min != null"><![CDATA[ and `menu_name` >= #{menuName_r_min} and `menu_name` <= #{menuName_r_max} ]]></if>
+            <if test="menuName_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="menuName_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="menuIcon != null"><![CDATA[ and  `menu_icon` = #{menuIcon:VARCHAR}]]></if>
+            <if test="menuIcon_r_min != null"><![CDATA[ and `menu_icon` >= #{menuIcon_r_min} and `menu_icon` <= #{menuIcon_r_max} ]]></if>
+            <if test="menuIcon_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="menuIcon_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="menuUrl != null"><![CDATA[ and  `menu_url` = #{menuUrl:VARCHAR}]]></if>
+            <if test="menuUrl_r_min != null"><![CDATA[ and `menu_url` >= #{menuUrl_r_min} and `menu_url` <= #{menuUrl_r_max} ]]></if>
+            <if test="menuUrl_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="menuUrl_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="menuSpread != null"><![CDATA[ and  `menu_spread` = #{menuSpread:NUMERIC}]]></if>
+            <if test="menuSpread_r_min != null"><![CDATA[ and `menu_spread` >= #{menuSpread_r_min} and `menu_spread` <= #{menuSpread_r_max} ]]></if>
+            <if test="menuSpread_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="menuSpread_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="menuLeaf != null"><![CDATA[ and  `menu_leaf` = #{menuLeaf:NUMERIC}]]></if>
+            <if test="menuLeaf_r_min != null"><![CDATA[ and `menu_leaf` >= #{menuLeaf_r_min} and `menu_leaf` <= #{menuLeaf_r_max} ]]></if>
+            <if test="menuLeaf_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="menuLeaf_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="menuOrder != null"><![CDATA[ and  `menu_order` = #{menuOrder:NUMERIC}]]></if>
+            <if test="menuOrder_r_min != null"><![CDATA[ and `menu_order` >= #{menuOrder_r_min} and `menu_order` <= #{menuOrder_r_max} ]]></if>
+            <if test="menuOrder_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="menuOrder_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="menuStatus != null"><![CDATA[ and  `menu_status` = #{menuStatus:NUMERIC}]]></if>
+            <if test="menuStatus_r_min != null"><![CDATA[ and `menu_status` >= #{menuStatus_r_min} and `menu_status` <= #{menuStatus_r_max} ]]></if>
+            <if test="menuStatus_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="menuStatus_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="menuDesc != null"><![CDATA[ and  `menu_desc` = #{menuDesc:VARCHAR}]]></if>
+            <if test="menuDesc_r_min != null"><![CDATA[ and `menu_desc` >= #{menuDesc_r_min} and `menu_desc` <= #{menuDesc_r_max} ]]></if>
+            <if test="menuDesc_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="menuDesc_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="menuPid != null"><![CDATA[ and  `menu_pid` = #{menuPid:NUMERIC}]]></if>
+            <if test="menuPid_r_min != null"><![CDATA[ and `menu_pid` >= #{menuPid_r_min} and `menu_pid` <= #{menuPid_r_max} ]]></if>
+            <if test="menuPid_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="menuPid_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="creator != null"><![CDATA[ and  `creator` = #{creator:NUMERIC}]]></if>
+            <if test="creator_r_min != null"><![CDATA[ and `creator` >= #{creator_r_min} and `creator` <= #{creator_r_max} ]]></if>
+            <if test="creator_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="creator_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="updator != null"><![CDATA[ and  `updator` = #{updator:NUMERIC}]]></if>
+            <if test="updator_r_min != null"><![CDATA[ and `updator` >= #{updator_r_min} and `updator` <= #{updator_r_max} ]]></if>
+            <if test="updator_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="updator_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="createTime != null"><![CDATA[ and  `create_time` = #{createTime:DATETIME}]]></if>
+            <if test="createTime_r_min != null"><![CDATA[ and `create_time` >= #{createTime_r_min} and `create_time` <= #{createTime_r_max} ]]></if>
+            <if test="createTime_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="createTime_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="updateTime != null"><![CDATA[ and  `update_time` = #{updateTime:DATETIME}]]></if>
+            <if test="updateTime_r_min != null"><![CDATA[ and `update_time` >= #{updateTime_r_min} and `update_time` <= #{updateTime_r_max} ]]></if>
+            <if test="updateTime_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="updateTime_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+        </trim>
+    </sql>
+
+    <sql id="orderSql">
+        <trim prefix="ORDER BY" suffixOverrides=",">
+            <if test="_orderBy == 'id_desc'"><![CDATA[ `id` desc, ]]></if>
+            <if test="_orderBy == 'id_asc'"><![CDATA[ `id`, ]]></if>
+            <if test="_orderBy == 'menuCode_desc'"><![CDATA[ `menu_code` desc, ]]></if>
+            <if test="_orderBy == 'menuCode_asc'"><![CDATA[ `menu_code`, ]]></if>
+            <if test="_orderBy == 'menuName_desc'"><![CDATA[ `menu_name` desc, ]]></if>
+            <if test="_orderBy == 'menuName_asc'"><![CDATA[ `menu_name`, ]]></if>
+            <if test="_orderBy == 'menuIcon_desc'"><![CDATA[ `menu_icon` desc, ]]></if>
+            <if test="_orderBy == 'menuIcon_asc'"><![CDATA[ `menu_icon`, ]]></if>
+            <if test="_orderBy == 'menuUrl_desc'"><![CDATA[ `menu_url` desc, ]]></if>
+            <if test="_orderBy == 'menuUrl_asc'"><![CDATA[ `menu_url`, ]]></if>
+            <if test="_orderBy == 'menuSpread_desc'"><![CDATA[ `menu_spread` desc, ]]></if>
+            <if test="_orderBy == 'menuSpread_asc'"><![CDATA[ `menu_spread`, ]]></if>
+            <if test="_orderBy == 'menuLeaf_desc'"><![CDATA[ `menu_leaf` desc, ]]></if>
+            <if test="_orderBy == 'menuLeaf_asc'"><![CDATA[ `menu_leaf`, ]]></if>
+            <if test="_orderBy == 'menuOrder_desc'"><![CDATA[ `menu_order` desc, ]]></if>
+            <if test="_orderBy == 'menuOrder_asc'"><![CDATA[ `menu_order`, ]]></if>
+            <if test="_orderBy == 'menuStatus_desc'"><![CDATA[ `menu_status` desc, ]]></if>
+            <if test="_orderBy == 'menuStatus_asc'"><![CDATA[ `menu_status`, ]]></if>
+            <if test="_orderBy == 'menuDesc_desc'"><![CDATA[ `menu_desc` desc, ]]></if>
+            <if test="_orderBy == 'menuDesc_asc'"><![CDATA[ `menu_desc`, ]]></if>
+            <if test="_orderBy == 'menuPid_desc'"><![CDATA[ `menu_pid` desc, ]]></if>
+            <if test="_orderBy == 'menuPid_asc'"><![CDATA[ `menu_pid`, ]]></if>
+            <if test="_orderBy == 'creator_desc'"><![CDATA[ `creator` desc, ]]></if>
+            <if test="_orderBy == 'creator_asc'"><![CDATA[ `creator`, ]]></if>
+            <if test="_orderBy == 'updator_desc'"><![CDATA[ `updator` desc, ]]></if>
+            <if test="_orderBy == 'updator_asc'"><![CDATA[ `updator`, ]]></if>
+            <if test="_orderBy == 'createTime_desc'"><![CDATA[ `create_time` desc, ]]></if>
+            <if test="_orderBy == 'createTime_asc'"><![CDATA[ `create_time`, ]]></if>
+            <if test="_orderBy == 'updateTime_desc'"><![CDATA[ `update_time` desc, ]]></if>
+            <if test="_orderBy == 'updateTime_asc'"><![CDATA[ `update_time`, ]]></if>
+            <if test="_orderBy_enum != null">
+                <foreach collection="_orderBy_enum" item="orderItem" open="" separator="," close="">
+                    <if test="orderItem == 'id_desc'"><![CDATA[ `id` desc ]]></if>
+                    <if test="orderItem == 'id_asc'"><![CDATA[ `id` ]]></if>
+                    <if test="orderItem == 'menuCode_desc'"><![CDATA[ `menu_code` desc ]]></if>
+                    <if test="orderItem == 'menuCode_asc'"><![CDATA[ `menu_code` ]]></if>
+                    <if test="orderItem == 'menuName_desc'"><![CDATA[ `menu_name` desc ]]></if>
+                    <if test="orderItem == 'menuName_asc'"><![CDATA[ `menu_name` ]]></if>
+                    <if test="orderItem == 'menuIcon_desc'"><![CDATA[ `menu_icon` desc ]]></if>
+                    <if test="orderItem == 'menuIcon_asc'"><![CDATA[ `menu_icon` ]]></if>
+                    <if test="orderItem == 'menuUrl_desc'"><![CDATA[ `menu_url` desc ]]></if>
+                    <if test="orderItem == 'menuUrl_asc'"><![CDATA[ `menu_url` ]]></if>
+                    <if test="orderItem == 'menuSpread_desc'"><![CDATA[ `menu_spread` desc ]]></if>
+                    <if test="orderItem == 'menuSpread_asc'"><![CDATA[ `menu_spread` ]]></if>
+                    <if test="orderItem == 'menuLeaf_desc'"><![CDATA[ `menu_leaf` desc ]]></if>
+                    <if test="orderItem == 'menuLeaf_asc'"><![CDATA[ `menu_leaf` ]]></if>
+                    <if test="orderItem == 'menuOrder_desc'"><![CDATA[ `menu_order` desc ]]></if>
+                    <if test="orderItem == 'menuOrder_asc'"><![CDATA[ `menu_order` ]]></if>
+                    <if test="orderItem == 'menuStatus_desc'"><![CDATA[ `menu_status` desc ]]></if>
+                    <if test="orderItem == 'menuStatus_asc'"><![CDATA[ `menu_status` ]]></if>
+                    <if test="orderItem == 'menuDesc_desc'"><![CDATA[ `menu_desc` desc ]]></if>
+                    <if test="orderItem == 'menuDesc_asc'"><![CDATA[ `menu_desc` ]]></if>
+                    <if test="orderItem == 'menuPid_desc'"><![CDATA[ `menu_pid` desc ]]></if>
+                    <if test="orderItem == 'menuPid_asc'"><![CDATA[ `menu_pid` ]]></if>
+                    <if test="orderItem == 'creator_desc'"><![CDATA[ `creator` desc ]]></if>
+                    <if test="orderItem == 'creator_asc'"><![CDATA[ `creator` ]]></if>
+                    <if test="orderItem == 'updator_desc'"><![CDATA[ `updator` desc ]]></if>
+                    <if test="orderItem == 'updator_asc'"><![CDATA[ `updator` ]]></if>
+                    <if test="orderItem == 'createTime_desc'"><![CDATA[ `create_time` desc ]]></if>
+                    <if test="orderItem == 'createTime_asc'"><![CDATA[ `create_time` ]]></if>
+                    <if test="orderItem == 'updateTime_desc'"><![CDATA[ `update_time` desc ]]></if>
+                    <if test="orderItem == 'updateTime_asc'"><![CDATA[ `update_time` ]]></if>
+                </foreach>
+            </if>
+        </trim>
+    </sql>
+
+    <sql id="updateSql">
+        <trim prefix="set" prefixOverrides=",">
+            <if test="menuCode != null"><![CDATA[ ,`menu_code` =  #{menuCode}]]></if>
+            <if test="menuName != null"><![CDATA[ ,`menu_name` =  #{menuName}]]></if>
+            <if test="menuIcon != null"><![CDATA[ ,`menu_icon` =  #{menuIcon}]]></if>
+            <if test="menuUrl != null"><![CDATA[ ,`menu_url` =  #{menuUrl}]]></if>
+            <if test="menuSpread != null"><![CDATA[ ,`menu_spread` =  #{menuSpread}]]></if>
+            <if test="menuLeaf != null"><![CDATA[ ,`menu_leaf` =  #{menuLeaf}]]></if>
+            <if test="menuOrder != null"><![CDATA[ ,`menu_order` =  #{menuOrder}]]></if>
+            <if test="menuStatus != null"><![CDATA[ ,`menu_status` =  #{menuStatus}]]></if>
+            <if test="menuDesc != null"><![CDATA[ ,`menu_desc` =  #{menuDesc}]]></if>
+            <if test="menuPid != null"><![CDATA[ ,`menu_pid` =  #{menuPid}]]></if>
+            <if test="creator != null"><![CDATA[ ,`creator` =  #{creator}]]></if>
+            <if test="updator != null"><![CDATA[ ,`updator` =  #{updator}]]></if>
+            <if test="createTime != null"><![CDATA[ ,`create_time` =  #{createTime}]]></if>
+            <if test="updateTime != null"><![CDATA[ ,`update_time` =  #{updateTime}]]></if>
+        </trim>
+    </sql>
+
+    <!--新增一个对象-->
+    <insert id="insertObject" parameterType="com.kentrasoft.cms.model.Menu">
+        <selectKey resultType="Long" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into menu(
+            `id`,`menu_code`,`menu_name`,`menu_icon`,`menu_url`,`menu_spread`,`menu_leaf`,`menu_order`,`menu_status`,`menu_desc`,`menu_pid`,`creator`,`updator`,`create_time`,`update_time`
+        ) values (
+            #{id},#{menuCode},#{menuName},#{menuIcon},#{menuUrl},#{menuSpread},#{menuLeaf},#{menuOrder},#{menuStatus},#{menuDesc},#{menuPid},#{creator},#{updator},#{createTime},#{updateTime}
+        )
+    </insert>
+
+    <!--新增多个对象-->
+    <insert id="insertList" parameterType="java.util.List">
+        insert into menu (
+            `menu_code`,`menu_name`,`menu_icon`,`menu_url`,`menu_spread`,`menu_leaf`,`menu_order`,`menu_status`,`menu_desc`,`menu_pid`,`creator`,`updator`,`create_time`,`update_time`
+        ) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.menuCode},#{item.menuName},#{item.menuIcon},#{item.menuUrl},#{item.menuSpread},#{item.menuLeaf},#{item.menuOrder},#{item.menuStatus},#{item.menuDesc},#{item.menuPid},#{item.creator},#{item.updator},#{item.createTime},#{item.updateTime})
+        </foreach>
+    </insert>
+
+    <!--根据对象主键更新对象所有字段-->
+    <update id="updateAll" parameterType="com.kentrasoft.cms.model.Menu">
+        update menu set
+                `menu_code` = #{menuCode},
+                `menu_name` = #{menuName},
+                `menu_icon` = #{menuIcon},
+                `menu_url` = #{menuUrl},
+                `menu_spread` = #{menuSpread},
+                `menu_leaf` = #{menuLeaf},
+                `menu_order` = #{menuOrder},
+                `menu_status` = #{menuStatus},
+                `menu_desc` = #{menuDesc},
+                `menu_pid` = #{menuPid},
+                `creator` = #{creator},
+                `updator` = #{updator},
+                `create_time` = #{createTime},
+                `update_time` = #{updateTime}
+        where `id`=#{id}
+    </update>
+
+    <!--根据对象主键更新对象不为空字段-->
+    <update id="updateByObject" parameterType="com.kentrasoft.cms.model.Menu">
+        update menu
+        <include refid="updateSql"/>
+        where `id`=#{id}
+    </update>
+
+    <!--根据对象主键更新对象指定字段-->
+    <update id="updateByParams" parameterType="java.util.Map">
+        update menu
+        <include refid="updateSql"/>
+        where `id`=#{id}
+    </update>
+
+    <delete id="deleteById" parameterType="Long">
+        DELETE FROM menu WHERE id = #{id}
+    </delete>
+
+    <delete id="deleteByParams" parameterType="java.util.Map">
+        DELETE FROM menu
+        <include refid="whereSql" />
+    </delete>
+
+    <!--根据ids删除：【a.b.c】-->
+    <delete id="deleteByIdsStr" parameterType="String">
+        delete from menu WHERE FIND_IN_SET(`id`,#{IdsStr})
+    </delete>
+
+    <!--根据id列表删除：【list<id>】-->
+    <delete id="deleteByIds" parameterType="java.util.List">
+        delete from menu WHERE `id` in
+        <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+        #{item}
+        </foreach>
+    </delete>
+
+
+    <!--根据id查询-->
+    <select id="findById" parameterType="Long" resultMap="resultMap">
+        select
+            <include refid="baseCol"/>
+        from
+            menu
+        where `id`=#{id}
+    </select>
+
+    <!--根据ids查询列表：【a.b.c】-->
+    <select id="findByIdsStr" parameterType="String" resultMap="resultMap">
+        select
+            <include refid="baseCol"/>
+        from menu WHERE FIND_IN_SET(`id`,#{idsStr})
+    </select>
+
+    <!--根据id列表获取一组对象:【list<id>】-->
+    <select id="findByIds" parameterType="java.util.List" resultMap="resultMap">
+        select
+            <include refid="baseCol"/>
+        from menu WHERE `id` in
+        <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <!--根据条件查询数量-->
+    <select id="queryCountByParams" parameterType="java.util.Map" resultType="int">
+        select count(*) from menu
+        <include refid="whereSql" />
+    </select>
+
+    <!--根据条件查询-->
+    <select id="queryByParams" parameterType="java.util.Map" resultMap="resultMap">
+        select
+            <include refid="baseCol" />
+        from menu
+            <include refid="whereSql" />
+            <include refid="orderSql" />
+            <include refid="pageSql" />
+    </select>
+
+
+    <!--查询所有-->
+    <select id="findAll" resultMap="resultMap">
+        select
+            <include refid="baseCol" />
+        from menu
+    </select>
+
+    <!--**********************************自定义***********************************-->
+
 </mapper>

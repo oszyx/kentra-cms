@@ -1,184 +1,100 @@
 package com.kentrasoft.cms.controller.user;
 
-import com.kentrasoft.cms.entity.Role;
-import com.kentrasoft.cms.entity.User;
-import com.kentrasoft.cms.entity.UserRole;
+import com.kentrasoft.base.controller.BaseController;
+import com.kentrasoft.base.plugin.PageForm;
+import com.kentrasoft.cms.model.User;
 import com.kentrasoft.cms.service.UserService;
-import com.kentrasoft.utils.plugin.BaseResult;
-import com.kentrasoft.utils.plugin.PageForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import java.util.HashMap;
 
 /**
  * 描述：用户controller
  *
- * @author zhangmengkang
- * @date 2018-5-25 17:47:34
+ * @author zmk
+ * @date 2018-9-28
  */
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends BaseController {
     @Autowired
     private UserService userService;
 
     /**
-     * 分页查询
+     * 描述：用户列表
      *
-     * @param page
-     * @param httpRequest
+     * @param pf
      * @return
      */
-    @RequestMapping(value = "/getListPage", method = RequestMethod.GET)
     @ResponseBody
-    public PageForm<User> getPageList(PageForm<User> page, HttpServletRequest httpRequest) {
-        String username = httpRequest.getParameter("username");
-        String telphone = httpRequest.getParameter("telphone");
-        String birthdayMinS = httpRequest.getParameter("birthdayMin");
-        String birthdayMaxS = httpRequest.getParameter("birthdayMax");
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        //必须捕获异常
-        Date birthdayMin = null;
-        Date birthdayMax = null;
-
-        if (birthdayMinS != "" && birthdayMinS != null) {
-            try {
-                birthdayMin = simpleDateFormat.parse(birthdayMinS);
-            } catch (Exception px) {
-                px.getMessage();
-            }
-        }
-        if (birthdayMaxS != "" && birthdayMaxS != null) {
-            try {
-                birthdayMax = simpleDateFormat.parse(birthdayMaxS);
-            } catch (Exception px) {
-                px.getMessage();
-            }
-        }
-        PageForm<User> pageForm = userService.getPageList(page, username, telphone, birthdayMin, birthdayMax);
-        return pageForm;
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public PageForm<User> list(PageForm<User> pf) {
+        HashMap<String, Object> pageData = this.getPageData();
+        pf.setPageData(pageData);
+        pf = userService.queryPageList(pf);
+        return pf;
     }
+
 
     /**
-     * 描述：新增用户
+     * 描述：添加用户
      *
      * @param user
+     * @return
      */
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
-    public BaseResult add(User user) {
-        return userService.add(user);
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public Long add(User user) {
+        Long id = (Long)userService.insertObject(user);
+        return id;
     }
 
-    /**
-     * 描述：修改用户信息
-     *
-     * @param user
-     */
-    @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    @ResponseBody
-    public BaseResult edit(User user) {
-        user.setUpdateTime(new Date());
-        return userService.edit(user);
-    }
 
     /**
      * 描述：删除用户
      *
      * @param ids
-     */
-    @RequestMapping(value = "/delete")
-    @ResponseBody
-    public BaseResult delete(String ids) {
-        String status = userService.delete(ids);
-        if (!status.equals("200")) {
-            return BaseResult.faild(status);
-        }
-        return BaseResult.success("删除成功");
-    }
-
-    /**
-     * 根据用户名查询用户
-     *
-     * @param username
      * @return
      */
-    @RequestMapping(value = "/findByUsername")
     @ResponseBody
-    public BaseResult findByUsername(String username) {
-        User user = userService.findByUsername(username);
-        if (user == null) {
-            return BaseResult.faild("查询用户不存在！");
-        } else {
-            return BaseResult.success("查询成功！", user);
-        }
-    }
-
-    /**
-     * 根据用户Id查询用户
-     *
-     * @param id
-     * @return
-     */
-    @RequestMapping(value = "/findById")
-    @ResponseBody
-    public User findById(Long id) {
-        User user = userService.findById(id);
-        return user;
-    }
-
-    /**
-     * 描述：用户添加角色
-     *
-     * @param userId
-     * @param roleIds
-     * @return
-     */
-    @RequestMapping(value = "/userAddRoles")
-    @ResponseBody
-    public BaseResult userAddRole(Long userId, String roleIds) {
-        if (userId == null) {
-            return BaseResult.faild("用户信息错误！");
-        }
-        /*if (roleIds == null || roleIds == "") {
-            return BaseResult.faild("请至少添加一个角色！");
-        }*/
-        userService.userAddRole(userId, roleIds);
-        return BaseResult.success("赋权成功");
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public Integer delete(String ids) {
+        int i = userService.deleteByIdsStr(ids);
+        return i;
     }
 
 
     /**
-     * 描述：根据用户Id查找角色_用户表
+     * 描述：修改用户
      *
-     * @param id
+     * @param user
      * @return
      */
-    @RequestMapping(value = "/findUserRole")
     @ResponseBody
-
-    public BaseResult findUserRoleId(Long id) {
-        List<UserRole> userRole = userService.findUserRoleId(id);
-        return BaseResult.success("删除成功", userRole);
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+    public Integer edit(User user) {
+        int i = userService.updateByObject(user);
+        return i;
     }
 
+
     /**
-     * 描述：根据用户Id查找所有角色
+     * 描述：设置/修改 用户权限
      *
-     * @param id
      * @return
      */
-    @RequestMapping(value = "/selectUserWithRole")
     @ResponseBody
-    public BaseResult selecetUserWithRole(Long id) {
-        List<Role> role = userService.selectUserWithRole(id);
-        return BaseResult.success("删除成功", role);
+    @RequestMapping("/setUserRights")
+    public void setUserRights(String roleIds) {
+        // 设置参数
+        HashMap<String,Object> queryParams = new HashMap<String,Object>();
+        queryParams.put("id", 1);
+        queryParams.put("userRights", roleIds);
+        // 修改权限
+        Integer integer = userService.setUserRights(queryParams);
     }
 }

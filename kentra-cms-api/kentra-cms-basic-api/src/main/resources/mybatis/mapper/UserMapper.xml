@@ -1,354 +1,281 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kentrasoft.cms.dao.UserMapper">
-  <resultMap id="BaseResultMap" type="com.kentrasoft.cms.entity.User">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="telphone" jdbcType="VARCHAR" property="telphone" />
-    <result column="birthday" jdbcType="TIMESTAMP" property="birthday" />
-    <result column="identity_card" jdbcType="VARCHAR" property="identityCard" />
-    <result column="rely_system" jdbcType="INTEGER" property="relySystem" />
-    <result column="status" jdbcType="INTEGER" property="status" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="ext1" jdbcType="VARCHAR" property="ext1" />
-    <result column="ext2" jdbcType="VARCHAR" property="ext2" />
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List">
-    id, username, `password`, telphone, birthday, identity_card, rely_system, `status`, 
-    create_time, update_time, ext1, ext2
-  </sql>
-  <select id="selectByExample" parameterType="com.kentrasoft.cms.entity.UserExample" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from user
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-    <if test="limitStart != null and limitStart&gt;=0">
-      limit #{limitStart} , #{limitEnd}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from user
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from user
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <delete id="deleteByExample" parameterType="com.kentrasoft.cms.entity.UserExample">
-    delete from user
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" parameterType="com.kentrasoft.cms.entity.User">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into user (username, `password`, telphone, 
-      birthday, identity_card, rely_system, 
-      `status`, create_time, update_time, 
-      ext1, ext2)
-    values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{telphone,jdbcType=VARCHAR}, 
-      #{birthday,jdbcType=TIMESTAMP}, #{identityCard,jdbcType=VARCHAR}, #{relySystem,jdbcType=INTEGER}, 
-      #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{ext1,jdbcType=VARCHAR}, #{ext2,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.kentrasoft.cms.entity.User">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into user
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="username != null">
-        username,
-      </if>
-      <if test="password != null">
-        `password`,
-      </if>
-      <if test="telphone != null">
-        telphone,
-      </if>
-      <if test="birthday != null">
-        birthday,
-      </if>
-      <if test="identityCard != null">
-        identity_card,
-      </if>
-      <if test="relySystem != null">
-        rely_system,
-      </if>
-      <if test="status != null">
-        `status`,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-      <if test="ext1 != null">
-        ext1,
-      </if>
-      <if test="ext2 != null">
-        ext2,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="telphone != null">
-        #{telphone,jdbcType=VARCHAR},
-      </if>
-      <if test="birthday != null">
-        #{birthday,jdbcType=TIMESTAMP},
-      </if>
-      <if test="identityCard != null">
-        #{identityCard,jdbcType=VARCHAR},
-      </if>
-      <if test="relySystem != null">
-        #{relySystem,jdbcType=INTEGER},
-      </if>
-      <if test="status != null">
-        #{status,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="ext1 != null">
-        #{ext1,jdbcType=VARCHAR},
-      </if>
-      <if test="ext2 != null">
-        #{ext2,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.kentrasoft.cms.entity.UserExample" resultType="java.lang.Long">
-    select count(*) from user
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map">
-    update user
-    <set>
-      <if test="record.id != null">
-        id = #{record.id,jdbcType=BIGINT},
-      </if>
-      <if test="record.username != null">
-        username = #{record.username,jdbcType=VARCHAR},
-      </if>
-      <if test="record.password != null">
-        `password` = #{record.password,jdbcType=VARCHAR},
-      </if>
-      <if test="record.telphone != null">
-        telphone = #{record.telphone,jdbcType=VARCHAR},
-      </if>
-      <if test="record.birthday != null">
-        birthday = #{record.birthday,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.identityCard != null">
-        identity_card = #{record.identityCard,jdbcType=VARCHAR},
-      </if>
-      <if test="record.relySystem != null">
-        rely_system = #{record.relySystem,jdbcType=INTEGER},
-      </if>
-      <if test="record.status != null">
-        `status` = #{record.status,jdbcType=INTEGER},
-      </if>
-      <if test="record.createTime != null">
-        create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.updateTime != null">
-        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.ext1 != null">
-        ext1 = #{record.ext1,jdbcType=VARCHAR},
-      </if>
-      <if test="record.ext2 != null">
-        ext2 = #{record.ext2,jdbcType=VARCHAR},
-      </if>
-    </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map">
-    update user
-    set id = #{record.id,jdbcType=BIGINT},
-      username = #{record.username,jdbcType=VARCHAR},
-      `password` = #{record.password,jdbcType=VARCHAR},
-      telphone = #{record.telphone,jdbcType=VARCHAR},
-      birthday = #{record.birthday,jdbcType=TIMESTAMP},
-      identity_card = #{record.identityCard,jdbcType=VARCHAR},
-      rely_system = #{record.relySystem,jdbcType=INTEGER},
-      `status` = #{record.status,jdbcType=INTEGER},
-      create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      ext1 = #{record.ext1,jdbcType=VARCHAR},
-      ext2 = #{record.ext2,jdbcType=VARCHAR}
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.kentrasoft.cms.entity.User">
-    update user
-    <set>
-      <if test="username != null">
-        username = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        `password` = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="telphone != null">
-        telphone = #{telphone,jdbcType=VARCHAR},
-      </if>
-      <if test="birthday != null">
-        birthday = #{birthday,jdbcType=TIMESTAMP},
-      </if>
-      <if test="identityCard != null">
-        identity_card = #{identityCard,jdbcType=VARCHAR},
-      </if>
-      <if test="relySystem != null">
-        rely_system = #{relySystem,jdbcType=INTEGER},
-      </if>
-      <if test="status != null">
-        `status` = #{status,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="ext1 != null">
-        ext1 = #{ext1,jdbcType=VARCHAR},
-      </if>
-      <if test="ext2 != null">
-        ext2 = #{ext2,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.kentrasoft.cms.entity.User">
-    update user
-    set username = #{username,jdbcType=VARCHAR},
-      `password` = #{password,jdbcType=VARCHAR},
-      telphone = #{telphone,jdbcType=VARCHAR},
-      birthday = #{birthday,jdbcType=TIMESTAMP},
-      identity_card = #{identityCard,jdbcType=VARCHAR},
-      rely_system = #{relySystem,jdbcType=INTEGER},
-      `status` = #{status,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      ext1 = #{ext1,jdbcType=VARCHAR},
-      ext2 = #{ext2,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
 
-    <!--#############################自定义user#################################-->
-    <!--多表关联查询结果集-->
-  <resultMap id="BaseRoleResultMap" type="com.kentrasoft.cms.entity.Role">
-      <id column="id" jdbcType="BIGINT" property="id" />
-      <result column="role_name" jdbcType="VARCHAR" property="roleName" />
-      <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
-      <result column="rely_system" jdbcType="INTEGER" property="relySystem" />
-      <result column="role_parent_id" jdbcType="BIGINT" property="roleParentId" />
-      <result column="desc" jdbcType="VARCHAR" property="desc" />
-      <result column="status" jdbcType="INTEGER" property="status" />
-      <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-      <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-  </resultMap>
+<mapper namespace="com.kentrasoft.cms.dao.UserDao">
 
-    <!--根据user查询角色-->
-  <select id="selectUserWithRole" parameterType="Long" resultMap="BaseRoleResultMap">
-      SELECT * FROM `role` r,`user_role` ur WHERE ur.`role_id`=r.`id` AND ur.`user_id`=#{id,jdbcType=BIGINT};
-  </select>
+    <resultMap id="resultMap" type="com.kentrasoft.cms.model.User">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="name" column="name"/>
+        <result property="birthday" column="birthday"/>
+        <result property="sex" column="sex"/>
+        <result property="telphone" column="telphone"/>
+        <result property="idCard" column="id_card"/>
+        <result property="userRights" column="user_rights"/>
+        <result property="userStatus" column="user_status"/>
+        <result property="creator" column="creator"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updator" column="updator"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
 
-    <!--批量删除-->
-  <delete id="deleteByPKs" parameterType="String">
-      delete from `user` WHERE FIND_IN_SET(id,#{ids})
-  </delete>
+    <sql id="baseCol">
+        `id`,`username`,`password`,`name`,`birthday`,`sex`,`telphone`,`id_card`,`user_rights`,`user_status`,`creator`,`create_time`,`updator`,`update_time`
+    </sql>
 
-  <!--重置密码  -->
-  <update id="resetPassword">
-       update `user` set `password`=#{resetPassword,jdbcType=BIGINT},update_time =SYSDATE()  where `id`=#{userId,jdbcType=VARCHAR}
-  </update>
+    <sql id="pageSql">
+        <if test="__start !=null and __size!=null"><![CDATA[ limit #{__start},#{__size} ]]></if>
+    </sql>
+
+    <sql id="whereSql">
+        <trim prefix="WHERE" prefixOverrides="and |or ">
+            <if test="id != null"><![CDATA[ and  `id` = #{id:NUMERIC}]]></if>
+            <if test="id_r_min != null"><![CDATA[ and `id` >= #{id_r_min} and `id` <= #{id_r_max} ]]></if>
+            <if test="id_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="id_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="username != null"><![CDATA[ and  `username` = #{username:VARCHAR}]]></if>
+            <if test="username_r_min != null"><![CDATA[ and `username` >= #{username_r_min} and `username` <= #{username_r_max} ]]></if>
+            <if test="username_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="username_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="password != null"><![CDATA[ and  `password` = #{password:VARCHAR}]]></if>
+            <if test="password_r_min != null"><![CDATA[ and `password` >= #{password_r_min} and `password` <= #{password_r_max} ]]></if>
+            <if test="password_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="password_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="name != null"><![CDATA[ and  `name` = #{name:VARCHAR}]]></if>
+            <if test="name_r_min != null"><![CDATA[ and `name` >= #{name_r_min} and `name` <= #{name_r_max} ]]></if>
+            <if test="name_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="name_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="birthday != null"><![CDATA[ and  `birthday` = #{birthday:DATETIME}]]></if>
+            <if test="birthday_r_min != null"><![CDATA[ and `birthday` >= #{birthday_r_min} and `birthday` <= #{birthday_r_max} ]]></if>
+            <if test="birthday_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="birthday_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="sex != null"><![CDATA[ and  `sex` = #{sex:NUMERIC}]]></if>
+            <if test="sex_r_min != null"><![CDATA[ and `sex` >= #{sex_r_min} and `sex` <= #{sex_r_max} ]]></if>
+            <if test="sex_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="sex_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="telphone != null"><![CDATA[ and  `telphone` = #{telphone:VARCHAR}]]></if>
+            <if test="telphone_r_min != null"><![CDATA[ and `telphone` >= #{telphone_r_min} and `telphone` <= #{telphone_r_max} ]]></if>
+            <if test="telphone_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="telphone_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="idCard != null"><![CDATA[ and  `id_card` = #{idCard:VARCHAR}]]></if>
+            <if test="idCard_r_min != null"><![CDATA[ and `id_card` >= #{idCard_r_min} and `id_card` <= #{idCard_r_max} ]]></if>
+            <if test="idCard_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="idCard_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="userRights != null"><![CDATA[ and  `user_rights` = #{userRights:VARCHAR}]]></if>
+            <if test="userRights_r_min != null"><![CDATA[ and `user_rights` >= #{userRights_r_min} and `user_rights` <= #{userRights_r_max} ]]></if>
+            <if test="userRights_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="userRights_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="userStatus != null"><![CDATA[ and  `user_status` = #{userStatus:NUMERIC}]]></if>
+            <if test="userStatus_r_min != null"><![CDATA[ and `user_status` >= #{userStatus_r_min} and `user_status` <= #{userStatus_r_max} ]]></if>
+            <if test="userStatus_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="userStatus_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="creator != null"><![CDATA[ and  `creator` = #{creator:NUMERIC}]]></if>
+            <if test="creator_r_min != null"><![CDATA[ and `creator` >= #{creator_r_min} and `creator` <= #{creator_r_max} ]]></if>
+            <if test="creator_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="creator_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="createTime != null"><![CDATA[ and  `create_time` = #{createTime:DATETIME}]]></if>
+            <if test="createTime_r_min != null"><![CDATA[ and `create_time` >= #{createTime_r_min} and `create_time` <= #{createTime_r_max} ]]></if>
+            <if test="createTime_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="createTime_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="updator != null"><![CDATA[ and  `updator` = #{updator:NUMERIC}]]></if>
+            <if test="updator_r_min != null"><![CDATA[ and `updator` >= #{updator_r_min} and `updator` <= #{updator_r_max} ]]></if>
+            <if test="updator_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="updator_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+            <if test="updateTime != null"><![CDATA[ and  `update_time` = #{updateTime:DATETIME}]]></if>
+            <if test="updateTime_r_min != null"><![CDATA[ and `update_time` >= #{updateTime_r_min} and `update_time` <= #{updateTime_r_max} ]]></if>
+            <if test="updateTime_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
+                <foreach collection="updateTime_enum" item="value" open="(" separator="," close=")">
+                    <![CDATA[ #{value} ]]>
+                </foreach>
+            </if>
+        </trim>
+    </sql>
+
+    <sql id="updateSql">
+        <trim prefix="set" prefixOverrides=",">
+            <if test="username != null"><![CDATA[ ,`username` =  #{username}]]></if>
+            <if test="password != null"><![CDATA[ ,`password` =  #{password}]]></if>
+            <if test="name != null"><![CDATA[ ,`name` =  #{name}]]></if>
+            <if test="birthday != null"><![CDATA[ ,`birthday` =  #{birthday}]]></if>
+            <if test="sex != null"><![CDATA[ ,`sex` =  #{sex}]]></if>
+            <if test="telphone != null"><![CDATA[ ,`telphone` =  #{telphone}]]></if>
+            <if test="idCard != null"><![CDATA[ ,`id_card` =  #{idCard}]]></if>
+            <if test="userRights != null"><![CDATA[ ,`user_rights` =  #{userRights}]]></if>
+            <if test="userStatus != null"><![CDATA[ ,`user_status` =  #{userStatus}]]></if>
+            <if test="creator != null"><![CDATA[ ,`creator` =  #{creator}]]></if>
+            <if test="createTime != null"><![CDATA[ ,`create_time` =  #{createTime}]]></if>
+            <if test="updator != null"><![CDATA[ ,`updator` =  #{updator}]]></if>
+            <if test="updateTime != null"><![CDATA[ ,`update_time` =  #{updateTime}]]></if>
+        </trim>
+    </sql>
+
+    <!--新增一个对象-->
+    <insert id="insertObject" parameterType="com.kentrasoft.cms.model.User">
+        <selectKey resultType="Long" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into user(
+            `id`,`username`,`password`,`name`,`birthday`,`sex`,`telphone`,`id_card`,`user_rights`,`user_status`,`creator`,`create_time`,`updator`,`update_time`
+        ) values (
+            #{id},#{username},#{password},#{name},#{birthday},#{sex},#{telphone},#{idCard},#{userRights},#{userStatus},#{creator},#{createTime},#{updator},#{updateTime}
+        )
+    </insert>
+
+    <!--新增多个对象-->
+    <insert id="insertList" parameterType="java.util.List">
+        insert into user (
+            `username`,`password`,`name`,`birthday`,`sex`,`telphone`,`id_card`,`user_rights`,`user_status`,`creator`,`create_time`,`updator`,`update_time`
+        ) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.username},#{item.password},#{item.name},#{item.birthday},#{item.sex},#{item.telphone},#{item.idCard},#{item.userRights},#{item.userStatus},#{item.creator},#{item.createTime},#{item.updator},#{item.updateTime})
+        </foreach>
+    </insert>
+
+    <!--根据对象主键更新对象所有字段-->
+    <update id="updateAll" parameterType="com.kentrasoft.cms.model.User">
+        update user set
+                `username` = #{username},
+                `password` = #{password},
+                `name` = #{name},
+                `birthday` = #{birthday},
+                `sex` = #{sex},
+                `telphone` = #{telphone},
+                `id_card` = #{idCard},
+                `user_rights` = #{userRights},
+                `user_status` = #{userStatus},
+                `creator` = #{creator},
+                `create_time` = #{createTime},
+                `updator` = #{updator},
+                `update_time` = #{updateTime}
+        where `id`=#{id}
+    </update>
+
+    <!--根据对象主键更新对象不为空字段-->
+    <update id="updateByObject" parameterType="com.kentrasoft.cms.model.User">
+        update user
+        <include refid="updateSql"/>
+        where `id`=#{id}
+    </update>
+
+    <!--根据对象主键更新对象指定字段-->
+    <update id="updateByParams" parameterType="java.util.Map">
+        update user
+        <include refid="updateSql"/>
+        where `id`=#{id}
+    </update>
+
+    <delete id="deleteById" parameterType="Long">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
+
+    <delete id="deleteByParams" parameterType="java.util.Map">
+        DELETE FROM user
+        <include refid="whereSql" />
+    </delete>
+
+    <!--根据ids删除：【a.b.c】-->
+    <delete id="deleteByIdsStr" parameterType="String">
+        delete from user WHERE FIND_IN_SET(`id`,#{IdsStr})
+    </delete>
+
+    <!--根据id列表删除：【list<id>】-->
+    <delete id="deleteByIds" parameterType="java.util.List">
+        delete from user WHERE `id` in
+        <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+        #{item}
+        </foreach>
+    </delete>
+
+
+    <!--根据id查询-->
+    <select id="findById" parameterType="Long" resultMap="resultMap">
+        select
+            <include refid="baseCol"/>
+        from
+            user
+        where `id`=#{id}
+    </select>
+
+    <!--根据ids查询列表：【a.b.c】-->
+    <select id="findByIdsStr" parameterType="String" resultMap="resultMap">
+        select
+            <include refid="baseCol"/>
+        from user WHERE FIND_IN_SET(`id`,#{idsStr})
+    </select>
+
+    <!--根据id列表获取一组对象:【list<id>】-->
+    <select id="findByIds" parameterType="java.util.List" resultMap="resultMap">
+        select
+            <include refid="baseCol"/>
+        from user WHERE `id` in
+        <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <!--根据条件查询数量-->
+    <select id="queryCountByParams" parameterType="java.util.Map" resultType="int">
+        select count(*) from user
+        <include refid="whereSql" />
+    </select>
+
+    <!--根据条件查询-->
+    <select id="queryByParams" parameterType="java.util.Map" resultMap="resultMap">
+        select
+            <include refid="baseCol" />
+        from user
+            <include refid="whereSql" />
+            <include refid="pageSql" />
+    </select>
+
+
+    <!--查询所有-->
+    <select id="findAll" resultMap="resultMap">
+        select
+            <include refid="baseCol" />
+        from user
+    </select>
+
+    <!--**********************************自定义***********************************-->
 
 </mapper>

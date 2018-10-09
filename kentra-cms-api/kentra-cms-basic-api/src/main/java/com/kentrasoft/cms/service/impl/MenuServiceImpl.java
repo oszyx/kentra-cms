@@ -1,124 +1,147 @@
 package com.kentrasoft.cms.service.impl;
 
-import com.kentrasoft.cms.dao.MenuMapper;
-import com.kentrasoft.cms.entity.Menu;
-import com.kentrasoft.cms.entity.MenuExample;
+import com.kentrasoft.base.dao.BaseDao;
+import com.kentrasoft.base.service.impl.BaseServiceImpl;
+import com.kentrasoft.cms.dao.MenuDao;
+import com.kentrasoft.cms.model.Menu;
 import com.kentrasoft.cms.service.MenuService;
-import com.kentrasoft.utils.plugin.PageForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
- * 描述：
+ * 描述：MenuServiceImpl
  *
- * @author zhangmengkang
- * @date 2018/5/28 10:28
+ * @author : zmk
+ * @date : 2018-09-07
  */
 @Service
-public class MenuServiceImpl implements MenuService {
+public class MenuServiceImpl extends BaseServiceImpl<Menu> implements MenuService {
+
     @Autowired
-    private MenuMapper menuMapper;
+    private MenuDao menuDao;
+
+    @Override
+    public BaseDao getModelDao() {
+        return this.menuDao;
+    }
+
 
     /**
-     * 查询导航展示项
+     * 描述：根据ids获取菜单
+     *
+     * @param ids 菜单id字符串
+     * @return menus
      */
     @Override
-    public List<Menu> findAllMenu() {
-        List<Menu> menu = menuMapper.findAllMenus();
-        return menu;
-
-    }
-
-    @Override
-    public List<Menu> findUserMenu(String id) {
-        List<Menu> menu = menuMapper.findUserMenu(id);
-        return menu;
-    }
-
-
-    //查询菜单树数据列表
-    @Override
-    public List<Menu> queryMenuList() {
-        List<Menu> list = menuMapper.getTreeList();
-        return list;
-    }
-
-    @Override
-    public PageForm<Menu> getPageList(PageForm<Menu> page, String menuName, String id) {
-
-        MenuExample menuExample = new MenuExample();
-        MenuExample.Criteria criteria = menuExample.createCriteria();
-        if (menuName != "" && menuName != null) {
-            criteria.andMenuNameLike("%"+menuName+"%");
+    public List<Menu> findByIdsStrNormal(String ids) {
+        // 获取menu
+        List<Menu> menus = menuDao.findByIdsStr(ids);
+        // 获取可用的menu
+        List<Menu> menusAvailable = new ArrayList<>();
+        for (Menu menu : menus) {
+            if (menu.getMenuStatus() == 1) {
+                menusAvailable.add(menu);
+            }
         }
-        if (id != "" && id != null) {
-            criteria.andMenuParentIdEqualTo(Long.parseLong(id));
+        return menusAvailable;
+    }
+
+
+    /**
+     * 描述：获取角色权限菜单
+     *
+     * @param roleRights
+     * @return
+     */
+    @Override
+    public List<Menu> findByRoleRights(String roleRights) {
+
+        return null;
+    }
+
+    /**
+     * 描述：获取所有可用权限
+     *
+     * @return menus
+     */
+    @Override
+    public List<Menu> getAllRightsTree(List<Menu> menus) {
+        //获取菜单
+        Map<Long, Menu> menuMap = new HashMap<>();
+        for (Menu menu : menus) {
+            menuMap.put(menu.getId(), menu);
         }
-        //查询所有菜单数量
-        Integer menuCount = menuMapper.countByExample(menuExample);
-        //分页查询所有菜单数据
-        menuExample.setLimitStart((page.getPage() - 1) * page.getLimit());
-        menuExample.setLimitEnd(page.getLimit());
-        List<Menu> menus = menuMapper.selectByExample(menuExample);
-        page.setCount(menuCount);
-        page.setData(menus);
-        return page;
-    }
 
-    @Override
-    public void add(Menu menu) {
-        menuMapper.insertSelective(menu);
-    }
-
-    @Override
-    public Menu findMenuByName(String menuName) {
-        if (menuName == null || menuName == "") {
-            return null;
+        // 组装树形菜单
+        Menu root = null;
+        for (Menu menu : menuMap.values()) {
+            if (menu.getMenuPid() == null || menu.getMenuPid() == 0) {
+                root = menu;
+            } else {
+                menuMap.get(menu.getMenuPid()).addChildMenu(menu);
+            }
         }
-        MenuExample menuExample = new MenuExample();
-        MenuExample.Criteria criteria = menuExample.createCriteria();
-        List<Menu> menus = menuMapper.selectByExample(menuExample);
-        if (menus == null || menus.size() < 1) {
-            return null;
-        } else {
-            return menus.get(0);
+
+        // 4.菜单排序
+        root.sameLevelSort();
+        return root.getChildMenus();
+    }
+
+
+    /**
+     * 描述：获取树形菜单
+     *
+     * @return menus
+     */
+    @Override
+    public List<Menu> getMenuTree(List<Menu> menus) {
+        //获取菜单
+        Map<Long, Menu> menuMap = new HashMap<>();
+        for (Menu menu : menus) {
+            // 如果是叶子节点就不添加
+            if (menu.getMenuLeaf() == 0) {
+                menuMap.put(menu.getId(), menu);
+            }
         }
+
+        // 组装树形菜单
+        Menu root = null;
+        for (Menu menu : menuMap.values()) {
+            if (menu.getMenuPid() == null || menu.getMenuPid() == 0) {
+                root = menu;
+            } else {
+                menuMap.get(menu.getMenuPid()).addChildMenu(menu);
+            }
+        }
+
+        // 4.菜单排序
+        root.sameLevelSort();
+        return root.getChildMenus();
     }
 
-    @Override
-    public Menu findById(Long id) {
-        return menuMapper.selectByPrimaryKey(id);
-    }
 
-    @Override
-    public void edit(Menu menu) {
-        menuMapper.updateByPrimaryKeySelective(menu);
-    }
 
+    /**
+     * 描述：获取按钮权限
+     *
+     * @return menus
+     */
     @Override
-    public String delete(String ids) {
-    	try {
-    		List<Menu> childrenMenu=menuMapper.findChildrenMenu(ids);//查询子菜单
-    		if(childrenMenu!=null && childrenMenu.size()==0) {
-    			menuMapper.delete(ids);
-    			menuMapper.deletRoleMenu(ids);
-                return "200";
-    		}else {
-    			return "300";
-    		}
-    		
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "400";
-		}
-        
-    }
-
-    @Override
-    public int countTreeData() {
-        return menuMapper.countTreeData();
+    public List<Menu> getButtonRights(List<Menu> menus) {
+        //获取菜单
+        List<Menu> buttonRights = new ArrayList<>();
+        for (Menu menu : menus) {
+            // 添加所有可用叶子节点
+            if (menu.getMenuLeaf() == 1) {
+                buttonRights.add(menu);
+            }
+        }
+        return buttonRights;
     }
 
 }
