@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.HashMap;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,7 +19,7 @@ public class LoginController {
      * Author 赵参谋
      * Describe:登录首页
      */
-    @RequestMapping("/gyfvs")
+    @RequestMapping("/bis")
     public String login(Model model) {
         model.addAttribute("hello", "welcome to platform");
         return "login.html";
@@ -29,7 +28,6 @@ public class LoginController {
     /**
      * 首页
      *author:赵参谋
-     * @param id
      * @param model
      * @return
      */
@@ -42,45 +40,8 @@ public class LoginController {
     			KentrasoftToken=cookie.getValue();
     		}
     	}
-        HashMap<String, Object> viewInfos = loginClient.loadIndex(KentrasoftToken);
-        model.addAttribute("ViewInfos", viewInfos);
+        //HashMap<String, Object> viewInfos = loginClient.loadIndex(KentrasoftToken);
+        //model.addAttribute("ViewInfos", viewInfos);
         return "index.html";
     }
-    /**
-     * 个人信息首页
-     *author:赵参谋
-     * @return
-     */
-   @RequestMapping("/sys/userInfos")
-   public String userInfos() {
-	   return "system/index/user_info.html";
-   }
-   /**
-    * 重置密码
-    *author:赵参谋
-    * @return
-    */
-   @RequestMapping("/sys/resetPassword")
-   public String resetPassword() {
-	   return "system/index/user_resetpassword.html";
-   }
-   /**
-    * 退出登录
-    *author:赵参谋
-    * @return
-    */
-   /*@RequestMapping("/sys/backLogin")
-   public String backLogin() {
-	   return "redirect:/kentrasoft";
-   }*/
-   
-   /**
-    * 重新登录
-    *author:赵参谋
-    * @return
-    */
-   @RequestMapping("/sys/resetLogin")
-   public String resetLogin() {
-	   return "system/index/resetLogin.html";
-   }
 }

@@ -18,17 +18,19 @@
             if (check()) {
                 $.ajax({
                     type: "post",
-                    url: "/api/sys/login",
+                    url: "/api/cms/login",
                     dataType: "json",
                     data: {"username": $("#login_username").val(), "password": $("#login_password").val()},
                     cache: true,
                     async: false,
                     success: function (data) {
                         if ("200" == data.statusCode) {
-                            // 初始化菜单
-                            window.sessionStorage.setItem("userMenu",data.result.menu);
                             // 初始化用户信息
-                            window.sessionStorage.setItem("user",data.result.user);
+                            window.sessionStorage.setItem("user",JSON.stringify(data.result.user));
+                            // 初始化菜单
+                            window.sessionStorage.setItem("userMenu",JSON.stringify(data.result.menu));
+                            // 初始化按钮
+                            window.sessionStorage.setItem("buttonRights",JSON.stringify(data.result.buttonRights));
                             // 跳转页面
                             window.location.href = "/web/sys/index";
                         } else if ("fail" == data.msg) {
