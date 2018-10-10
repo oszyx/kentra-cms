@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * 描述：RoleServiceImpl
@@ -62,5 +64,25 @@ public class RoleServiceImpl extends BaseServiceImpl<Role> implements RoleServic
         queryParams.put("roleRights", bigInteger+"");
         int i = roleDao.updateByParams(queryParams);
         return i;
+    }
+
+    /**
+     * 描述：根据用户权限 获得角色
+     *
+     * @param userRights
+     * @return
+     */
+    @Override
+    public List<Role> getRoleByUserRights(String userRights) {
+        // 从缓存中获取数据
+        List<Role> all = this.findAll();
+        List<Role> roles = new ArrayList<>();
+        for (Role role : all) {
+            boolean flag = RightsHelper.testRights(userRights, role.getId() + "");
+            if (flag) {
+                roles.add(role);
+            }
+        }
+        return roles;
     }
 }

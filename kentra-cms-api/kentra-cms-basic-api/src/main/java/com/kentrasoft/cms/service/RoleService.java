@@ -5,6 +5,7 @@ import com.kentrasoft.cms.base.service.BaseService;
 import com.kentrasoft.cms.model.Role;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * 描述：RoleService
@@ -30,4 +31,12 @@ public interface RoleService extends BaseService<Role> {
      * @return
      */
     Integer setRoleRights(HashMap<String, Object> queryParams);
+
+    /**
+     * 描述：根据用户权限 获得角色
+     *
+     * @param userRights
+     * @return
+     */
+    List<Role> getRoleByUserRights(String userRights);
 }

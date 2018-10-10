@@ -14,19 +14,27 @@ import java.util.List;
  */
 public interface MenuService extends BaseService<Menu> {
 
-    public List<Menu> getAllRightsTree(List<Menu> menus);
-
     public List<Menu> findByIdsStrNormal(String ids);
 
+    /**
+     * 描述：获取树形菜单
+     *
+     * @return menus
+     */
     public List<Menu> getMenuTree(List<Menu> menus);
 
+    /**
+     * 描述：获取按钮权限
+     *
+     * @return menus
+     */
     public List<Menu> getButtonRights(List<Menu> menus);
 
     /**
-     * 描述：获取角色权限菜单
+     * 描述：根据角色权限 获得菜单
      *
      * @param roleRights
      * @return
      */
-    List<Menu> findByRoleRights(String roleRights);
+    List<Menu> getMenuByRoleRights(String roleRights);
 }

@@ -2,6 +2,7 @@ package com.kentrasoft.cms.service.impl;
 
 import com.kentrasoft.cms.base.dao.BaseDao;
 import com.kentrasoft.cms.base.service.impl.BaseServiceImpl;
+import com.kentrasoft.cms.common.util.RightsUtils.RightsHelper;
 import com.kentrasoft.cms.dao.MenuDao;
 import com.kentrasoft.cms.model.Menu;
 import com.kentrasoft.cms.service.MenuService;
@@ -49,47 +50,6 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu> implements MenuServic
             }
         }
         return menusAvailable;
-    }
-
-
-    /**
-     * 描述：获取角色权限菜单
-     *
-     * @param roleRights
-     * @return
-     */
-    @Override
-    public List<Menu> findByRoleRights(String roleRights) {
-
-        return null;
-    }
-
-    /**
-     * 描述：获取所有可用权限
-     *
-     * @return menus
-     */
-    @Override
-    public List<Menu> getAllRightsTree(List<Menu> menus) {
-        //获取菜单
-        Map<Long, Menu> menuMap = new HashMap<>();
-        for (Menu menu : menus) {
-            menuMap.put(menu.getId(), menu);
-        }
-
-        // 组装树形菜单
-        Menu root = null;
-        for (Menu menu : menuMap.values()) {
-            if (menu.getMenuPid() == null || menu.getMenuPid() == 0) {
-                root = menu;
-            } else {
-                menuMap.get(menu.getMenuPid()).addChildMenu(menu);
-            }
-        }
-
-        // 4.菜单排序
-        root.sameLevelSort();
-        return root.getChildMenus();
     }
 
 
@@ -144,4 +104,23 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu> implements MenuServic
         return buttonRights;
     }
 
+    /**
+     * 描述：根据角色权限 获得菜单
+     *
+     * @param roleRights
+     * @return
+     */
+    @Override
+    public List<Menu> getMenuByRoleRights(String roleRights) {
+        List<Menu> all = this.findAll();
+
+        List<Menu> menus = new ArrayList<>();
+        for (Menu menu : all) {
+            boolean flag = RightsHelper.testRights(roleRights, menu.getId() + "");
+            if (flag) {
+                menus.add(menu);
+            }
+        }
+        return menus;
+    }
 }
