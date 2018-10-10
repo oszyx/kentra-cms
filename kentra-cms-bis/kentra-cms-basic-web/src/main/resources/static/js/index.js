@@ -21,24 +21,8 @@ layui.config({
         $("#left_username").text(user.username);
         $("#top_username").text(user.username);
 
-        $.ajax({
-            type: "get",
-            url: "/user/initIndex",
-            dataType: "json",
-            data: {"id": user.id},
-            cache: false,
-            async: false,
-            success: function (data) {
-                if (data != null && data != "") {
-                    if ("200" == data.status) {
-                        //菜单数据
-                        tab.navBar(data.result);
-                    } else if ("300" == data.status) {
-                        window.location.href="http://localhost:8081";
-                    }
-                }
-            }
-        });
+        //菜单数据
+        tab.navBar(window.sessionStorage.getItem("userMenu"));
     })
 
 

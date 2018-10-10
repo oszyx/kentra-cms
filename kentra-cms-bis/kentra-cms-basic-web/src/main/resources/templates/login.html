@@ -24,17 +24,12 @@
                     cache: true,
                     async: false,
                     success: function (data) {
-                        if ("success" == data.msg) {
-                        	//清空缓存
-                            var menu = window.sessionStorage.getItem("menu")=="undefined" ? "undefined": window.sessionStorage.getItem("menu")=="" ? '' :JSON.parse(window.sessionStorage.getItem("menu"));
-                   		     var curmenu = window.sessionStorage.getItem("curmenu")=="undefined" ? "undefined" : window.sessionStorage.getItem("curmenu")=="" ? '' : JSON.parse(window.sessionStorage.getItem("curmenu"));
-                            if(menu!='undefined' && menu!=""){
-                            	window.sessionStorage.removeItem("menu");
-                            }
-                            if(curmenu!='undefined' && curmenu!=''){
-                            	window.sessionStorage.removeItem("curmenu");
-                            }
-                        	$.cookie('KentrasoftToken', data.Token,{path: '/' });
+                        if ("200" == data.statusCode) {
+                            // 初始化菜单
+                            window.sessionStorage.setItem("userMenu",data.result.menu);
+                            // 初始化用户信息
+                            window.sessionStorage.setItem("user",data.result.user);
+                            // 跳转页面
                             window.location.href = "/web/sys/index";
                         } else if ("fail" == data.msg) {
                             $("#login_warn").text("账号/密码错误！");
