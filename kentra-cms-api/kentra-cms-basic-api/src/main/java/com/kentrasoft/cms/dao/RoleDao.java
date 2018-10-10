@@ -1,11 +1,8 @@
 package com.kentrasoft.cms.dao;
 
-import com.kentrasoft.base.dao.BaseDao;
+import com.kentrasoft.cms.base.dao.BaseDao;
 import com.kentrasoft.cms.model.Role;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * 描述：RoleDao

@@ -1,13 +1,10 @@
 package com.kentrasoft.cms.service;
 
 
-import com.kentrasoft.base.plugin.PageForm;
-import com.kentrasoft.base.service.BaseService;
-import com.kentrasoft.cms.model.Menu;
+import com.kentrasoft.cms.base.service.BaseService;
 import com.kentrasoft.cms.model.Role;
 
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * 描述：RoleService

@@ -1,11 +1,10 @@
 package com.kentrasoft.cms.controller;
 
-import com.kentrasoft.base.controller.BaseController;
+import com.kentrasoft.cms.base.controller.BaseController;
 import com.kentrasoft.cms.common.cache.util.RedisUtil;
 import com.kentrasoft.cms.model.User;
 import com.kentrasoft.cms.service.MenuService;
 import com.kentrasoft.cms.service.UserService;
-import com.kentrasoft.utils.jwt.JWTUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

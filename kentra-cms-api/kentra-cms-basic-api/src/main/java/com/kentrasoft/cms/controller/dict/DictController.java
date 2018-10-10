@@ -1,11 +1,9 @@
 package com.kentrasoft.cms.controller.dict;
 
-import com.kentrasoft.base.controller.BaseController;
-import com.kentrasoft.base.plugin.PageForm;
+import com.kentrasoft.cms.base.controller.BaseController;
+import com.kentrasoft.cms.base.plugin.PageForm;
 import com.kentrasoft.cms.model.Dict;
-import com.kentrasoft.cms.model.Menu;
 import com.kentrasoft.cms.service.DictService;
-import com.kentrasoft.cms.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,7 +1,7 @@
 package com.kentrasoft.cms.service.impl;
 
-import com.kentrasoft.base.dao.BaseDao;
-import com.kentrasoft.base.service.impl.BaseServiceImpl;
+import com.kentrasoft.cms.base.dao.BaseDao;
+import com.kentrasoft.cms.base.service.impl.BaseServiceImpl;
 import com.kentrasoft.cms.dao.MenuDao;
 import com.kentrasoft.cms.model.Menu;
 import com.kentrasoft.cms.service.MenuService;

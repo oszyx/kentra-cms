@@ -1,19 +1,16 @@
 package com.kentrasoft.cms.service.impl;
 
-import com.kentrasoft.base.dao.BaseDao;
-import com.kentrasoft.base.service.impl.BaseServiceImpl;
+import com.kentrasoft.cms.base.dao.BaseDao;
+import com.kentrasoft.cms.base.service.impl.BaseServiceImpl;
 import com.kentrasoft.cms.dao.RoleDao;
-import com.kentrasoft.cms.model.Menu;
 import com.kentrasoft.cms.model.Role;
 import com.kentrasoft.cms.service.RoleService;
-import com.kentrasoft.utils.RightsUtils.RightsHelper;
+import com.kentrasoft.cms.common.util.RightsUtils.RightsHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * 描述：RoleServiceImpl

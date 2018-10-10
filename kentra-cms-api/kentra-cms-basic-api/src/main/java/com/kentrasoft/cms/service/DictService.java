@@ -1,7 +1,7 @@
 package com.kentrasoft.cms.service;
 
 
-import com.kentrasoft.base.service.BaseService;
+import com.kentrasoft.cms.base.service.BaseService;
 import com.kentrasoft.cms.model.Dict;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.kentrasoft.cms.controller.user;
 
-import com.kentrasoft.base.controller.BaseController;
-import com.kentrasoft.base.plugin.PageForm;
+import com.kentrasoft.cms.base.controller.BaseController;
+import com.kentrasoft.cms.base.plugin.PageForm;
 import com.kentrasoft.cms.model.User;
 import com.kentrasoft.cms.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
