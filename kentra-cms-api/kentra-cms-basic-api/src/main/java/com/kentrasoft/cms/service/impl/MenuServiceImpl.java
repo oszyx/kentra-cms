@@ -103,6 +103,11 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu> implements MenuServic
         return buttonRights;
     }
 
+    @Override
+    public List<Menu> findByRoleRights(String roleRights) {
+        return null;
+    }
+
     /**---------------------------ly----------------------------*/
     /**
      * 登录用户的权限菜单

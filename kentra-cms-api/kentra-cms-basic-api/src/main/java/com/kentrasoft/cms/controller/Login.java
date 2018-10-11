@@ -5,16 +5,13 @@ import com.kentrasoft.cms.base.plugin.BaseResult;
 import com.kentrasoft.cms.common.cache.util.RedisUtil;
 import com.kentrasoft.cms.common.util.JwtUtil;
 import com.kentrasoft.cms.common.util.MD5Util;
-import com.kentrasoft.cms.model.Menu;
-import com.kentrasoft.cms.model.Role;
+import com.kentrasoft.cms.common.util.RightsUtils.RightsHelper;
 import com.kentrasoft.cms.model.Menu;
 import com.kentrasoft.cms.model.Role;
 import com.kentrasoft.cms.model.User;
 import com.kentrasoft.cms.service.MenuService;
 import com.kentrasoft.cms.service.RoleService;
 import com.kentrasoft.cms.service.UserService;
-import com.kentrasoft.utils.RightsUtils.RightsHelper;
-import com.kentrasoft.utils.plugin.BaseResult;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,10 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/cms")
