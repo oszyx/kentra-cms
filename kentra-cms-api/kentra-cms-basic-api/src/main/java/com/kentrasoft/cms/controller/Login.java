@@ -80,7 +80,10 @@ public class Login extends BaseController {
         userInfo.put("menu", menuTree);
         userInfo.put("button", buttonRights);
 
-        // 生成token储存到redis 和 cookie
+        // 储存用户信息到储存到redis
+        redisUtil.set(username+"user", user);
+        redisUtil.set(username+"menu", menus);
+
 
         return BaseResult.success("success",userInfo);
     }
@@ -92,7 +95,6 @@ public class Login extends BaseController {
      */
     @RequestMapping("/init")
     public HashMap<String, String> init() {
-
         return null;
     }
 
