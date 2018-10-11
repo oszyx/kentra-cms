@@ -1,11 +1,11 @@
 package com.kentrasoft.cms.service.impl;
 
-import com.kentrasoft.base.dao.BaseDao;
-import com.kentrasoft.base.service.impl.BaseServiceImpl;
+import com.kentrasoft.cms.base.dao.BaseDao;
+import com.kentrasoft.cms.base.service.impl.BaseServiceImpl;
 import com.kentrasoft.cms.dao.RoleDao;
 import com.kentrasoft.cms.model.Role;
 import com.kentrasoft.cms.service.RoleService;
-import com.kentrasoft.utils.RightsUtils.RightsHelper;
+import com.kentrasoft.cms.common.util.RightsUtils.RightsHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,5 +62,25 @@ public class RoleServiceImpl extends BaseServiceImpl<Role> implements RoleServic
         queryParams.put("roleRights", bigInteger + "");
         int i = roleDao.updateByParams(queryParams);
         return i;
+    }
+
+    /**
+     * 描述：根据用户权限 获得角色
+     *
+     * @param userRights
+     * @return
+     */
+    @Override
+    public List<Role> getRoleByUserRights(String userRights) {
+        // 从缓存中获取数据
+        List<Role> all = this.findAll();
+        List<Role> roles = new ArrayList<>();
+        for (Role role : all) {
+            boolean flag = RightsHelper.testRights(userRights, role.getId() + "");
+            if (flag) {
+                roles.add(role);
+            }
+        }
+        return roles;
     }
 }

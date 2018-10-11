@@ -1,9 +1,10 @@
 package com.kentrasoft.cms.service.impl;
 
-import com.kentrasoft.base.dao.BaseDao;
-import com.kentrasoft.base.service.impl.BaseServiceImpl;
+import com.kentrasoft.cms.base.dao.BaseDao;
+import com.kentrasoft.cms.base.service.impl.BaseServiceImpl;
 import com.kentrasoft.cms.dao.UserDao;
 import com.kentrasoft.cms.model.User;
+import com.kentrasoft.cms.common.util.RightsUtils.RightsHelper;
 import com.kentrasoft.cms.service.UserService;
 import com.kentrasoft.utils.RightsUtils.RightsHelper;
 import org.springframework.beans.factory.annotation.Autowired;

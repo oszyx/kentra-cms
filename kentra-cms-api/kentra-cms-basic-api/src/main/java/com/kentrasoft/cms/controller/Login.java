@@ -1,13 +1,17 @@
 package com.kentrasoft.cms.controller;
 
-import com.kentrasoft.base.controller.BaseController;
+import com.kentrasoft.cms.base.controller.BaseController;
+import com.kentrasoft.cms.base.plugin.BaseResult;
 import com.kentrasoft.cms.common.cache.util.RedisUtil;
 import com.kentrasoft.cms.common.util.JwtUtil;
 import com.kentrasoft.cms.common.util.MD5Util;
 import com.kentrasoft.cms.model.Menu;
 import com.kentrasoft.cms.model.Role;
+import com.kentrasoft.cms.model.Menu;
+import com.kentrasoft.cms.model.Role;
 import com.kentrasoft.cms.model.User;
 import com.kentrasoft.cms.service.MenuService;
+import com.kentrasoft.cms.service.RoleService;
 import com.kentrasoft.cms.service.UserService;
 import com.kentrasoft.utils.RightsUtils.RightsHelper;
 import com.kentrasoft.utils.plugin.BaseResult;
@@ -19,12 +23,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/cms")
 public class Login extends BaseController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RoleService roleService;
 
     @Autowired
     private MenuService menuService;
@@ -132,7 +143,6 @@ public class Login extends BaseController {
      */
     @RequestMapping("/init")
     public HashMap<String, String> init() {
-
         return null;
     }
 

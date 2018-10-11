@@ -1,6 +1,6 @@
 package com.kentrasoft.cms.dao;
 
-import com.kentrasoft.base.dao.BaseDao;
+import com.kentrasoft.cms.base.dao.BaseDao;
 import com.kentrasoft.cms.model.User;
 import org.springframework.stereotype.Repository;
 

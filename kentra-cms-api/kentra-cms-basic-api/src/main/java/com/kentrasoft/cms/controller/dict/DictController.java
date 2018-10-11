@@ -1,7 +1,7 @@
 package com.kentrasoft.cms.controller.dict;
 
-import com.kentrasoft.base.controller.BaseController;
-import com.kentrasoft.base.plugin.PageForm;
+import com.kentrasoft.cms.base.controller.BaseController;
+import com.kentrasoft.cms.base.plugin.PageForm;
 import com.kentrasoft.cms.model.Dict;
 import com.kentrasoft.cms.service.DictService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,7 @@
 package com.kentrasoft.cms.controller.role;
 
-import com.kentrasoft.base.controller.BaseController;
-import com.kentrasoft.base.plugin.PageForm;
-import com.kentrasoft.cms.model.Menu;
+import com.kentrasoft.cms.base.controller.BaseController;
+import com.kentrasoft.cms.base.plugin.PageForm;
 import com.kentrasoft.cms.model.Role;
 import com.kentrasoft.cms.service.MenuService;
 import com.kentrasoft.cms.service.RoleService;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * 描述：角色controller
@@ -115,9 +113,5 @@ public class RoleController extends BaseController {
     public void findRoleRights(Long id) {
         // 获取角色
         Role role = roleService.findById(id);
-
-        // 获取角色权限
-        List<Menu> menus = menuService.findByRoleRights(role.getRoleRights());
-
     }
 }
