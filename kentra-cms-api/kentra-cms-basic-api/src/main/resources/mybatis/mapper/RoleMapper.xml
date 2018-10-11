@@ -34,63 +34,72 @@
                 </foreach>
             </if>
             <if test="roleName != null"><![CDATA[ and  `role_name` = #{roleName:VARCHAR}]]></if>
-            <if test="roleName_r_min != null"><![CDATA[ and `role_name` >= #{roleName_r_min} and `role_name` <= #{roleName_r_max} ]]></if>
+            <if test="roleName_r_min != null">
+                <![CDATA[ and `role_name` >= #{roleName_r_min} and `role_name` <= #{roleName_r_max} ]]></if>
             <if test="roleName_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="roleName_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="roleCode != null"><![CDATA[ and  `role_code` = #{roleCode:VARCHAR}]]></if>
-            <if test="roleCode_r_min != null"><![CDATA[ and `role_code` >= #{roleCode_r_min} and `role_code` <= #{roleCode_r_max} ]]></if>
+            <if test="roleCode_r_min != null">
+                <![CDATA[ and `role_code` >= #{roleCode_r_min} and `role_code` <= #{roleCode_r_max} ]]></if>
             <if test="roleCode_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="roleCode_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="roleRights != null"><![CDATA[ and  `role_rights` = #{roleRights:VARCHAR}]]></if>
-            <if test="roleRights_r_min != null"><![CDATA[ and `role_rights` >= #{roleRights_r_min} and `role_rights` <= #{roleRights_r_max} ]]></if>
+            <if test="roleRights_r_min != null">
+                <![CDATA[ and `role_rights` >= #{roleRights_r_min} and `role_rights` <= #{roleRights_r_max} ]]></if>
             <if test="roleRights_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="roleRights_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="roleStatus != null"><![CDATA[ and  `role_status` = #{roleStatus:NUMERIC}]]></if>
-            <if test="roleStatus_r_min != null"><![CDATA[ and `role_status` >= #{roleStatus_r_min} and `role_status` <= #{roleStatus_r_max} ]]></if>
+            <if test="roleStatus_r_min != null">
+                <![CDATA[ and `role_status` >= #{roleStatus_r_min} and `role_status` <= #{roleStatus_r_max} ]]></if>
             <if test="roleStatus_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="roleStatus_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="rolePid != null"><![CDATA[ and  `role_pid` = #{rolePid:NUMERIC}]]></if>
-            <if test="rolePid_r_min != null"><![CDATA[ and `role_pid` >= #{rolePid_r_min} and `role_pid` <= #{rolePid_r_max} ]]></if>
+            <if test="rolePid_r_min != null">
+                <![CDATA[ and `role_pid` >= #{rolePid_r_min} and `role_pid` <= #{rolePid_r_max} ]]></if>
             <if test="rolePid_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="rolePid_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="creator != null"><![CDATA[ and  `creator` = #{creator:NUMERIC}]]></if>
-            <if test="creator_r_min != null"><![CDATA[ and `creator` >= #{creator_r_min} and `creator` <= #{creator_r_max} ]]></if>
+            <if test="creator_r_min != null">
+                <![CDATA[ and `creator` >= #{creator_r_min} and `creator` <= #{creator_r_max} ]]></if>
             <if test="creator_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="creator_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="createTime != null"><![CDATA[ and  `create_time` = #{createTime:DATETIME}]]></if>
-            <if test="createTime_r_min != null"><![CDATA[ and `create_time` >= #{createTime_r_min} and `create_time` <= #{createTime_r_max} ]]></if>
+            <if test="createTime_r_min != null">
+                <![CDATA[ and `create_time` >= #{createTime_r_min} and `create_time` <= #{createTime_r_max} ]]></if>
             <if test="createTime_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="createTime_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="updator != null"><![CDATA[ and  `updator` = #{updator:NUMERIC}]]></if>
-            <if test="updator_r_min != null"><![CDATA[ and `updator` >= #{updator_r_min} and `updator` <= #{updator_r_max} ]]></if>
+            <if test="updator_r_min != null">
+                <![CDATA[ and `updator` >= #{updator_r_min} and `updator` <= #{updator_r_max} ]]></if>
             <if test="updator_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="updator_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="updateTime != null"><![CDATA[ and  `update_time` = #{updateTime:DATETIME}]]></if>
-            <if test="updateTime_r_min != null"><![CDATA[ and `update_time` >= #{updateTime_r_min} and `update_time` <= #{updateTime_r_max} ]]></if>
+            <if test="updateTime_r_min != null">
+                <![CDATA[ and `update_time` >= #{updateTime_r_min} and `update_time` <= #{updateTime_r_max} ]]></if>
             <if test="updateTime_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="updateTime_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
@@ -168,16 +177,16 @@
             SELECT LAST_INSERT_ID()
         </selectKey>
         insert into role(
-            `id`,`role_name`,`role_code`,`role_rights`,`role_status`,`role_pid`,`creator`,`create_time`,`updator`,`update_time`
+        `id`,`role_name`,`role_code`,`role_rights`,`role_status`,`role_pid`,`creator`,`create_time`,`updator`,`update_time`
         ) values (
-            #{id},#{roleName},#{roleCode},#{roleRights},#{roleStatus},#{rolePid},#{creator},#{createTime},#{updator},#{updateTime}
+        #{id},#{roleName},#{roleCode},#{roleRights},#{roleStatus},#{rolePid},#{creator},#{createTime},#{updator},#{updateTime}
         )
     </insert>
 
     <!--新增多个对象-->
     <insert id="insertList" parameterType="java.util.List">
         insert into role (
-            `role_name`,`role_code`,`role_rights`,`role_status`,`role_pid`,`creator`,`create_time`,`updator`,`update_time`
+        `role_name`,`role_code`,`role_rights`,`role_status`,`role_pid`,`creator`,`create_time`,`updator`,`update_time`
         ) values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.roleName},#{item.roleCode},#{item.roleRights},#{item.roleStatus},#{item.rolePid},#{item.creator},#{item.createTime},#{item.updator},#{item.updateTime})
@@ -219,7 +228,7 @@
 
     <delete id="deleteByParams" parameterType="java.util.Map">
         DELETE FROM role
-        <include refid="whereSql" />
+        <include refid="whereSql"/>
     </delete>
 
     <!--根据ids删除：【a.b.c】-->
@@ -231,7 +240,7 @@
     <delete id="deleteByIds" parameterType="java.util.List">
         delete from role WHERE `id` in
         <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
-        #{item}
+            #{item}
         </foreach>
     </delete>
 
@@ -239,23 +248,23 @@
     <!--根据id查询-->
     <select id="findById" parameterType="Long" resultMap="resultMap">
         select
-            <include refid="baseCol"/>
+        <include refid="baseCol"/>
         from
-            role
+        role
         where `id`=#{id}
     </select>
 
     <!--根据ids查询列表：【a.b.c】-->
     <select id="findByIdsStr" parameterType="String" resultMap="resultMap">
         select
-            <include refid="baseCol"/>
+        <include refid="baseCol"/>
         from role WHERE FIND_IN_SET(`id`,#{idsStr})
     </select>
 
     <!--根据id列表获取一组对象:【list<id>】-->
     <select id="findByIds" parameterType="java.util.List" resultMap="resultMap">
         select
-            <include refid="baseCol"/>
+        <include refid="baseCol"/>
         from role WHERE `id` in
         <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
             #{item}
@@ -265,24 +274,24 @@
     <!--根据条件查询数量-->
     <select id="queryCountByParams" parameterType="java.util.Map" resultType="int">
         select count(*) from role
-        <include refid="whereSql" />
+        <include refid="whereSql"/>
     </select>
 
     <!--根据条件查询-->
     <select id="queryByParams" parameterType="java.util.Map" resultMap="resultMap">
         select
-            <include refid="baseCol" />
+        <include refid="baseCol"/>
         from role
-            <include refid="whereSql" />
-            <include refid="orderSql" />
-            <include refid="pageSql" />
+        <include refid="whereSql"/>
+        <include refid="orderSql"/>
+        <include refid="pageSql"/>
     </select>
 
 
     <!--查询所有-->
     <select id="findAll" resultMap="resultMap">
         select
-            <include refid="baseCol" />
+        <include refid="baseCol"/>
         from role
     </select>
 

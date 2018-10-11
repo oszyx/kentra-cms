@@ -9,129 +9,129 @@ import java.io.Serializable;
  * @author : zmk
  * @date : 2018-09-30
  */
-public class Role implements Serializable{
+public class Role implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 角色id
      */
-	private Long id;
+    private Long id;
     /**
      * 角色名
      */
-	private String roleName;
+    private String roleName;
     /**
      * 角色码
      */
-	private String roleCode;
+    private String roleCode;
     /**
      * 角色权限
      */
-	private String roleRights;
+    private String roleRights;
     /**
      * 角色状态: 0-不可用 1-正常
      */
-	private Integer roleStatus;
+    private Integer roleStatus;
     /**
      * 角色分组
      */
-	private Long rolePid;
+    private Long rolePid;
     /**
      * 创建人
      */
-	private Long creator;
+    private Long creator;
     /**
      * 创建时间
      */
-	private java.util.Date createTime;
+    private java.util.Date createTime;
     /**
      * 修改人
      */
-	private Long updator;
+    private Long updator;
     /**
      * 修改时间
      */
-	private java.util.Date updateTime;
+    private java.util.Date updateTime;
 
     public Long getId() {
-    	return id;
+        return id;
     }
 
     public void setId(Long id) {
-    	this.id = id;
+        this.id = id;
     }
 
     public String getRoleName() {
-    	return roleName;
+        return roleName;
     }
 
     public void setRoleName(String roleName) {
-    	this.roleName = roleName;
+        this.roleName = roleName;
     }
 
     public String getRoleCode() {
-    	return roleCode;
+        return roleCode;
     }
 
     public void setRoleCode(String roleCode) {
-    	this.roleCode = roleCode;
+        this.roleCode = roleCode;
     }
 
     public String getRoleRights() {
-    	return roleRights;
+        return roleRights;
     }
 
     public void setRoleRights(String roleRights) {
-    	this.roleRights = roleRights;
+        this.roleRights = roleRights;
     }
 
     public Integer getRoleStatus() {
-    	return roleStatus;
+        return roleStatus;
     }
 
     public void setRoleStatus(Integer roleStatus) {
-    	this.roleStatus = roleStatus;
+        this.roleStatus = roleStatus;
     }
 
     public Long getRolePid() {
-    	return rolePid;
+        return rolePid;
     }
 
     public void setRolePid(Long rolePid) {
-    	this.rolePid = rolePid;
+        this.rolePid = rolePid;
     }
 
     public Long getCreator() {
-    	return creator;
+        return creator;
     }
 
     public void setCreator(Long creator) {
-    	this.creator = creator;
+        this.creator = creator;
     }
 
     public java.util.Date getCreateTime() {
-    	return createTime;
+        return createTime;
     }
 
     public void setCreateTime(java.util.Date createTime) {
-    	this.createTime = createTime;
+        this.createTime = createTime;
     }
 
     public Long getUpdator() {
-    	return updator;
+        return updator;
     }
 
     public void setUpdator(Long updator) {
-    	this.updator = updator;
+        this.updator = updator;
     }
 
     public java.util.Date getUpdateTime() {
-    	return updateTime;
+        return updateTime;
     }
 
     public void setUpdateTime(java.util.Date updateTime) {
-    	this.updateTime = updateTime;
+        this.updateTime = updateTime;
     }
 
 }

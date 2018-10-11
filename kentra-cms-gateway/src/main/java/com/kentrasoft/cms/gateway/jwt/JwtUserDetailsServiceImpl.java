@@ -1,7 +1,7 @@
 package com.kentrasoft.cms.gateway.jwt;
 
 import com.kentrasoft.cms.common.cache.util.RedisUtil;
-import com.kentrasoft.cms.entity.User;
+import com.kentrasoft.cms.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

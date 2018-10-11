@@ -6,6 +6,7 @@ import com.kentrasoft.base.service.BaseService;
 import com.kentrasoft.cms.model.Menu;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 描述：MenuService
@@ -30,4 +31,10 @@ public interface MenuService extends BaseService<Menu> {
      * @return
      */
     List<Menu> findByRoleRights(String roleRights);
+
+    /**
+     * 登录用户的权限菜单
+     * @param params
+     */
+    List<Menu> userMenuTree( Map<String, Object> params);
 }

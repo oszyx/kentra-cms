@@ -125,7 +125,6 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu> implements MenuServic
     }
 
 
-
     /**
      * 描述：获取按钮权限
      *
@@ -144,4 +143,16 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu> implements MenuServic
         return buttonRights;
     }
 
+    /**---------------------------ly----------------------------*/
+    /**
+     * 登录用户的权限菜单
+     *
+     * @param params
+     * @return
+     */
+    @Override
+    public List<Menu> userMenuTree( Map<String, Object> params) {
+        return menuDao.userMenuTree(params);
+    }
+    /**----------------------------ly---------------------------*/
 }

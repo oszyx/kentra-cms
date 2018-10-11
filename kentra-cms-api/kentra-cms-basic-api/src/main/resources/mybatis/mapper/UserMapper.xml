@@ -38,14 +38,16 @@
                 </foreach>
             </if>
             <if test="username != null"><![CDATA[ and  `username` = #{username:VARCHAR}]]></if>
-            <if test="username_r_min != null"><![CDATA[ and `username` >= #{username_r_min} and `username` <= #{username_r_max} ]]></if>
+            <if test="username_r_min != null">
+                <![CDATA[ and `username` >= #{username_r_min} and `username` <= #{username_r_max} ]]></if>
             <if test="username_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="username_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="password != null"><![CDATA[ and  `password` = #{password:VARCHAR}]]></if>
-            <if test="password_r_min != null"><![CDATA[ and `password` >= #{password_r_min} and `password` <= #{password_r_max} ]]></if>
+            <if test="password_r_min != null">
+                <![CDATA[ and `password` >= #{password_r_min} and `password` <= #{password_r_max} ]]></if>
             <if test="password_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="password_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
@@ -59,7 +61,8 @@
                 </foreach>
             </if>
             <if test="birthday != null"><![CDATA[ and  `birthday` = #{birthday:DATETIME}]]></if>
-            <if test="birthday_r_min != null"><![CDATA[ and `birthday` >= #{birthday_r_min} and `birthday` <= #{birthday_r_max} ]]></if>
+            <if test="birthday_r_min != null">
+                <![CDATA[ and `birthday` >= #{birthday_r_min} and `birthday` <= #{birthday_r_max} ]]></if>
             <if test="birthday_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="birthday_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
@@ -73,56 +76,64 @@
                 </foreach>
             </if>
             <if test="telphone != null"><![CDATA[ and  `telphone` = #{telphone:VARCHAR}]]></if>
-            <if test="telphone_r_min != null"><![CDATA[ and `telphone` >= #{telphone_r_min} and `telphone` <= #{telphone_r_max} ]]></if>
+            <if test="telphone_r_min != null">
+                <![CDATA[ and `telphone` >= #{telphone_r_min} and `telphone` <= #{telphone_r_max} ]]></if>
             <if test="telphone_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="telphone_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="idCard != null"><![CDATA[ and  `id_card` = #{idCard:VARCHAR}]]></if>
-            <if test="idCard_r_min != null"><![CDATA[ and `id_card` >= #{idCard_r_min} and `id_card` <= #{idCard_r_max} ]]></if>
+            <if test="idCard_r_min != null">
+                <![CDATA[ and `id_card` >= #{idCard_r_min} and `id_card` <= #{idCard_r_max} ]]></if>
             <if test="idCard_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="idCard_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="userRights != null"><![CDATA[ and  `user_rights` = #{userRights:VARCHAR}]]></if>
-            <if test="userRights_r_min != null"><![CDATA[ and `user_rights` >= #{userRights_r_min} and `user_rights` <= #{userRights_r_max} ]]></if>
+            <if test="userRights_r_min != null">
+                <![CDATA[ and `user_rights` >= #{userRights_r_min} and `user_rights` <= #{userRights_r_max} ]]></if>
             <if test="userRights_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="userRights_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="userStatus != null"><![CDATA[ and  `user_status` = #{userStatus:NUMERIC}]]></if>
-            <if test="userStatus_r_min != null"><![CDATA[ and `user_status` >= #{userStatus_r_min} and `user_status` <= #{userStatus_r_max} ]]></if>
+            <if test="userStatus_r_min != null">
+                <![CDATA[ and `user_status` >= #{userStatus_r_min} and `user_status` <= #{userStatus_r_max} ]]></if>
             <if test="userStatus_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="userStatus_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="creator != null"><![CDATA[ and  `creator` = #{creator:NUMERIC}]]></if>
-            <if test="creator_r_min != null"><![CDATA[ and `creator` >= #{creator_r_min} and `creator` <= #{creator_r_max} ]]></if>
+            <if test="creator_r_min != null">
+                <![CDATA[ and `creator` >= #{creator_r_min} and `creator` <= #{creator_r_max} ]]></if>
             <if test="creator_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="creator_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="createTime != null"><![CDATA[ and  `create_time` = #{createTime:DATETIME}]]></if>
-            <if test="createTime_r_min != null"><![CDATA[ and `create_time` >= #{createTime_r_min} and `create_time` <= #{createTime_r_max} ]]></if>
+            <if test="createTime_r_min != null">
+                <![CDATA[ and `create_time` >= #{createTime_r_min} and `create_time` <= #{createTime_r_max} ]]></if>
             <if test="createTime_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="createTime_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="updator != null"><![CDATA[ and  `updator` = #{updator:NUMERIC}]]></if>
-            <if test="updator_r_min != null"><![CDATA[ and `updator` >= #{updator_r_min} and `updator` <= #{updator_r_max} ]]></if>
+            <if test="updator_r_min != null">
+                <![CDATA[ and `updator` >= #{updator_r_min} and `updator` <= #{updator_r_max} ]]></if>
             <if test="updator_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="updator_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="updateTime != null"><![CDATA[ and  `update_time` = #{updateTime:DATETIME}]]></if>
-            <if test="updateTime_r_min != null"><![CDATA[ and `update_time` >= #{updateTime_r_min} and `update_time` <= #{updateTime_r_max} ]]></if>
+            <if test="updateTime_r_min != null">
+                <![CDATA[ and `update_time` >= #{updateTime_r_min} and `update_time` <= #{updateTime_r_max} ]]></if>
             <if test="updateTime_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="updateTime_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
@@ -155,16 +166,16 @@
             SELECT LAST_INSERT_ID()
         </selectKey>
         insert into user(
-            `id`,`username`,`password`,`name`,`birthday`,`sex`,`telphone`,`id_card`,`user_rights`,`user_status`,`creator`,`create_time`,`updator`,`update_time`
+        `id`,`username`,`password`,`name`,`birthday`,`sex`,`telphone`,`id_card`,`user_rights`,`user_status`,`creator`,`create_time`,`updator`,`update_time`
         ) values (
-            #{id},#{username},#{password},#{name},#{birthday},#{sex},#{telphone},#{idCard},#{userRights},#{userStatus},#{creator},#{createTime},#{updator},#{updateTime}
+        #{id},#{username},#{password},#{name},#{birthday},#{sex},#{telphone},#{idCard},#{userRights},#{userStatus},#{creator},#{createTime},#{updator},#{updateTime}
         )
     </insert>
 
     <!--新增多个对象-->
     <insert id="insertList" parameterType="java.util.List">
         insert into user (
-            `username`,`password`,`name`,`birthday`,`sex`,`telphone`,`id_card`,`user_rights`,`user_status`,`creator`,`create_time`,`updator`,`update_time`
+        `username`,`password`,`name`,`birthday`,`sex`,`telphone`,`id_card`,`user_rights`,`user_status`,`creator`,`create_time`,`updator`,`update_time`
         ) values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.username},#{item.password},#{item.name},#{item.birthday},#{item.sex},#{item.telphone},#{item.idCard},#{item.userRights},#{item.userStatus},#{item.creator},#{item.createTime},#{item.updator},#{item.updateTime})
@@ -210,7 +221,7 @@
 
     <delete id="deleteByParams" parameterType="java.util.Map">
         DELETE FROM user
-        <include refid="whereSql" />
+        <include refid="whereSql"/>
     </delete>
 
     <!--根据ids删除：【a.b.c】-->
@@ -222,7 +233,7 @@
     <delete id="deleteByIds" parameterType="java.util.List">
         delete from user WHERE `id` in
         <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
-        #{item}
+            #{item}
         </foreach>
     </delete>
 
@@ -230,23 +241,23 @@
     <!--根据id查询-->
     <select id="findById" parameterType="Long" resultMap="resultMap">
         select
-            <include refid="baseCol"/>
+        <include refid="baseCol"/>
         from
-            user
+        user
         where `id`=#{id}
     </select>
 
     <!--根据ids查询列表：【a.b.c】-->
     <select id="findByIdsStr" parameterType="String" resultMap="resultMap">
         select
-            <include refid="baseCol"/>
+        <include refid="baseCol"/>
         from user WHERE FIND_IN_SET(`id`,#{idsStr})
     </select>
 
     <!--根据id列表获取一组对象:【list<id>】-->
     <select id="findByIds" parameterType="java.util.List" resultMap="resultMap">
         select
-            <include refid="baseCol"/>
+        <include refid="baseCol"/>
         from user WHERE `id` in
         <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
             #{item}
@@ -256,26 +267,32 @@
     <!--根据条件查询数量-->
     <select id="queryCountByParams" parameterType="java.util.Map" resultType="int">
         select count(*) from user
-        <include refid="whereSql" />
+        <include refid="whereSql"/>
     </select>
 
     <!--根据条件查询-->
     <select id="queryByParams" parameterType="java.util.Map" resultMap="resultMap">
         select
-            <include refid="baseCol" />
+        <include refid="baseCol"/>
         from user
-            <include refid="whereSql" />
-            <include refid="pageSql" />
+        <include refid="whereSql"/>
+        <include refid="pageSql"/>
     </select>
 
 
     <!--查询所有-->
     <select id="findAll" resultMap="resultMap">
         select
-            <include refid="baseCol" />
+        <include refid="baseCol"/>
         from user
     </select>
 
     <!--**********************************自定义***********************************-->
 
+    <!--根据用户名查询用户信息-->
+    <select id="findUserByUserName" parameterType="map" resultMap="resultMap">
+        select
+        <include refid="baseCol"/>
+        from user where username=#{username} and password = #{password}
+    </select>
 </mapper>

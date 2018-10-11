@@ -4,10 +4,8 @@ import com.kentrasoft.base.controller.BaseController;
 import com.kentrasoft.base.plugin.PageForm;
 import com.kentrasoft.cms.model.Menu;
 import com.kentrasoft.cms.model.Role;
-import com.kentrasoft.cms.model.User;
 import com.kentrasoft.cms.service.MenuService;
 import com.kentrasoft.cms.service.RoleService;
-import com.kentrasoft.cms.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,7 +55,7 @@ public class RoleController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public Long add(Role role) {
-        Long id = (Long)roleService.insertObject(role);
+        Long id = (Long) roleService.insertObject(role);
         return id;
     }
 
@@ -99,7 +97,7 @@ public class RoleController extends BaseController {
     @RequestMapping("/setRoleRights")
     public void setRoleRights(String menuIds) {
         // 设置参数
-        HashMap<String,Object> queryParams = new HashMap<String,Object>();
+        HashMap<String, Object> queryParams = new HashMap<String, Object>();
         queryParams.put("id", 1);
         queryParams.put("roleRights", menuIds);
         // 修改权限

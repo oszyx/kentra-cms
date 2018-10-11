@@ -13,153 +13,153 @@ import java.util.List;
  * @author : zmk
  * @date : 2018-09-30
  */
-public class Dict implements Serializable{
+public class Dict implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 字典id
      */
-	private Long id;
+    private Long id;
     /**
      * 字典名称
      */
-	private String dictName;
+    private String dictName;
     /**
      * 字典code
      */
-	private String dictCode;
+    private String dictCode;
     /**
      * 字典排序
      */
-	private Integer dictOrder;
+    private Integer dictOrder;
     /**
      * 字典父id
      */
-	private Long dictPid;
+    private Long dictPid;
     /**
      * 字典描述
      */
-	private String dictDesc;
+    private String dictDesc;
     /**
      * 字典状态
      */
-	private Integer dictStatus;
+    private Integer dictStatus;
     /**
      * 是否有子节点
      */
-	private Integer hasChild;
+    private Integer hasChild;
     /**
      * 创建人
      */
-	private Long creator;
+    private Long creator;
     /**
      * 创建时间
      */
-	private java.util.Date createTime;
+    private java.util.Date createTime;
     /**
      * 修改人
      */
-	private Long updator;
+    private Long updator;
     /**
      * 修改时间
      */
-	private java.util.Date updateTime;
+    private java.util.Date updateTime;
 
     public Long getId() {
-    	return id;
+        return id;
     }
 
     public void setId(Long id) {
-    	this.id = id;
+        this.id = id;
     }
 
     public String getDictName() {
-    	return dictName;
+        return dictName;
     }
 
     public void setDictName(String dictName) {
-    	this.dictName = dictName;
+        this.dictName = dictName;
     }
 
     public String getDictCode() {
-    	return dictCode;
+        return dictCode;
     }
 
     public void setDictCode(String dictCode) {
-    	this.dictCode = dictCode;
+        this.dictCode = dictCode;
     }
 
     public Integer getDictOrder() {
-    	return dictOrder;
+        return dictOrder;
     }
 
     public void setDictOrder(Integer dictOrder) {
-    	this.dictOrder = dictOrder;
+        this.dictOrder = dictOrder;
     }
 
     public Long getDictPid() {
-    	return dictPid;
+        return dictPid;
     }
 
     public void setDictPid(Long dictPid) {
-    	this.dictPid = dictPid;
+        this.dictPid = dictPid;
     }
 
     public String getDictDesc() {
-    	return dictDesc;
+        return dictDesc;
     }
 
     public void setDictDesc(String dictDesc) {
-    	this.dictDesc = dictDesc;
+        this.dictDesc = dictDesc;
     }
 
     public Integer getDictStatus() {
-    	return dictStatus;
+        return dictStatus;
     }
 
     public void setDictStatus(Integer dictStatus) {
-    	this.dictStatus = dictStatus;
+        this.dictStatus = dictStatus;
     }
 
     public Integer getHasChild() {
-    	return hasChild;
+        return hasChild;
     }
 
     public void setHasChild(Integer hasChild) {
-    	this.hasChild = hasChild;
+        this.hasChild = hasChild;
     }
 
     public Long getCreator() {
-    	return creator;
+        return creator;
     }
 
     public void setCreator(Long creator) {
-    	this.creator = creator;
+        this.creator = creator;
     }
 
     public java.util.Date getCreateTime() {
-    	return createTime;
+        return createTime;
     }
 
     public void setCreateTime(java.util.Date createTime) {
-    	this.createTime = createTime;
+        this.createTime = createTime;
     }
 
     public Long getUpdator() {
-    	return updator;
+        return updator;
     }
 
     public void setUpdator(Long updator) {
-    	this.updator = updator;
+        this.updator = updator;
     }
 
     public java.util.Date getUpdateTime() {
-    	return updateTime;
+        return updateTime;
     }
 
     public void setUpdateTime(java.util.Date updateTime) {
-    	this.updateTime = updateTime;
+        this.updateTime = updateTime;
     }
 
 
@@ -174,7 +174,7 @@ public class Dict implements Serializable{
     }
 
     public void addChildDict(Dict childDict) {
-        if (this.childDicts==null) {
+        if (this.childDicts == null) {
             this.childDicts = new ArrayList<Dict>();
         }
         this.childDicts.add(childDict);

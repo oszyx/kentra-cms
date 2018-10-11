@@ -38,7 +38,7 @@ public class DictServiceImpl extends BaseServiceImpl<Dict> implements DictServic
     @Override
     public List<Dict> findAllNormal() {
         HashMap<String, Object> queryParam = new HashMap<>();
-        queryParam.put("dictStatus",1);
+        queryParam.put("dictStatus", 1);
         List<Dict> dicts = dictDao.queryByParams(queryParam);
         return dicts;
     }
