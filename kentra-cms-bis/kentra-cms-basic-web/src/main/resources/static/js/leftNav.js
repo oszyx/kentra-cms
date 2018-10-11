@@ -8,7 +8,7 @@ function navBar(data) {
             ulHtml += '<li class="layui-nav-item">';
         }
 
-        if (data[i].childrens != undefined && data[i].childrens.length > 0) { //子菜单
+        if (data[i].childMenus != undefined && data[i].childMenus.length > 0) { //子菜单
             ulHtml += '<a href="javascript:;">';
             if (data[i].menuIcon != undefined && data[i].menuIcon != '') { //菜单图标
                 if (data[i].menuIcon.indexOf("icon-") != -1) {
@@ -21,16 +21,16 @@ function navBar(data) {
             ulHtml += '<span class="layui-nav-more"></span>';
             ulHtml += '</a>'
             ulHtml += '<dl class="layui-nav-child">';
-            for (var j = 0; j < data[i].childrens.length; j++) { //子菜单
-                ulHtml += '<dd><a href="javascript:;" data-url="' + data[i].childrens[j].menuUrl + '">';//菜单路径
-                if (data[i].childrens[j].menuIcon != undefined && data[i].childrens[j].menuIcon != '') {//菜单图标
-                    if (data[i].childrens[j].menuIcon.indexOf("icon-") != -1) {
-                        ulHtml += '<i class="iconfont ' + data[i].childrens[j].menuIcon + '" data-icon="' + data[i].childrens[j].menuIcon + '"></i>';
+            for (var j = 0; j < data[i].childMenus.length; j++) { //子菜单
+                ulHtml += '<dd><a href="javascript:;" data-url="' + data[i].childMenus[j].menuUrl + '">';//菜单路径
+                if (data[i].childMenus[j].menuIcon != undefined && data[i].childMenus[j].menuIcon != '') {//菜单图标
+                    if (data[i].childMenus[j].menuIcon.indexOf("icon-") != -1) {
+                        ulHtml += '<i class="iconfont ' + data[i].childMenus[j].menuIcon + '" data-icon="' + data[i].childMenus[j].menuIcon + '"></i>';
                     } else {
-                        ulHtml += '<i class="layui-icon" data-icon="' + data[i].childrens[j].menuIcon + '">' + data[i].childrens[j].menuIcon + '</i>';
+                        ulHtml += '<i class="layui-icon" data-icon="' + data[i].childMenus[j].menuIcon + '">' + data[i].childMenus[j].menuIcon + '</i>';
                     }
                 }
-                ulHtml += '<cite>' + data[i].childrens[j].menuName + '</cite></a></dd>';//菜单名称
+                ulHtml += '<cite>' + data[i].childMenus[j].menuName + '</cite></a></dd>';//菜单名称
             }
             ulHtml += "</dl>"
         } else {

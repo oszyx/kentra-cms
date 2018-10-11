@@ -25,6 +25,7 @@
                     async: false,
                     success: function (data) {
                         if ("200" == data.statusCode) {
+                            console.info(data);
                             // 初始化用户信息
                             window.sessionStorage.setItem("user",JSON.stringify(data.result.user));
                             // 初始化菜单
