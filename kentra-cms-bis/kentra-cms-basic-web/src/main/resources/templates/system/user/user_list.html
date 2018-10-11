@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../assets/css/ace.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" media="all">
+</head>
+<body class="childrenBody"  style="padding: 0 0 0 30px;background-color: white">
+
+<!--工具栏-->
+<div >
+    <!--搜索按钮-->
+    <div style="padding-top: 7px;padding-right: 10px">
+        <div class="layui-input-inline">
+            <span style="font-size: 16px;">用户名:</span>
+            <input type="text" id="usernameParam" placeholder="请输入用户名" style="border-radius:6px;height: 16px;">
+            <span style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;手机号:</span>
+            <input type="text" id="telphoneParam" placeholder="请输入手机号" style="border-radius:6px;height: 16px;">
+
+            <span style="font-size: 16px;">&nbsp;&nbsp;&nbsp;&nbsp;出生日期:</span>
+            <input type="text" name="birthdayMinParam" id="birthdayMinParam" placeholder="开始日期" style="border-radius:6px;height: 16px;width:10%;">
+            <span style="font-size: 16px;">-</span>
+            <input type="text" name="birthdayMaxParam" id="birthdayMaxParam" placeholder="结束日期" style="border-radius:6px;height: 16px;width:11%;">
+
+        </div>
+        <button class="btn btn-xs btn-primary" style="float:right;width: 80px;margin-right: 40px" id="searchBtn">
+            <i class="icon-search bigger-130"></i>
+            <span class="bigger-130 no-text-shadow">搜索</span>
+        </button>
+    </div>
+
+
+    <!--工具栏-->
+    <div class='btn-operation' style="margin:7px 0 2px 0">
+        <!--添加-->
+        <button class="btn btn-xs btn-warning btn-add" id="addBtn">
+            <i class="icon-plus bigger-130"></i>
+            <span class="bigger-130 no-text-shadow">添加</span>
+        </button>
+        <!--详情-->
+        <button class="btn btn-xs btn-primary" id="detailBtn">
+            <i class="icon-zoom-in bigger-130"></i>
+            <span class="bigger-130 no-text-shadow">详情</span>
+        </button>
+        <!--编辑-->
+        <button class="btn btn-xs btn-primary" id="editBtn">
+            <i class="icon-pencil bigger-130"></i>
+            <span class="bigger-130 no-text-shadow">编辑</span>
+        </button>
+        <!--删除-->
+        <button class="btn btn-xs btn-danger" id="deleteBtn">
+            <i class="icon-trash bigger-130"></i>
+            <span class="bigger-130 no-text-shadow">删除</span>
+        </button>
+        <!--赋权-->
+        <button class="btn btn-xs btn-primary" id="addRoleBtn">
+            <i class="icon-wrench bigger-130"></i>
+            <span class="bigger-130 no-text-shadow">赋权角色</span>
+        </button>
+    </div>
+</div>
+
+
+<!--用户列表展示-->
+<div class="layui-form news_list" style="padding: 0 50px 0 0">
+    <table id="userTable" lay-filter="userTableFilter"></table>
+</div>
+
+<!-- 分页栏 -->
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/system/user/userList.js"></script>
+<!--日期格式化工具类-->
+<script type="text/javascript" src="../js/utils/dateFormat.js"></script>
+<!--生日格式处理-->
+<script id="birthdayTpl" type="text/html">
+    {{#  if(d.birthday == null||d.birthday == ''){ }}
+        /
+    {{#  } else { }}
+        {{#  return Format(d.birthday,'yyyy-MM-dd'); }}
+    {{#  } }}
+</script>
+
+<!--状态格式处理-->
+<script id="statusTpl" type="text/html">
+    {{#  if(d.status == 0){ }}
+        未激活
+    {{#  } else if(d.status == 1){ }}
+        激活
+    {{#  } else { }}
+        未知状态
+    {{#  } }}
+</script>
+
+</body>
+</html>
