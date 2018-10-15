@@ -18,6 +18,8 @@ CREATE TABLE `user` (
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `updator` bigint(20) DEFAULT NULL COMMENT '修改者',
   `update_time` datetime DEFAULT NULL COMMENT '修改时间',
+  `reserved1` varchar(255) DEFAULT NULL COMMENT '预留字段1',
+  `reserved2` varchar(255) DEFAULT NULL COMMENT '预留字段2',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

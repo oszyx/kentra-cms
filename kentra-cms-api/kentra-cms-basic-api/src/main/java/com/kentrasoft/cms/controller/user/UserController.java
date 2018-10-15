@@ -49,7 +49,7 @@ public class UserController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public Long add(User user) {
-        Long id = (Long)userService.insertObject(user);
+        Long id = (Long) userService.insertObject(user);
         return id;
     }
 
@@ -81,7 +81,6 @@ public class UserController extends BaseController {
         return i;
     }
 
-
     /**
      * 描述：设置/修改 用户权限
      *
@@ -91,7 +90,7 @@ public class UserController extends BaseController {
     @RequestMapping("/setUserRights")
     public void setUserRights(String roleIds) {
         // 设置参数
-        HashMap<String,Object> queryParams = new HashMap<String,Object>();
+        HashMap<String, Object> queryParams = new HashMap<String, Object>();
         queryParams.put("id", 1);
         queryParams.put("userRights", roleIds);
         // 修改权限

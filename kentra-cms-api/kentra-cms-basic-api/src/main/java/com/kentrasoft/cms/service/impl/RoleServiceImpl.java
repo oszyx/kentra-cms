@@ -43,8 +43,8 @@ public class RoleServiceImpl extends BaseServiceImpl<Role> implements RoleServic
     public Integer addRights(Long roleId, String roleRights) {
         // 查询条件
         HashMap<String, Object> queryParam = new HashMap<>();
-        queryParam.put("id",roleId);
-        queryParam.put("roleRights",roleRights);
+        queryParam.put("id", roleId);
+        queryParam.put("roleRights", roleRights);
 
         return roleDao.updateByParams(queryParam);
     }
@@ -58,10 +58,10 @@ public class RoleServiceImpl extends BaseServiceImpl<Role> implements RoleServic
      */
     @Override
     public Integer setRoleRights(HashMap<String, Object> queryParams) {
-        String userRights = (String)queryParams.get("roleRights");
+        String userRights = (String) queryParams.get("roleRights");
         // 计算权限
         BigInteger bigInteger = RightsHelper.sumRights(userRights.split(","));
-        queryParams.put("roleRights", bigInteger+"");
+        queryParams.put("roleRights", bigInteger + "");
         int i = roleDao.updateByParams(queryParams);
         return i;
     }

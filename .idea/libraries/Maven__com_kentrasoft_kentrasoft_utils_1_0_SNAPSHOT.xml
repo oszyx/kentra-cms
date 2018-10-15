@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.kentrasoft:kentrasoft-utils:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/kentrasoft/kentrasoft-utils/1.0-SNAPSHOT/kentrasoft-utils-1.0-20181010.035034-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/kentrasoft/kentrasoft-utils/1.0-SNAPSHOT/kentrasoft-utils-1.0-20181010.035034-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/kentrasoft/kentrasoft-utils/1.0-SNAPSHOT/kentrasoft-utils-1.0-20181010.035034-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

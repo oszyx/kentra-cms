@@ -39,98 +39,112 @@
                 </foreach>
             </if>
             <if test="menuCode != null"><![CDATA[ and  `menu_code` = #{menuCode:VARCHAR}]]></if>
-            <if test="menuCode_r_min != null"><![CDATA[ and `menu_code` >= #{menuCode_r_min} and `menu_code` <= #{menuCode_r_max} ]]></if>
+            <if test="menuCode_r_min != null">
+                <![CDATA[ and `menu_code` >= #{menuCode_r_min} and `menu_code` <= #{menuCode_r_max} ]]></if>
             <if test="menuCode_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="menuCode_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="menuName != null"><![CDATA[ and  `menu_name` = #{menuName:VARCHAR}]]></if>
-            <if test="menuName_r_min != null"><![CDATA[ and `menu_name` >= #{menuName_r_min} and `menu_name` <= #{menuName_r_max} ]]></if>
+            <if test="menuName_r_min != null">
+                <![CDATA[ and `menu_name` >= #{menuName_r_min} and `menu_name` <= #{menuName_r_max} ]]></if>
             <if test="menuName_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="menuName_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="menuIcon != null"><![CDATA[ and  `menu_icon` = #{menuIcon:VARCHAR}]]></if>
-            <if test="menuIcon_r_min != null"><![CDATA[ and `menu_icon` >= #{menuIcon_r_min} and `menu_icon` <= #{menuIcon_r_max} ]]></if>
+            <if test="menuIcon_r_min != null">
+                <![CDATA[ and `menu_icon` >= #{menuIcon_r_min} and `menu_icon` <= #{menuIcon_r_max} ]]></if>
             <if test="menuIcon_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="menuIcon_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="menuUrl != null"><![CDATA[ and  `menu_url` = #{menuUrl:VARCHAR}]]></if>
-            <if test="menuUrl_r_min != null"><![CDATA[ and `menu_url` >= #{menuUrl_r_min} and `menu_url` <= #{menuUrl_r_max} ]]></if>
+            <if test="menuUrl_r_min != null">
+                <![CDATA[ and `menu_url` >= #{menuUrl_r_min} and `menu_url` <= #{menuUrl_r_max} ]]></if>
             <if test="menuUrl_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="menuUrl_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="menuSpread != null"><![CDATA[ and  `menu_spread` = #{menuSpread:NUMERIC}]]></if>
-            <if test="menuSpread_r_min != null"><![CDATA[ and `menu_spread` >= #{menuSpread_r_min} and `menu_spread` <= #{menuSpread_r_max} ]]></if>
+            <if test="menuSpread_r_min != null">
+                <![CDATA[ and `menu_spread` >= #{menuSpread_r_min} and `menu_spread` <= #{menuSpread_r_max} ]]></if>
             <if test="menuSpread_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="menuSpread_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="menuLeaf != null"><![CDATA[ and  `menu_leaf` = #{menuLeaf:NUMERIC}]]></if>
-            <if test="menuLeaf_r_min != null"><![CDATA[ and `menu_leaf` >= #{menuLeaf_r_min} and `menu_leaf` <= #{menuLeaf_r_max} ]]></if>
+            <if test="menuLeaf_r_min != null">
+                <![CDATA[ and `menu_leaf` >= #{menuLeaf_r_min} and `menu_leaf` <= #{menuLeaf_r_max} ]]></if>
             <if test="menuLeaf_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="menuLeaf_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="menuOrder != null"><![CDATA[ and  `menu_order` = #{menuOrder:NUMERIC}]]></if>
-            <if test="menuOrder_r_min != null"><![CDATA[ and `menu_order` >= #{menuOrder_r_min} and `menu_order` <= #{menuOrder_r_max} ]]></if>
+            <if test="menuOrder_r_min != null">
+                <![CDATA[ and `menu_order` >= #{menuOrder_r_min} and `menu_order` <= #{menuOrder_r_max} ]]></if>
             <if test="menuOrder_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="menuOrder_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="menuStatus != null"><![CDATA[ and  `menu_status` = #{menuStatus:NUMERIC}]]></if>
-            <if test="menuStatus_r_min != null"><![CDATA[ and `menu_status` >= #{menuStatus_r_min} and `menu_status` <= #{menuStatus_r_max} ]]></if>
+            <if test="menuStatus_r_min != null">
+                <![CDATA[ and `menu_status` >= #{menuStatus_r_min} and `menu_status` <= #{menuStatus_r_max} ]]></if>
             <if test="menuStatus_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="menuStatus_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="menuDesc != null"><![CDATA[ and  `menu_desc` = #{menuDesc:VARCHAR}]]></if>
-            <if test="menuDesc_r_min != null"><![CDATA[ and `menu_desc` >= #{menuDesc_r_min} and `menu_desc` <= #{menuDesc_r_max} ]]></if>
+            <if test="menuDesc_r_min != null">
+                <![CDATA[ and `menu_desc` >= #{menuDesc_r_min} and `menu_desc` <= #{menuDesc_r_max} ]]></if>
             <if test="menuDesc_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="menuDesc_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="menuPid != null"><![CDATA[ and  `menu_pid` = #{menuPid:NUMERIC}]]></if>
-            <if test="menuPid_r_min != null"><![CDATA[ and `menu_pid` >= #{menuPid_r_min} and `menu_pid` <= #{menuPid_r_max} ]]></if>
+            <if test="menuPid_r_min != null">
+                <![CDATA[ and `menu_pid` >= #{menuPid_r_min} and `menu_pid` <= #{menuPid_r_max} ]]></if>
             <if test="menuPid_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="menuPid_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="creator != null"><![CDATA[ and  `creator` = #{creator:NUMERIC}]]></if>
-            <if test="creator_r_min != null"><![CDATA[ and `creator` >= #{creator_r_min} and `creator` <= #{creator_r_max} ]]></if>
+            <if test="creator_r_min != null">
+                <![CDATA[ and `creator` >= #{creator_r_min} and `creator` <= #{creator_r_max} ]]></if>
             <if test="creator_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="creator_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="updator != null"><![CDATA[ and  `updator` = #{updator:NUMERIC}]]></if>
-            <if test="updator_r_min != null"><![CDATA[ and `updator` >= #{updator_r_min} and `updator` <= #{updator_r_max} ]]></if>
+            <if test="updator_r_min != null">
+                <![CDATA[ and `updator` >= #{updator_r_min} and `updator` <= #{updator_r_max} ]]></if>
             <if test="updator_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="updator_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="createTime != null"><![CDATA[ and  `create_time` = #{createTime:DATETIME}]]></if>
-            <if test="createTime_r_min != null"><![CDATA[ and `create_time` >= #{createTime_r_min} and `create_time` <= #{createTime_r_max} ]]></if>
+            <if test="createTime_r_min != null">
+                <![CDATA[ and `create_time` >= #{createTime_r_min} and `create_time` <= #{createTime_r_max} ]]></if>
             <if test="createTime_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="createTime_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="updateTime != null"><![CDATA[ and  `update_time` = #{updateTime:DATETIME}]]></if>
-            <if test="updateTime_r_min != null"><![CDATA[ and `update_time` >= #{updateTime_r_min} and `update_time` <= #{updateTime_r_max} ]]></if>
+            <if test="updateTime_r_min != null">
+                <![CDATA[ and `update_time` >= #{updateTime_r_min} and `update_time` <= #{updateTime_r_max} ]]></if>
             <if test="updateTime_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="updateTime_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
@@ -233,16 +247,16 @@
             SELECT LAST_INSERT_ID()
         </selectKey>
         insert into menu(
-            `id`,`menu_code`,`menu_name`,`menu_icon`,`menu_url`,`menu_spread`,`menu_leaf`,`menu_order`,`menu_status`,`menu_desc`,`menu_pid`,`creator`,`updator`,`create_time`,`update_time`
+        `id`,`menu_code`,`menu_name`,`menu_icon`,`menu_url`,`menu_spread`,`menu_leaf`,`menu_order`,`menu_status`,`menu_desc`,`menu_pid`,`creator`,`updator`,`create_time`,`update_time`
         ) values (
-            #{id},#{menuCode},#{menuName},#{menuIcon},#{menuUrl},#{menuSpread},#{menuLeaf},#{menuOrder},#{menuStatus},#{menuDesc},#{menuPid},#{creator},#{updator},#{createTime},#{updateTime}
+        #{id},#{menuCode},#{menuName},#{menuIcon},#{menuUrl},#{menuSpread},#{menuLeaf},#{menuOrder},#{menuStatus},#{menuDesc},#{menuPid},#{creator},#{updator},#{createTime},#{updateTime}
         )
     </insert>
 
     <!--新增多个对象-->
     <insert id="insertList" parameterType="java.util.List">
         insert into menu (
-            `menu_code`,`menu_name`,`menu_icon`,`menu_url`,`menu_spread`,`menu_leaf`,`menu_order`,`menu_status`,`menu_desc`,`menu_pid`,`creator`,`updator`,`create_time`,`update_time`
+        `menu_code`,`menu_name`,`menu_icon`,`menu_url`,`menu_spread`,`menu_leaf`,`menu_order`,`menu_status`,`menu_desc`,`menu_pid`,`creator`,`updator`,`create_time`,`update_time`
         ) values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.menuCode},#{item.menuName},#{item.menuIcon},#{item.menuUrl},#{item.menuSpread},#{item.menuLeaf},#{item.menuOrder},#{item.menuStatus},#{item.menuDesc},#{item.menuPid},#{item.creator},#{item.updator},#{item.createTime},#{item.updateTime})
@@ -289,7 +303,7 @@
 
     <delete id="deleteByParams" parameterType="java.util.Map">
         DELETE FROM menu
-        <include refid="whereSql" />
+        <include refid="whereSql"/>
     </delete>
 
     <!--根据ids删除：【a.b.c】-->
@@ -301,7 +315,7 @@
     <delete id="deleteByIds" parameterType="java.util.List">
         delete from menu WHERE `id` in
         <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
-        #{item}
+            #{item}
         </foreach>
     </delete>
 
@@ -309,23 +323,23 @@
     <!--根据id查询-->
     <select id="findById" parameterType="Long" resultMap="resultMap">
         select
-            <include refid="baseCol"/>
+        <include refid="baseCol"/>
         from
-            menu
+        menu
         where `id`=#{id}
     </select>
 
     <!--根据ids查询列表：【a.b.c】-->
     <select id="findByIdsStr" parameterType="String" resultMap="resultMap">
         select
-            <include refid="baseCol"/>
+        <include refid="baseCol"/>
         from menu WHERE FIND_IN_SET(`id`,#{idsStr})
     </select>
 
     <!--根据id列表获取一组对象:【list<id>】-->
     <select id="findByIds" parameterType="java.util.List" resultMap="resultMap">
         select
-            <include refid="baseCol"/>
+        <include refid="baseCol"/>
         from menu WHERE `id` in
         <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
             #{item}
@@ -335,27 +349,34 @@
     <!--根据条件查询数量-->
     <select id="queryCountByParams" parameterType="java.util.Map" resultType="int">
         select count(*) from menu
-        <include refid="whereSql" />
+        <include refid="whereSql"/>
     </select>
 
     <!--根据条件查询-->
     <select id="queryByParams" parameterType="java.util.Map" resultMap="resultMap">
         select
-            <include refid="baseCol" />
+        <include refid="baseCol"/>
         from menu
-            <include refid="whereSql" />
-            <include refid="orderSql" />
-            <include refid="pageSql" />
+        <include refid="whereSql"/>
+        <include refid="orderSql"/>
+        <include refid="pageSql"/>
     </select>
 
 
     <!--查询所有-->
     <select id="findAll" resultMap="resultMap">
         select
-            <include refid="baseCol" />
+        <include refid="baseCol"/>
         from menu
     </select>
 
     <!--**********************************自定义***********************************-->
-
+    <select id="userMenuTree" resultMap="resultMap">
+        select id,menu_code,menu_name,menu_icon,menu_url,menu_pid from menu where id in
+        <foreach collection="idList" item="item" index="index"
+                 open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+        and menu_status = 1
+    </select>
 </mapper>

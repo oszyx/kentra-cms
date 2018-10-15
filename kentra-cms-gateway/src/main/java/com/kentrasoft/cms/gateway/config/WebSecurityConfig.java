@@ -53,16 +53,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().authorizeRequests()
+                //登录放过,刷新token      "/api/sys/chanageToken"
+                .antMatchers("/api/cms/login").permitAll()
+
                 // 页面资源放过
-                .antMatchers("/web/**","/gyWeb/**").permitAll()
-                //登录放过,刷新token
-                .antMatchers("/web/gyfvs","/api/sys/login","/api/sys/chanageToken").permitAll()
-                //静态资源放过
-                .antMatchers("/*.js","/*.css","/*.jpg","/*.html","/*.png","/.woff","/.ttf","/favicon.ico").permitAll()
-                //地图获取
-                .antMatchers("/gyfvsmap").permitAll()
-                //app端
-                .antMatchers("/customer/**","/app/**").permitAll()
+//                .antMatchers("/web/**","/gyWeb/**").permitAll()
+//                //静态资源放过
+//                .antMatchers("/*.js","/*.css","/*.jpg","/*.html","/*.png","/.woff","/.ttf","/favicon.ico").permitAll()
+//                //地图获取
+//                .antMatchers("/gyfvsmap").permitAll()
+//                //app端
+//                .antMatchers("/customer/**","/app/**").permitAll()
 //                .anyRequest().authenticated().and().headers().cacheControl();
                 .anyRequest().authenticated().and().headers().frameOptions().disable();
         httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);

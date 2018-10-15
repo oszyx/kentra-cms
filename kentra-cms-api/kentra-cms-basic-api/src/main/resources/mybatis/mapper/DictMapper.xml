@@ -36,77 +36,88 @@
                 </foreach>
             </if>
             <if test="dictName != null"><![CDATA[ and  `dict_name` = #{dictName:VARCHAR}]]></if>
-            <if test="dictName_r_min != null"><![CDATA[ and `dict_name` >= #{dictName_r_min} and `dict_name` <= #{dictName_r_max} ]]></if>
+            <if test="dictName_r_min != null">
+                <![CDATA[ and `dict_name` >= #{dictName_r_min} and `dict_name` <= #{dictName_r_max} ]]></if>
             <if test="dictName_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="dictName_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="dictCode != null"><![CDATA[ and  `dict_code` = #{dictCode:VARCHAR}]]></if>
-            <if test="dictCode_r_min != null"><![CDATA[ and `dict_code` >= #{dictCode_r_min} and `dict_code` <= #{dictCode_r_max} ]]></if>
+            <if test="dictCode_r_min != null">
+                <![CDATA[ and `dict_code` >= #{dictCode_r_min} and `dict_code` <= #{dictCode_r_max} ]]></if>
             <if test="dictCode_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="dictCode_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="dictOrder != null"><![CDATA[ and  `dict_order` = #{dictOrder:NUMERIC}]]></if>
-            <if test="dictOrder_r_min != null"><![CDATA[ and `dict_order` >= #{dictOrder_r_min} and `dict_order` <= #{dictOrder_r_max} ]]></if>
+            <if test="dictOrder_r_min != null">
+                <![CDATA[ and `dict_order` >= #{dictOrder_r_min} and `dict_order` <= #{dictOrder_r_max} ]]></if>
             <if test="dictOrder_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="dictOrder_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="dictPid != null"><![CDATA[ and  `dict_pid` = #{dictPid:NUMERIC}]]></if>
-            <if test="dictPid_r_min != null"><![CDATA[ and `dict_pid` >= #{dictPid_r_min} and `dict_pid` <= #{dictPid_r_max} ]]></if>
+            <if test="dictPid_r_min != null">
+                <![CDATA[ and `dict_pid` >= #{dictPid_r_min} and `dict_pid` <= #{dictPid_r_max} ]]></if>
             <if test="dictPid_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="dictPid_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="dictDesc != null"><![CDATA[ and  `dict_desc` = #{dictDesc:VARCHAR}]]></if>
-            <if test="dictDesc_r_min != null"><![CDATA[ and `dict_desc` >= #{dictDesc_r_min} and `dict_desc` <= #{dictDesc_r_max} ]]></if>
+            <if test="dictDesc_r_min != null">
+                <![CDATA[ and `dict_desc` >= #{dictDesc_r_min} and `dict_desc` <= #{dictDesc_r_max} ]]></if>
             <if test="dictDesc_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="dictDesc_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="dictStatus != null"><![CDATA[ and  `dict_status` = #{dictStatus:NUMERIC}]]></if>
-            <if test="dictStatus_r_min != null"><![CDATA[ and `dict_status` >= #{dictStatus_r_min} and `dict_status` <= #{dictStatus_r_max} ]]></if>
+            <if test="dictStatus_r_min != null">
+                <![CDATA[ and `dict_status` >= #{dictStatus_r_min} and `dict_status` <= #{dictStatus_r_max} ]]></if>
             <if test="dictStatus_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="dictStatus_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="hasChild != null"><![CDATA[ and  `has_child` = #{hasChild:NUMERIC}]]></if>
-            <if test="hasChild_r_min != null"><![CDATA[ and `has_child` >= #{hasChild_r_min} and `has_child` <= #{hasChild_r_max} ]]></if>
+            <if test="hasChild_r_min != null">
+                <![CDATA[ and `has_child` >= #{hasChild_r_min} and `has_child` <= #{hasChild_r_max} ]]></if>
             <if test="hasChild_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="hasChild_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="creator != null"><![CDATA[ and  `creator` = #{creator:NUMERIC}]]></if>
-            <if test="creator_r_min != null"><![CDATA[ and `creator` >= #{creator_r_min} and `creator` <= #{creator_r_max} ]]></if>
+            <if test="creator_r_min != null">
+                <![CDATA[ and `creator` >= #{creator_r_min} and `creator` <= #{creator_r_max} ]]></if>
             <if test="creator_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="creator_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="createTime != null"><![CDATA[ and  `create_time` = #{createTime:DATETIME}]]></if>
-            <if test="createTime_r_min != null"><![CDATA[ and `create_time` >= #{createTime_r_min} and `create_time` <= #{createTime_r_max} ]]></if>
+            <if test="createTime_r_min != null">
+                <![CDATA[ and `create_time` >= #{createTime_r_min} and `create_time` <= #{createTime_r_max} ]]></if>
             <if test="createTime_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="createTime_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="updator != null"><![CDATA[ and  `updator` = #{updator:NUMERIC}]]></if>
-            <if test="updator_r_min != null"><![CDATA[ and `updator` >= #{updator_r_min} and `updator` <= #{updator_r_max} ]]></if>
+            <if test="updator_r_min != null">
+                <![CDATA[ and `updator` >= #{updator_r_min} and `updator` <= #{updator_r_max} ]]></if>
             <if test="updator_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="updator_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
                 </foreach>
             </if>
             <if test="updateTime != null"><![CDATA[ and  `update_time` = #{updateTime:DATETIME}]]></if>
-            <if test="updateTime_r_min != null"><![CDATA[ and `update_time` >= #{updateTime_r_min} and `update_time` <= #{updateTime_r_max} ]]></if>
+            <if test="updateTime_r_min != null">
+                <![CDATA[ and `update_time` >= #{updateTime_r_min} and `update_time` <= #{updateTime_r_max} ]]></if>
             <if test="updateTime_enum != null"><![CDATA[ and $!{column.value.xmlFieldName} in ]]>
                 <foreach collection="updateTime_enum" item="value" open="(" separator="," close=")">
                     <![CDATA[ #{value} ]]>
@@ -194,16 +205,16 @@
             SELECT LAST_INSERT_ID()
         </selectKey>
         insert into dict(
-            `id`,`dict_name`,`dict_code`,`dict_order`,`dict_pid`,`dict_desc`,`dict_status`,`has_child`,`creator`,`create_time`,`updator`,`update_time`
+        `id`,`dict_name`,`dict_code`,`dict_order`,`dict_pid`,`dict_desc`,`dict_status`,`has_child`,`creator`,`create_time`,`updator`,`update_time`
         ) values (
-            #{id},#{dictName},#{dictCode},#{dictOrder},#{dictPid},#{dictDesc},#{dictStatus},#{hasChild},#{creator},#{createTime},#{updator},#{updateTime}
+        #{id},#{dictName},#{dictCode},#{dictOrder},#{dictPid},#{dictDesc},#{dictStatus},#{hasChild},#{creator},#{createTime},#{updator},#{updateTime}
         )
     </insert>
 
     <!--新增多个对象-->
     <insert id="insertList" parameterType="java.util.List">
         insert into dict (
-            `dict_name`,`dict_code`,`dict_order`,`dict_pid`,`dict_desc`,`dict_status`,`has_child`,`creator`,`create_time`,`updator`,`update_time`
+        `dict_name`,`dict_code`,`dict_order`,`dict_pid`,`dict_desc`,`dict_status`,`has_child`,`creator`,`create_time`,`updator`,`update_time`
         ) values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.dictName},#{item.dictCode},#{item.dictOrder},#{item.dictPid},#{item.dictDesc},#{item.dictStatus},#{item.hasChild},#{item.creator},#{item.createTime},#{item.updator},#{item.updateTime})
@@ -247,7 +258,7 @@
 
     <delete id="deleteByParams" parameterType="java.util.Map">
         DELETE FROM dict
-        <include refid="whereSql" />
+        <include refid="whereSql"/>
     </delete>
 
     <!--根据ids删除：【a.b.c】-->
@@ -259,7 +270,7 @@
     <delete id="deleteByIds" parameterType="java.util.List">
         delete from dict WHERE `id` in
         <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
-        #{item}
+            #{item}
         </foreach>
     </delete>
 
@@ -267,23 +278,23 @@
     <!--根据id查询-->
     <select id="findById" parameterType="Long" resultMap="resultMap">
         select
-            <include refid="baseCol"/>
+        <include refid="baseCol"/>
         from
-            dict
+        dict
         where `id`=#{id}
     </select>
 
     <!--根据ids查询列表：【a.b.c】-->
     <select id="findByIdsStr" parameterType="String" resultMap="resultMap">
         select
-            <include refid="baseCol"/>
+        <include refid="baseCol"/>
         from dict WHERE FIND_IN_SET(`id`,#{idsStr})
     </select>
 
     <!--根据id列表获取一组对象:【list<id>】-->
     <select id="findByIds" parameterType="java.util.List" resultMap="resultMap">
         select
-            <include refid="baseCol"/>
+        <include refid="baseCol"/>
         from dict WHERE `id` in
         <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
             #{item}
@@ -293,24 +304,24 @@
     <!--根据条件查询数量-->
     <select id="queryCountByParams" parameterType="java.util.Map" resultType="int">
         select count(*) from dict
-        <include refid="whereSql" />
+        <include refid="whereSql"/>
     </select>
 
     <!--根据条件查询-->
     <select id="queryByParams" parameterType="java.util.Map" resultMap="resultMap">
         select
-            <include refid="baseCol" />
+        <include refid="baseCol"/>
         from dict
-            <include refid="whereSql" />
-            <include refid="orderSql" />
-            <include refid="pageSql" />
+        <include refid="whereSql"/>
+        <include refid="orderSql"/>
+        <include refid="pageSql"/>
     </select>
 
 
     <!--查询所有-->
     <select id="findAll" resultMap="resultMap">
         select
-            <include refid="baseCol" />
+        <include refid="baseCol"/>
         from dict
     </select>
 

@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
  * @date : 2018-09-30
  */
 @Repository
-public interface RoleDao extends BaseDao<Role,Long> {
+public interface RoleDao extends BaseDao<Role, Long> {
 
 }

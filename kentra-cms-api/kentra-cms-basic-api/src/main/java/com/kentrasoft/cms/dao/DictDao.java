@@ -12,6 +12,6 @@ import org.springframework.stereotype.Repository;
  * @date : 2018-09-30
  */
 @Repository
-public interface DictDao extends BaseDao<Dict,Long> {
+public interface DictDao extends BaseDao<Dict, Long> {
 
 }

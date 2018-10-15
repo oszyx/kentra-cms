@@ -50,7 +50,7 @@ public class MenuController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public Long add(Menu menu) {
-        Long id = (Long)menuService.insertObject(menu);
+        Long id = (Long) menuService.insertObject(menu);
         return id;
     }
 

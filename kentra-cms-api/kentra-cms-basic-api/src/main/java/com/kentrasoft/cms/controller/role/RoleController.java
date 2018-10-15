@@ -53,7 +53,7 @@ public class RoleController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public Long add(Role role) {
-        Long id = (Long)roleService.insertObject(role);
+        Long id = (Long) roleService.insertObject(role);
         return id;
     }
 
@@ -95,7 +95,7 @@ public class RoleController extends BaseController {
     @RequestMapping("/setRoleRights")
     public void setRoleRights(String menuIds) {
         // 设置参数
-        HashMap<String,Object> queryParams = new HashMap<String,Object>();
+        HashMap<String, Object> queryParams = new HashMap<String, Object>();
         queryParams.put("id", 1);
         queryParams.put("roleRights", menuIds);
         // 修改权限

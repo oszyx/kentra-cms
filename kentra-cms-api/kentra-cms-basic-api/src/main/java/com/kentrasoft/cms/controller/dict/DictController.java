@@ -49,7 +49,7 @@ public class DictController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public Long add(Dict dict) {
-        Long id = (Long)dictService.insertObject(dict);
+        Long id = (Long) dictService.insertObject(dict);
         return id;
     }
 
