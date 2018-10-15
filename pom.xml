@@ -19,7 +19,6 @@
         <module>kentra-cms-gateway</module>
         <module>kentra-cms-monitor</module>
         <module>kentra-cms-common</module>
-        <module>kentra-cms-auth</module>
         <module>kentra-cms-bis</module>
         <module>kentra-cms-api</module>
     </modules>
