@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="kentra-cms-api" />
         <module name="kentra-cms-auth" />
-        <module name="kentra-cms-bis" />
+        <module name="kentra-cms-basic-api" />
+        <module name="kentra-cms-basic-web" />
+        <module name="kentra-cms-common-cache" />
         <module name="kentra-cms-common-chache" />
         <module name="kentra-cms-common-util" />
         <module name="kentra-cms-config" />
@@ -22,11 +23,14 @@
       <module name="kentra-cms" target="1.8" />
       <module name="kentra-cms-api" target="1.8" />
       <module name="kentra-cms-auth" target="1.8" />
+      <module name="kentra-cms-basic-api" target="1.8" />
+      <module name="kentra-cms-basic-web" target="1.8" />
       <module name="kentra-cms-bis" target="1.8" />
       <module name="kentra-cms-common" target="1.8" />
+      <module name="kentra-cms-common-cache" target="1.8" />
       <module name="kentra-cms-common-chache" target="1.8" />
       <module name="kentra-cms-common-util" target="1.8" />
-      <module name="kentra-cms-config" target="1.5" />
+      <module name="kentra-cms-config" target="1.8" />
       <module name="kentra-cms-gateway" target="1.8" />
       <module name="kentra-cms-monitor" target="1.5" />
       <module name="kentra-cms-registry" target="1.8" />
